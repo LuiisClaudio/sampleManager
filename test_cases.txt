@@ -1,0 +1,40 @@
+Casos de uso
+
+1) Registrar um Sample com o nome de um Arquivo existente
+1.1) Sample é registrado com sucesso
+2) Registrar um Sample com o nome de um Arquivo não existente
+2.1) Sample não é registrado e operação retorno um erro
+3) Classificar um sample como sendo do gênero Jazz
+3.1) Sample é classificado com sucesso como sendo do gênero jazz
+4) Inidicar o Bpm de um sample como sendo 100
+4.1) Sample é registrado como tendo Bpm 100
+5) Classificar um Sample como sendo do tom G#
+5.1) Sample é classificado com sucesso como sendo do tom G#
+6) Classificar um Sample como sendo do tom Z
+6.1) Novo tom para o sample não é registrado e operação retorna um erro
+7) Filtrar samples pelo gênero Hip Hop
+7.1) Na tela de samples, somente os sendo do gênero Hip Hop são mostrados
+8) Filtrar Samples pelo tom C# e pelo Bpm 120
+8.1) Na tela de samples, somente os sendo do tom C# e Bpm 110 são exibidos
+9) Filtrar samples pelo gênero Latin, com Bpm 140 e tom A#
+9.1) Na tela de samples, somente os sendo do tom A#, com Bpm 110 e do gênero Latin são exibidos
+10) Filtrar samples por um gênero ainda não registrado
+10.1) Nenhum sample é exibido
+11) Selecionar um sample e dar play
+11.1) Sample selecionado é reproduzido a partir do minuto e do segundo 0
+12) Selecionar stop no player
+12.1) Player para de tocar e sample é rebobinado
+13) Selecionar pause em um sample que está tocando
+13.1) Sample que está tocando pára de tocar
+14) Arrastar o tempo no player para o minuto 0 e segundo 10
+14.1) Sample deve começar a ser reproduzido a partir do segundo 10
+15) Arrastar o tempo no player para o minuto 1 e segundo 5
+15.1) Sample deve começar a ser reproduzido a partir do minuto 1 e segundo 5
+16) Apertar o botão forward em um sample que está sendo reproduzido
+16.1) O sample começa a avançar duas vezes mais rápido
+17) Apertar o botão backward em um sample que está sendo reproduzido
+17.1) O sample começa a rebobinar duas vezes mais rápido do que estava tocando
+18) Aumentar o pitch de um sample que está sendo reproduzido
+18.1) Usuário percebe que o sample está mais agudo
+19) Diminuir o pitch de um sample que está sendo reproduzido
+19.1) Usuário percebe que o sample está mais grave
