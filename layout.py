@@ -27,6 +27,7 @@ class samplePage:
         self.window = Tk()
         self.window.title("Manage Sample")
         self.window.geometry("1000x1000")
+        #self.window.resizable(0, 0)
 
         ManagaeTagButton = Button(self.window, text='Manage tag.', bd=2, font=('arialblack', 13), width=10, command=self.new_window)#.grid(row=7, column=2, columnspan=4)
 
@@ -131,10 +132,9 @@ class samplePage:
 
         self._buildSampleSpace()
 
-        self._createListTag()
-        self.view_command()
+        self._buildTagSpace()
 
-        self._create_treeview()
+        self._buildPlayerSpace()
 
         self.showTags()
 
@@ -145,6 +145,8 @@ class samplePage:
         self.app = TagPage(self.newWindow)
 
     def _buildSampleSpace(self):
+
+        self._create_treeview()
 
         Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x = 10, y = 10)
         Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x = 100, y = 10)
@@ -180,23 +182,9 @@ class samplePage:
         ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=750)
         ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=800)
 
-
-    def _createListTag(self):
-        self.sampleList = Listbox(self.window, height=15, width=20)
-        self.sampleList.place(x = indexs.xTagGrig, y = 150)
-        self.indexSample = 0
-
-        sb = Scrollbar(self.window)
-        #sb.grid(row=1, column=2, rowspan=6)
-
-        self.sampleList.configure(yscrollcommand=sb.set)
-        sb.configure(command=self.sampleList.yview)
-
-        self.sampleList.bind('<<ListboxSelect>>', self.getSelectedRow)
-
     def _create_treeview(self):
         self.dataCols = ["f.id_fato", "s.id_sample", "s.name", "s.path", "s.extension", "s.disk", "id_tag", "tag"]  # ['name', 'path', 'extension']
-        self.tree = ttk.Treeview(self.window, columns=self.dataCols, show='headings')
+        self.tree = ttk.Treeview(self.window, columns=self.dataCols, show='headings', height = 20)
         self.tree.place(x = 10, y = 150)
         self.tree.bind('<ButtonRelease-1>', self.selectTreeValues)
 
@@ -225,6 +213,181 @@ class samplePage:
         for i in self.dataCols:
             self.tree.column(i, width=75, minwidth=100)
 
+        #tree.insert('', 'end', text = 'your text', tags = ('oddrow',))
+        #tree.tag_configure('oddrow', background='orange')
+
+    def _buildTagSpace(self):
+        self._createListTag()
+        self.view_command()
+
+        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=10)
+        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 50, y=10)
+        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 100, y=10)
+
+        pathEntry = StringVar()
+        Entry(self.window, textvariable=pathEntry, width=10).place(x=indexs.xTagGrid, y=40)
+
+        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=100)
+
+        pathEntry = StringVar()
+        Entry(self.window, textvariable=pathEntry, width=10).place(x=indexs.xTagGrid + 50, y=100)
+
+    def _createListTag(self):
+        self.sampleList = Listbox(self.window, height=15, width=20)
+        self.sampleList.place(x = indexs.xTagGrid, y = 150)
+        self.indexSample = 0
+
+        sb = Scrollbar(self.window)
+        #sb.grid(row=1, column=2, rowspan=6)
+
+        self.sampleList.configure(yscrollcommand=sb.set)
+        sb.configure(command=self.sampleList.yview)
+
+        self.sampleList.bind('<<ListboxSelect>>', self.getSelectedRow)
+
+    def _buildPlayerSpace(self):
+        global imgPlay 
+        imgPlay = PhotoImage(file='icones_player/play.png')
+
+        def eventEnter_play(event):
+            play_des.place(x=25,y=460)
+
+        def on_leave_play(event):
+            play_des.place(x=1000,y=1000)
+
+        global botaoPlay
+        botaoPlay = Button(self.window, image=imgPlay,bd=0)#,command=self.tocarMusica)
+        botaoPlay.place(x=10 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
+        botaoPlay.bind('<Enter>',eventEnter_play)
+        botaoPlay.bind('<Leave>',on_leave_play)
+
+
+        def eventEnter_prev(event):
+            prev_des.place(x=45,y=460)
+
+        def on_leave_prev(event):
+            prev_des.place(x=1000,y=1000)
+        
+
+        prev_img = PhotoImage(file='icones_player/voltar.png')
+        prev_button = Button(self.window, image=prev_img,bd=0)#,command=lambda:self.voltarFaixa(1))
+        prev_button.place(x=50 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
+        prev_button.bind('<Enter>',eventEnter_prev)
+        prev_button.bind('<Leave>',on_leave_prev)
+
+
+
+        def eventEnter_stop(event):
+            stop_des.place(x=70,y=460)
+
+        def on_leave_stop(event):
+            stop_des.place(x=1000,y=1000)
+
+        stop_img = PhotoImage(file='icones_player/stop.png')
+        stop_button = Button(self.window,image=stop_img,bd=0)#,command=self.stop)
+        stop_button.place(x=85 + indexs.xPlayerGrid,y=438 + indexs.yPlayerGrid)
+        stop_button.bind('<Enter>',eventEnter_stop)
+        stop_button.bind('<Leave>',on_leave_stop)
+
+
+        def eventEnter_next(event):
+            next_des.place(x=100,y=460)
+
+        def on_leave_next(event):
+            next_des.place(x=1000,y=1000)
+
+        next_img = PhotoImage(file='icones_player/proximo.png')
+        next_button = Button(self.window, image=next_img,bd=0)#,command=lambda:self.voltarFaixa(2))
+        next_button.place(x=113 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
+        next_button.bind('<Enter>',eventEnter_next)
+        next_button.bind('<Leave>',on_leave_next)
+
+        global imgPause
+        imgPause = PhotoImage(file='icones_player/pause.png')
+
+
+        global imgSpeaker
+        imgSpeaker = PhotoImage(file='icones_player/vol.png')
+
+        global imgMute
+        imgMute = PhotoImage(file='icones_player/mute.png')
+
+
+        def eventEnter_vol(event):
+            vol_des.place(x=560,y=450)
+
+        def on_leave_vol(event):
+            vol_des.place(x=1000,y=1000)
+
+        global speaker
+        speaker = Button(self.window,image=imgSpeaker,bd=0)#,command=self.speaker_func)
+        speaker.place(x=200 + indexs.xPlayerGrid,y=442 + indexs.yPlayerGrid)
+        speaker.bind('<Enter>',eventEnter_vol)
+        speaker.bind('<Leave>',on_leave_vol)
+
+
+        def eventEnter_shuffle(event):
+            shuffle_des.place(x=180,y=460)
+
+        def on_leave_shuffle(event):
+            shuffle_des.place(x=1000,y=1000)
+
+        shuffle_img = PhotoImage(file='icones_player/shuffle.png')
+        shuffle_button = Button(self.window, image=shuffle_img,bd=0)#,command=lambda:self.modoRepeticao(1))
+        shuffle_button.place(x=170 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
+        shuffle_button.bind('<Enter>',eventEnter_shuffle)
+        shuffle_button.bind('<Leave>',on_leave_shuffle)
+
+
+        def eventEnter_repetirTodos(event):
+            repetirTodos_des.place(x=220,y=460)
+
+        def on_leave_repetirTodos(event):
+            repetirTodos_des.place(x=1000,y=1000)
+
+        
+
+        repeat_img = PhotoImage(file='icones_player/repeat.png')
+        repeat_button = Button(self.window, image=repeat_img,bd=0)#,command=lambda:self.modoRepeticao(2))
+        repeat_button.place(x=200 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
+        repeat_button.bind('<Enter>',eventEnter_repetirTodos)
+        repeat_button.bind('<Leave>',on_leave_repetirTodos)
+
+
+
+
+        play_des = Label(self.window, text='Play/Pause',relief='groove')
+        prev_des = Label(self.window, text='Previous Track',relief='groove')
+        stop_des = Label(self.window, text='Stop Music',relief='groove')
+        next_des = Label(self.window, text='Next Track',relief='groove')
+        shuffle_des = Label(self.window, text='Shuffle All',relief='groove')
+        repetirTodos_des = Label(self.window, text='Repeat All',relief='groove')
+        vol_des = Label(self.window, text='Adjust Volume',relief='groove')
+
+        
+
+
+        ## Volume Scale - adjust volume
+        global scale
+        scale = ttk.Scale(self.window, from_=0, to=100, orient=HORIZONTAL)#,command=self.set_vol)
+        scale.set(70)  # implement the default value of scale when music player starts
+        #mixer.music.set_volume(0.7)
+        scale.place(x=250 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
+
+
+        ## Time Durations
+        global tempoComeco, tempoFinal
+        tempoComeco = Label(self.window, text='--:--',font=('Calibri',10,'bold'))
+        tempoComeco.place(x=5 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+        tempoFinal = Label(self.window, text='--:--',font=('Calibri',10,'bold'))
+        tempoFinal.place(x=300 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+
+
+
+        ## Progress Bar - The progress bar which indicates the running music
+        global tempoBarra
+        tempoBarra = ttk.Progressbar(self.window, orient='horizontal',length=200)
+        tempoBarra.place(x=42 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
 
     def autoTag(self):
         lstAutoTag = smartTag.autoTag()
