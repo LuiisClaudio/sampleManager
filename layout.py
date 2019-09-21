@@ -148,39 +148,42 @@ class samplePage:
 
         self._create_treeview()
 
-        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x = 10, y = 10)
-        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x = 100, y = 10)
+        Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command='').place(x = 10, y = 10)
+        Button(self.window, text='Like', bd=2, font=('arialblack', 13), width=5, command='').place(x = 100, y = 10)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x = 10, y = 40)
+        sampleSearch = StringVar()
+        sampleSearch.set("Name")
+        Entry(self.window, textvariable=sampleSearch, width=10).place(x = 10, y = 40)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x = 110, y = 40)
+        ttk.Spinbox(self.window, values=indexs.lstBpm, width=3).place(x = 120, y = 40)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x = 210, y = 40)
+        ttk.Combobox(self.window, values=indexs.lstKey, width=5).place(x = 180, y = 40)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x = 310, y = 40)
+        ttk.Combobox(self.window, values=indexs.lstGenre, width=10).place(x = 260, y = 40)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x = 410, y = 40)
+        tagSearch = StringVar()
+        tagSearch.set("Tag")
+        Entry(self.window, textvariable=tagSearch, width=10).place(x = 380, y = 40)
+
+        ttk.Spinbox(self.window, values=indexs.lstLove, width=3).place(x=490, y=40)
+        ttk.Spinbox(self.window, values=indexs.lstLove, width=3).place(x=550, y=40)
 
         Label(self.window, text="Name").place(x=10, y=550)
-        Label(self.window, text="Name").place(x=10, y=600)
-        Label(self.window, text="Name").place(x=10, y=650)
-        Label(self.window, text="Name").place(x=10, y=700)
-        Label(self.window, text="Name").place(x=10, y=750)
-        Label(self.window, text="Name").place(x=10, y=800)
+        Label(self.window, text="BPM").place(x=10, y=600)
+        Label(self.window, text="Key").place(x=10, y=650)
+        Label(self.window, text="Genre").place(x=10, y=700)
+        Label(self.window, text="Tag").place(x=10, y=750)
+        Label(self.window, text="Love").place(x=10, y=800)
 
 
         Label(self.window, text="Name").place(x=100, y=550)
 
-        ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=600)
-        ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=650)
-        ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=700)
-        ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=750)
-        ttk.Combobox(self.window, values=["January", "February", "March", "April"]).place(x=100, y=800)
+        ttk.Spinbox(self.window, values=indexs.lstBpm, width=3).place(x=100, y=600)
+        ttk.Combobox(self.window, values=indexs.lstKey, width=5).place(x=100, y=650)
+        ttk.Combobox(self.window, values=indexs.lstGenre, width=10).place(x=100, y=700)
+        ttk.Combobox(self.window, values=tag_db.viewall()).place(x=100, y=750)
+        ttk.Spinbox(self.window, values=indexs.lstLove, width=10).place(x=100, y=800)
+
 
     def _create_treeview(self):
         self.dataCols = ["f.id_fato", "s.id_sample", "s.name", "s.path", "s.extension", "s.disk", "id_tag", "tag"]  # ['name', 'path', 'extension']
@@ -220,17 +223,18 @@ class samplePage:
         self._createListTag()
         self.view_command()
 
-        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=10)
-        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 50, y=10)
-        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 100, y=10)
+        Button(self.window, text='Add', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=10)
+        Button(self.window, text='Remove', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 60, y=10)
+        Button(self.window, text='Edit', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 120, y=10)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x=indexs.xTagGrid, y=40)
+        self.tagNameEdit = StringVar()
+        self.tagNameEditEntry = Entry(self.window, textvariable=self.tagNameEdit, width=10).place(x=indexs.xTagGrid, y=40)
 
-        Button(self.window, text='-', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=100)
+        Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=100)
 
-        pathEntry = StringVar()
-        Entry(self.window, textvariable=pathEntry, width=10).place(x=indexs.xTagGrid + 50, y=100)
+        self.tagSearch = StringVar()
+        self.tagSearch.set("Name")
+        Entry(self.window, textvariable=self.tagSearch, width=10).place(x=indexs.xTagGrid + 50, y=100)
 
     def _createListTag(self):
         self.sampleList = Listbox(self.window, height=15, width=20)
@@ -476,6 +480,9 @@ class samplePage:
             tagListBox.itemconfig(self.indexTag, bg='pale turquoise', fg='black')
             tagListBox.itemconfig(indexTagAnt, bg='white', fg='black')
             print(selectedTupleTag)
+
+            self.tagNameEditEntry.delete(0, END)
+            self.tagNameEditEntry.insert(END, selectedTupleTag)
         except IndexError:
             pass
 
