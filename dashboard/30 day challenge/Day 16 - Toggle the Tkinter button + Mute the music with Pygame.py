@@ -27,7 +27,7 @@ subMenu.add_command(label="Exit", command=root.destroy)
 
 
 def about_us():
-    tkinter.messagebox.showinfo('About Melody', 'This is a music player build using Python Tkinter by @attreyabhatt')
+    tkinter.messagebox.showinfo('About Melody', 'This is a music MusicPlayer.py build using Python Tkinter by @attreyabhatt')
 
 
 subMenu = Menu(menubar, tearoff=0)
@@ -130,7 +130,7 @@ volumeBtn = Button(bottomframe, image=volumePhoto, command=mute_music)
 volumeBtn.grid(row=0, column=1)
 
 scale = Scale(bottomframe, from_=0, to=100, orient=HORIZONTAL, command=set_vol)
-scale.set(70)  # implement the default value of scale when music player starts
+scale.set(70)  # implement the default value of scale when music MusicPlayer.py starts
 mixer.music.set_volume(0.7)
 scale.grid(row=0, column=2, pady=15, padx=30)
 

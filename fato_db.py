@@ -16,7 +16,7 @@ def selectAll():
     cur = con.cursor()
     cur.execute("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag \
     FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag \
-    Order By s.name ASC, t.name ASC")
+    Order By s.name ASC -- , t.name ASC")
     rows = cur.fetchall()
     con.close()
     return rows
