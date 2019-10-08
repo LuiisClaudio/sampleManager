@@ -63,19 +63,6 @@ class samplePage:
 
         cdate = date.today().strftime("%d/%m/%Y")
 
-        b1 = Button(self.window, text="Add", width=12, command=self.abrirMusica)
-
-        b2 = Button(self.window, text="Update", width=12, command=self.update_command)
-
-        b3 = Button(self.window, text="Search", width=12, command=self.search_command)
-
-        b4 = Button(self.window, text="View All", width=12, command=self.view_command)
-
-        b5 = Button(self.window, text="Delete", width=12, command=self.delete_command)
-
-        b6 = Button(self.window, text="Cancel", width=12, command=self.window.destroy)
-
-        b7 = Button(self.window, text="Clear All", width=12, command=self.clear_command)
 
         syncTagButton = Button(self.window, text="Sync Tag", width=12, command=self.syncTag)
 
@@ -119,50 +106,86 @@ class samplePage:
 
     def _buildSampleSpace(self):
 
+        global editSampleKey
+
         self._create_treeview()
 
-        Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command='').place(x = 10, y = 10)
-        Button(self.window, text='Like', bd=2, font=('arialblack', 13), width=5, command='').place(x = 100, y = 10)
+        Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command=self.search_command).place(x = 10, y = 10)
+        Button(self.window, text='Save', bd=2, font=('arialblack', 13), width=5, command=self.editSampleInfo).place(x = 400, y = 550)
 
-        sampleSearch = StringVar()
-        sampleSearch.set("Name")
-        Entry(self.window, textvariable=sampleSearch, width=10).place(x = 10, y = 40)
+        self.sampleSearch = StringVar()
+        #self.sampleSearch.set("Name")
+        Entry(self.window, textvariable=self.sampleSearch, width=10).place(x = 10, y = 40)
 
-        ttk.Spinbox(self.window, values=indexs.lstBpm, width=3).place(x = 120, y = 40)
+        self.pathSearch = StringVar()
+        #self.pathSearch.set("Name")
+        Entry(self.window, textvariable=self.pathSearch, width=10).place(x=10, y=70)
 
-        ttk.Combobox(self.window, values=indexs.lstKey, width=5).place(x = 180, y = 40)
+        self.extensionSearch = StringVar()
+        #self.extensionSearch.set("Name")
+        Entry(self.window, textvariable=self.extensionSearch, width=10).place(x=10, y=100)
 
-        ttk.Combobox(self.window, values=indexs.lstGenre, width=10).place(x = 260, y = 40)
+        self.diskSearch = StringVar()
+        #self.diskSearch.set("Name")
+        Entry(self.window, textvariable=self.diskSearch, width=10).place(x=10, y=130)
 
-        tagSearch = StringVar()
-        tagSearch.set("Tag")
-        Entry(self.window, textvariable=tagSearch, width=10).place(x = 380, y = 40)
+        self.bpmSearch = ttk.Spinbox(self.window, values=indexs.lstBpm, width=3)
+        self.bpmSearch.place(x = 120, y = 40)
 
-        ttk.Spinbox(self.window, values=indexs.lstLove, width=3).place(x=490, y=40)
-        ttk.Spinbox(self.window, values=indexs.lstLove, width=3).place(x=550, y=40)
+        self.keySearch = ttk.Combobox(self.window, values=indexs.lstKey, width=5)
+        self.keySearch.place(x = 180, y = 40)
+
+        self.genreSearch = ttk.Combobox(self.window, values=indexs.lstGenre, width=10)
+        self.genreSearch.place(x = 260, y = 40)
+
+        self.tagSearch = StringVar()
+        #tagSearch.set("Tag")
+        Entry(self.window, textvariable=self.tagSearch, width=10).place(x = 380, y = 40)
+
+        self.loveLowSearch = ttk.Spinbox(self.window, values=indexs.lstLove, width=3)
+        self.loveLowSearch.place(x=490, y=40)
+        self.loveUpperSearch =ttk.Spinbox(self.window, values=indexs.lstLove, width=3)
+        self.loveUpperSearch.place(x=550, y=40)
 
         Label(self.window, text="Name").place(x=10, y=550)
-        Label(self.window, text="BPM").place(x=10, y=600)
-        Label(self.window, text="Key").place(x=10, y=650)
-        Label(self.window, text="Genre").place(x=10, y=700)
-        Label(self.window, text="Tag").place(x=10, y=750)
+        Label(self.window, text="Tag").place(x=10, y=600)  # .place(x=10, y=750)
+        Label(self.window, text="BPM").place(x=10, y=650)#.place(x=10, y=600)
+        Label(self.window, text="Key").place(x=10, y=700)#.place(x=10, y=650)
+        Label(self.window, text="Genre").place(x=10, y=750)#.place(x=10, y=700)
         Label(self.window, text="Love").place(x=10, y=800)
 
 
-        Label(self.window, text="Name").place(x=100, y=550)
+        self.editSampleName =  Label(self.window, text="Name")
+        self.editSampleName.place(x=100, y=550)
 
-        ttk.Spinbox(self.window, values=indexs.lstBpm, width=3).place(x=100, y=600)
-        ttk.Combobox(self.window, values=indexs.lstKey, width=5).place(x=100, y=650)
-        ttk.Combobox(self.window, values=indexs.lstGenre, width=10).place(x=100, y=700)
-        ttk.Combobox(self.window, values=tag_db.viewall()).place(x=100, y=750)
-        ttk.Spinbox(self.window, values=indexs.lstLove, width=10).place(x=100, y=800)
+        self.tagListComboBox = []
+        for i in tag_db.viewallNames():
+            self.tagListComboBox.append(i[0])
+        self.editSampleTag = ttk.Combobox(self.window, values=self.tagListComboBox)
+        self.editSampleTag.place(x=100, y=600)#.place(x=100, y=750)
+
+        self.editSampleBpm = ttk.Spinbox(self.window, values=indexs.lstBpm, width=3)
+        self.editSampleBpm.place(x=100, y=650)#.place(x=100, y=600)
+
+        self.box_value = StringVar()
+        self.editSampleKey = ttk.Combobox(self.window, textvariable=self.box_value, values=indexs.lstKey, state='readonly', width=5)
+        self.editSampleKey.place(x=100, y=700)#.place(x=100, y=650)
+
+        self.editSampleGenre = ttk.Combobox(self.window, values=indexs.lstGenre, width=10)
+        self.editSampleGenre.place(x=100, y=750)#.place(x=100, y=700)
+
+
+        self.editSampleLove = ttk.Spinbox(self.window, values=indexs.lstLove, width=10)
+        self.editSampleLove.place(x=100, y=800)
 
 
     def _create_treeview(self):
-        self.dataCols = ["Index", "Sample", "Path", "Extension", "Disk", "Tag"]  # ['name', 'path', 'extension']
+        self.dataCols = ["Index", "Sample", "Tag", "Path", "Extension", "Disk", "BPM", "Key", "Genre", "Love"]  # ['name', 'path', 'extension']
         self.tree = ttk.Treeview(self.window, columns=self.dataCols, show='headings', height = 20)
         self.tree.place(x = 10, y = 150)
         self.tree.bind('<ButtonRelease-1>', self.selectTreeValues)
+        self.tree.bind('<Up>', self.selectTreeValuesKey)
+        self.tree.bind('<Down>', self.selectTreeValuesKey)
 
         ysb = ttk.Scrollbar(orient=VERTICAL, command=self.tree.xview)
         xsb = ttk.Scrollbar(orient=HORIZONTAL, command=self.tree.xview)
@@ -182,16 +205,20 @@ class samplePage:
         self.factQuery = fato_db.selectAll()
         cont = 1
         for item in self.factQuery:
-            self.tree.insert('', 'end', values=[cont, item[2], item[7], item[3], item[4], item[5]])
+            self.tree.insert('', 'end', values=[cont, item[2], item[7], item[3], item[4], item[5], item[8], item[9], item[10], item[11]])
             cont  = cont + 1
         #for i in self.dataCols:
         #    self.tree.column(i, width=75, minwidth=100)
-        self.tree.column('Index', width=100, minwidth=35)
+        self.tree.column('Index', width=35, minwidth=35)
         self.tree.column('Sample', width=100, minwidth=150)
         self.tree.column('Tag', width=100, minwidth=100)
         self.tree.column('Path', width=100, minwidth=200)
-        self.tree.column('Extension', width=100, minwidth=40)
-        self.tree.column('Disk', width=100, minwidth=40)
+        self.tree.column('Extension', width=30, minwidth=30)
+        self.tree.column('Disk', width=30, minwidth=30)
+        self.tree.column('BPM', width=35, minwidth=35)
+        self.tree.column('Key', width=35, minwidth=35)
+        self.tree.column('Genre', width=100, minwidth=100)
+        self.tree.column('Love', width=35, minwidth=35)
 
         #tree.insert('', 'end', text = 'your text', tags = ('oddrow',))
         #tree.tag_configure('oddrow', background='orange')
@@ -200,11 +227,89 @@ class samplePage:
         curItem = self.tree.focus()
         treeValue = self.tree.item(curItem)
         self.treeRowValue = treeValue['values']
-        print(self.treeRowValue)
-        print(self.treeRowValue[0] - 1)
+        print('-->',self.treeRowValue)
         self.indexSample = self.treeRowValue[0] - 1
-        self.fillEntryBox()
         self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+        self.fillSampleInfo()
+
+    def changeFocus(self, val):
+        if self.treeRowValue != []:
+            curItem = self.tree.focus()
+            print(curItem)
+            curItem = curItem.replace('I', '0x')
+            print(curItem)
+            print(int(curItem, 16))
+            curItem = int(curItem, 16) + val
+            curItem = hex(curItem)
+            curItem = str(curItem).upper().replace('X', '')
+            print(curItem)
+            if len(curItem) == 1:
+                curItem = 'I00' + curItem
+            if len(curItem) == 2:
+                curItem = 'I0' + curItem
+            if len(curItem) == 3:
+                curItem = 'I0' + curItem[1:]
+            else:
+                curItem = 'I' + curItem[1:]
+            print(curItem)
+            return curItem
+
+
+    def selectTreeValuesKey(self, event):
+        #print(event.keycode)
+        def detectKey(key):
+            if key.keycode == 8255233 or key.keycode == 8192084:
+                return 1
+            elif key.keycode == 8320768 or key.keycode == 8257618:
+                return -1
+        curItem = self.changeFocus(detectKey(event))
+        treeValue = self.tree.item(curItem)
+        self.treeRowValue = treeValue['values']
+        print('-->',self.treeRowValue)
+        self.indexSample = self.treeRowValue[0] - 1
+        self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+        self.fillSampleInfo()
+
+    def fillSampleInfo(self):
+        def searchIndexTag(name):
+            found = False
+            for position in (x for x, n in enumerate(self.tagListComboBox) if n == name):
+                self.tagListComboBox[position]
+                return position
+            if not found:
+                return 0
+
+        self.editSampleName['text'] = self.treeRowValue[indexs.selectedTreeSample]
+
+        #self.editSampleKey.current(indexs.lstKey.index(self.treeRowValue[indexs.selectedTreeKey]))
+
+        self.editSampleTag.current(searchIndexTag(self.treeRowValue[indexs.selectedTreeTag]))
+        self.editSampleBpm.set(self.treeRowValue[indexs.selectedTreeBpm])
+        self.editSampleKey.current(indexs.lstKey.index(self.treeRowValue[indexs.selectedTreeKey]))
+        self.editSampleGenre.current(indexs.lstGenre.index(self.treeRowValue[indexs.selectedTreeGenre]))
+
+        self.editSampleLove.set(self.treeRowValue[indexs.selectedTreeLove])
+
+    def editSampleInfo(self):
+        def searchIdTag(name):
+            return tag_db.findTagId(name)
+
+        print(self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1])
+        id_fato = self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1][indexs.fatoQueryIdFato]
+        love = self.editSampleLove.get()
+        id_tag = searchIdTag(self.editSampleTag.get())
+        id_sample = self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1][indexs.fatoQueryIdSample]
+        print(id_fato, love, id_tag)
+        fato_db.updateByInterface(id_fato, id_sample, love, id_tag)
+
+
+        bpm = self.editSampleBpm.get()
+        key = self.editSampleKey.get()
+        genre = self.editSampleGenre.get()
+        print(id_sample, bpm, key, genre)
+        sample_db.updateByInterface(id_sample, bpm, key, genre)
+
+        self.refresh()
 
     def _buildTagSpace(self):
         value = StringVar()
@@ -221,9 +326,9 @@ class samplePage:
 
         Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=100)
 
-        self.tagSearch = StringVar()
-        self.tagSearch.set("Name")
-        Entry(self.window, textvariable=self.tagSearch, width=10).place(x=indexs.xTagGrid + 50, y=100)
+        self.tagNameSearch = StringVar()
+        #self.tagSearch.set("Name")
+        Entry(self.window, textvariable=self.tagNameSearch, width=10).place(x=indexs.xTagGrid + 50, y=100)
 
         Button(self.window, text="Sync Tag", width=12, command=self.syncTag).place(x=indexs.xTagGrid  - 130, y=200)
 
@@ -275,13 +380,13 @@ class samplePage:
         self.botaoPlay = Button(self.window, image=imgPlay,bd=0, command=self.samplePlayer.playSample)#,command=self.tocarMusica)
         self.botaoPlay.place(x=10 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
 
-        prev_button = Button(self.window, image=prev_img,bd=0, command=self.nextTrack)#,command=lambda:self.voltarFaixa(1))
+        prev_button = Button(self.window, image=prev_img,bd=0, command=self.prevTrack)#,command=lambda:self.voltarFaixa(1))
         prev_button.place(x=50 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
 
         stop_button = Button(self.window, image=stop_img, command=self.samplePlayer.stopSample)
         stop_button.place(x=85 + indexs.xPlayerGrid,y=438 + indexs.yPlayerGrid)
 
-        next_button = Button(self.window, image=next_img,bd=0)#,command=lambda:self.voltarFaixa(2))
+        next_button = Button(self.window, image=next_img,bd=0, command=self.nextTrack)#,command=lambda:self.voltarFaixa(2))
         next_button.place(x=113 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
 
         speaker = Button(self.window,image=imgSpeaker,bd=0)#,command=self.speaker_func)
@@ -319,28 +424,30 @@ class samplePage:
         tempoBarra = ttk.Progressbar(self.window, orient='horizontal',length=200)
         tempoBarra.place(x=42 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
 
+
+
+
+
     def nextTrack(self):
-        print(self.treeRowValue)
-        # print(self.factQuery[self.treeRowValue[0] + 1])
-        # self.treeRowValue = self.factQuery[self.treeRowValue[0] + 1]
-        # self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+        if self.treeRowValue != []:
+            self.tree.event_generate('<Down>')
+            self.samplePlayer.pauseSample()
+            self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+            self.samplePlayer.playSample()
+
+    def prevTrack(self):
+        if self.treeRowValue != []:
+            self.tree.event_generate('<Up>')
+            self.samplePlayer.pauseSample()
+            self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+            self.samplePlayer.playSample()
+
 
     def autoTag(self):
         lstAutoTag = smartTag.autoTag()
         for i in lstAutoTag:
             fato_db.addIfNotExist(i[1], i[2])
         self.refresh()
-
-
-    def fillEntryBox(self):
-        e1.delete(0, END)
-        e1.insert(END, self.treeRowValue[2])
-        e2.delete(0, END)
-        e2.insert(END, self.treeRowValue[3])
-        e3.delete(0, END)
-        e3.insert(END, self.treeRowValue[4])
-        e4.delete(0, END)
-        e4.insert(END, self.treeRowValue[5])
 
     def refresh(self):
         for row in self.tree.get_children():
@@ -390,18 +497,29 @@ class samplePage:
         #self.modeTagQuery['text'] = 'View All'
         self.tagListbox.delete(0, END)
         self.tagQuery = tag_db.viewall()
+        self.displayTags = []
         for row in self.tagQuery:
+            self.displayTags.append(row[1])
             self.tagListbox.insert(END, row[1])
 
     def search_command(self):
         lb.delete(0, END)
         for row in self.tree.get_children():
             self.tree.delete(row)
-        query = fato_db.selectFilter(name=name.get(), path=pathEntry.get(), extension=extensionEntry.get(),
-                                     disk=diskEntry.get())
-        for row in query:
-            lb.insert(END, row)
-            self.tree.insert('', 'end', values=row)
+        query = fato_db.selectFilter(name=self.sampleSearch.get(), path=pathEntry.get(), extension=extensionEntry.get(),
+                                     disk=diskEntry.get(), tag = self.tagSearch.get(), bpm = self.bpmSearch.get(), key = self.keySearch.get(), genre = self.genreSearch.get(), loveLow=self.loveLowSearch.get(), loveUpper=self.loveUpperSearch.get())
+        self.new_data(query)
+
+    def new_data(self, query):
+        self.indexSample = 0
+        self.factQuery = query
+        cont = 1
+        for item in self.factQuery:
+            self.tree.insert('', 'end', values=[cont, item[2], item[7], item[3], item[4], item[5], item[8], item[9], item[10], item[11]])
+            cont  = cont + 1
+
+        #tree.insert('', 'end', text = 'your text', tags = ('oddrow',))
+        #tree.tag_configure('oddrow', background='orange')
 
     def add_command(self):
         tag_db.add(name.get(), cdate.get())
@@ -492,7 +610,7 @@ class TagPage:
         bTag2 = Button(self.frame, text="Update", width=12, command=self.update_commandTag)
         bTag2.grid(row=5, column=1)
 
-        bTag3 = Button(self.frame, text="Search", width=12, command=self.search_commandTag)
+        bTag3 = Button(self.frame, text="Search", width=12, command='')
         bTag3.grid(row=5, column=2)
 
         bTag4 = Button(self.frame, text="View All", width=12, command=self.view_commandTag)
@@ -529,10 +647,6 @@ class TagPage:
         for row in tag_db.viewall():
             lbTag.insert(END, row)
 
-    def search_commandTag(self):
-        lbTag.delete(0, END)
-        for row in tag_db.search(name=nameTag.get()):
-            lbTag.insert(END, row)
 
     def add_commandTag(self):
         tag_db.add(nameTag.get(), cdate)

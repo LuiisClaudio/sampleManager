@@ -20,9 +20,20 @@ import time
 class Teste:
     def __init__(self):
         self.soundFile = vlc.MediaPlayer('api/TESTE4.mp3')
+        #print( self.soundFile.get_length() )
+        #print(self.soundFile.get_time())
+        #print(self.soundFile.get_title())
+        #self.soundFile.audio_set_volume(20)
+
+    def sampleRate(self, rate):
+        self.soundFile.set_rate(rate)
+
+    def volumeSample(self, db):
+        self.soundFile.audio_set_volume(db)
 
     def changeSample(self, name, path, extension):
-        print(path + '/' + name + '.' + extension)
+        #print(path + '/' + name + '.' + extension)
+        self.soundFile.pause()
         self.soundFile = vlc.MediaPlayer(path + '/' + name)
 
     def playSample(self):
@@ -37,7 +48,6 @@ class Teste:
         #self.soundFile.play()
 
     def pauseSample(self):
-
         self.soundFile.pause()
 
     def stopSample(self):
@@ -89,7 +99,7 @@ class Main_class():
         #mixer.music.load('/Users/luisclaudio/Downloads/KF - HTT - Hybrid Hit 1 - Full.wav')
         #mixer.Sound('/Users/luisclaudio/Downloads/KF - HTT - Hybrid Hit 1 - Full.wav&')
         #mixer.music.play(-1)
-        soundFile = vlc.MediaPlayer('api/TESTE2.wav')
+        soundFile = vlc.MediaPlayer('api/TESTE2.wav', '--loop')
         #soundFile.set_rate(0.5)
         soundFile.play()
         print(soundFile.is_playing())

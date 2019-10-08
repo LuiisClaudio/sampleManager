@@ -15,6 +15,15 @@ def viewall():
     #print(rows)
     return rows
 
+def viewallNames():
+    con = sqlite3.connect("sample_db.db")
+    cur = con.cursor()
+    cur.execute("SELECT name FROM tag Order By name ASC")
+    rows = cur.fetchall()
+    con.close()
+    #print(rows)
+    return rows
+
 def viewMostUsed():
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
@@ -73,5 +82,13 @@ def search(name):
     con.close()
     return rows
 
+def findTagId(name):
+    con = sqlite3.connect("sample_db.db")
+    cur = con.cursor()
+    cur.execute("SELECT id_tag FROM tag WHERE name=?", (name,))
+    rows = cur.fetchall()
+    #print(rows[0][0])
+    con.close()
+    return rows[0][0]
 #Create a DB
 create()

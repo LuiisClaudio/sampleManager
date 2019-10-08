@@ -51,5 +51,12 @@ def update(id,name,path,extension,disk,date):
     con.commit()
     con.close()
 
+def updateByInterface(id_sample, bpm, key, genre):
+    con = sqlite3.connect("sample_db.db")
+    cur = con.cursor()
+    cur.execute("UPDATE sample SET bpm=?, key=?, genre=? WHERE id_sample=?",(bpm, key, genre, id_sample) )
+    con.commit()
+    con.close()
+
 #Create a DB
 create()

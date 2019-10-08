@@ -14,7 +14,7 @@ def inicializaFato():
 def selectAll():
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag \
+    cur.execute("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag, s.bpm, s.key, s.genre, f.love \
     FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag \
     Order By s.name ASC -- , t.name ASC")
     rows = cur.fetchall()
@@ -22,13 +22,16 @@ def selectAll():
     return rows
 
 
-def selectFilter(name="",path="",extension="",disk="", tag=""):
+def selectFilter(name="",path="",extension="",disk="", tag="", bpm="", key="", genre = "", loveLow = "", loveUpper = ""):
     lstParam = []
     nameWhere = ""
     pathWhere = ""
     extensionWhere = ""
     diskWhere = ""
     tagWhere = ""
+    bpmWhere = ""
+    keyWhere = ""
+    genreWhere = ""
     where = " Where "
     if name != "":
         nameWhere = ' s.name LIKE ? AND '
@@ -47,19 +50,51 @@ def selectFilter(name="",path="",extension="",disk="", tag=""):
         lstParam.append(disk) 
         where = where + diskWhere
     if tag != "":
-        tagWhere = ' s.tag LIKE ? AND '
+        tagWhere = ' t.name LIKE ? AND '
         lstParam.append(tag)
         where = where + tagWhere
+    if bpm != "":
+        bpmWhere = ' s.bpm = ' + str(bpm) + ' AND '
+        where = where + bpmWhere
+
+    if key != "":
+        keyWhere = ' s.key = ' + "'" + key + "'" + ' AND '
+        where = where + keyWhere
+    if genre != "":
+        genreWhere = ' s.genre = '+ "'" + genre + "'" + ' AND '
+        where = where + genreWhere
+
+    if(loveUpper != "" or loveLow != ""):
+        if loveUpper == "":
+            loveUpper = loveLow
+        elif loveLow == "":
+            loveLow = loveUpper
+
+
+        loveLowWhere = ' f.love >= ' + str(loveLow) + ' AND '
+
+        where = where + loveLowWhere
+
+        loveUpperWhere = ' f.love <= '+ str(loveUpper)  + ' AND '   
+
+        where = where + loveUpperWhere
 
     where = where + ' 1 = 1'
+
+    where = where + ' Order By s.name ASC '
+
+    #print(where)
+
 
     
     con = sqlite3.connect("sample_db.db")
 
     #print("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag" + where)
-    selectFrom = "SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag "
+    selectFrom = "SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag, s.bpm, s.key, s.genre, f.love FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag "
     cur = con.cursor()
-    if len(lstParam) == 1:
+    if len(lstParam) == 0:
+        cur.execute(selectFrom + where)
+    elif len(lstParam) == 1:
         cur.execute(selectFrom + where, ('%'+lstParam[0]+'%',))
     elif len(lstParam) == 2:
         cur.execute(selectFrom + where, ('%'+lstParam[0]+'%','%'+lstParam[0]+'%'))
@@ -69,11 +104,10 @@ def selectFilter(name="",path="",extension="",disk="", tag=""):
         cur.execute(selectFrom + where, ('%'+lstParam[0]+'%','%'+lstParam[1]+'%','%'+lstParam[2]+'%','%'+lstParam[3]+'%'))
     elif len(lstParam) == 5:
         cur.execute(selectFrom + where, ('%'+lstParam[0]+'%','%'+lstParam[1]+'%','%'+lstParam[2]+'%','%'+lstParam[3]+'%','%'+lstParam[4]+'%'))
-    
     rows = cur.fetchall()
 
-    # for i in rows:
-    #     print(rows)
+    #for i in rows:
+    #     print(i)
 
     con.close()
     return rows
@@ -148,6 +182,14 @@ def updateTag(id, id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
     cur.execute("UPDATE fato SET id_tag=? WHERE id_fato=?",(id_tag, id))
+    con.commit()
+    con.close()
+
+def updateByInterface(id_fato, id_sample, love, id_tag):
+    con = sqlite3.connect("sample_db.db")
+    cur = con.cursor()
+    cur.execute("UPDATE fato SET love=?, date=? WHERE id_sample=?",(love, date.today().strftime("%d/%m/%Y"), id_sample) )
+    cur.execute("UPDATE fato SET id_tag=? WHERE id_fato=?", (id_tag, id_sample))
     con.commit()
     con.close()
 
