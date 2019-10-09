@@ -1,4 +1,6 @@
 import sqlite3
+from datetime import date
+
 def create():
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
@@ -50,10 +52,10 @@ def add(name, date):
     con.commit()
     con.close()
 
-def addIfNotExist(name, date):
+def addIfNotExist(name):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("insert into tag (name, date) Select ?, ? Where not exists(select * from tag where name=?)",(name,date,name))
+    cur.execute("insert into tag (name, date) Select ?, ? Where not exists(select * from tag where name=?)",(name,date.today().strftime("%d/%m/%Y"),name))
     con.commit()
     con.close()
 
@@ -73,11 +75,17 @@ def update(id,name,cdate):
     con.commit()
     con.close()
 
-def search(name):
+def search(name, orderByType):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
+    if orderByType == 'Name':
+        query = "SELECT * FROM tag WHERE name LIKE ? " + 'Order by name ASC'
+    elif orderByType == 'Last':
+        query = "SELECT * FROM tag WHERE name LIKE ? " + 'Order by date ASC'
+    elif orderByType == 'Most':
+        query = "Select * from tag as t inner join fato as f on t.id_tag = f.id_tag where name LIKE ? group by t.id_tag ORDER BY count(*) ASC"
     print(name)
-    cur.execute("SELECT * FROM tag WHERE name LIKE ?",('%'+name+'%',))
+    cur.execute(query,('%'+name+'%',))
     rows = cur.fetchall()
     con.close()
     return rows

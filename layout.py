@@ -10,6 +10,9 @@ import smartTag
 from datetime import date
 import indexs
 import MusicPlayer
+import audio_metadata
+
+global count
 
 class samplePage:
 
@@ -39,6 +42,9 @@ class samplePage:
 
         self.factQuery = []
         self.tagQuery = []
+
+        self.t = StringVar()
+        self.t.set("00:00:00")
 
         nameLabel = Label(self.window, text="Name")
 
@@ -231,6 +237,7 @@ class samplePage:
         self.indexSample = self.treeRowValue[0] - 1
         self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
         self.fillSampleInfo()
+        self.audioMetaData()
 
     def changeFocus(self, val):
         if self.treeRowValue != []:
@@ -269,6 +276,7 @@ class samplePage:
         self.indexSample = self.treeRowValue[0] - 1
         self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
         self.fillSampleInfo()
+        self.audioMetaData()
 
     def fillSampleInfo(self):
         def searchIndexTag(name):
@@ -313,22 +321,23 @@ class samplePage:
 
     def _buildTagSpace(self):
         value = StringVar()
-        self.modeTagQuery = ttk.Combobox(self.window, values=['Name', 'Most Used', 'Last Used'], width = 10, textvariable=value, state='readonly').place(x = indexs.xTagGrid, y = 150 - 20)
-        #self.modeTagQuery.current[0]
+        self.modeTagQuery = ttk.Combobox(self.window, values=['Name', 'Most Used', 'Last Used'], width = 10, state='readonly')
+        self.modeTagQuery.place(x = indexs.xTagGrid, y = 150 - 20)
+        self.modeTagQuery.current(0)
         self._createListTag()
 
-        Button(self.window, text='Add', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=10)
-        Button(self.window, text='Remove', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 60, y=10)
-        Button(self.window, text='Edit', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 120, y=10)
+        Button(self.window, text='Add', bd=2, font=('arialblack', 13), width=5, command=self.addTag).place(x=indexs.xTagGrid, y=10)
+        Button(self.window, text='Remove', bd=2, font=('arialblack', 13), width=5, command=self.removeTag).place(x=indexs.xTagGrid + 60, y=10)
+        #Button(self.window, text='Edit', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid + 120, y=10)
 
         self.tagNameEdit = StringVar()
-        self.tagNameEditEntry = Entry(self.window, textvariable=self.tagNameEdit, width=10).place(x=indexs.xTagGrid, y=40)
+        self.tagNameEditEntry = Entry(self.window, textvariable=self.tagNameEdit, width=10)
+        self.tagNameEditEntry.place(x=indexs.xTagGrid, y=40)
+        Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command=self.searchTagByName).place(x=indexs.xTagGrid, y=100)
 
-        Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command='').place(x=indexs.xTagGrid, y=100)
-
-        self.tagNameSearch = StringVar()
+        self.tagSearchNameEntry = StringVar()
         #self.tagSearch.set("Name")
-        Entry(self.window, textvariable=self.tagNameSearch, width=10).place(x=indexs.xTagGrid + 50, y=100)
+        Entry(self.window, textvariable=self.tagSearchNameEntry, width=10).place(x=indexs.xTagGrid + 50, y=100)
 
         Button(self.window, text="Sync Tag", width=12, command=self.syncTag).place(x=indexs.xTagGrid  - 130, y=200)
 
@@ -355,12 +364,43 @@ class samplePage:
             print(self.indexTag, selectedTuple)
             #self.tagListbox.itemconfig(self.indexSample, bg='pale turquoise', fg='black')
             #self.tagListbox.itemconfig(indexSampleAnt, bg='white', fg='black')
+            self.tagNameEdit.set(selectedTuple)
 
-            #self.tagNameEditEntry.delete(0, END)
-            #self.tagNameEditEntry.insert(END, selectedTupleTag)
+
         except IndexError:
             pass
 
+    def searchTagByName(self):
+        def sendOrderBy():
+            if self.modeTagQuery.get() == 'Name':
+                return 'Name'
+            elif self.modeTagQuery.get()==  'Most Used':
+                return 'Most'
+            elif self.modeTagQuery.get()== 'Last Used':
+                return 'Last'
+            else:
+                return 'Name'
+        self.tagQuery = tag_db.search(self.tagSearchNameEntry.get(), sendOrderBy())
+        self.tagListbox.delete(0, END)
+        for row in self.tagQuery:
+            self.tagListbox.insert(END, row[1])
+        return
+
+    def showTags(self):
+        if tagSearchType.get() == 0:
+            # self.modeTagQuery['text'] = "View Most Used"
+            self.tagQuery = tag_db.viewMostUsed()
+            self.tagListbox.delete(0, END)
+            for row in self.tagQuery:
+                self.tagListbox.insert(END, row[1])
+
+    def addTag(self):
+        tag_db.addIfNotExist(self.tagSearchNameEntry.get())
+        self.refresh()
+
+    def removeTag(self):
+        tag_db.delete(tag_db.findTagId(self.tagSearchNameEntry.get()))
+        self.refresh()
 
     def _buildPlayerSpace(self):
 
@@ -377,13 +417,13 @@ class samplePage:
         repeat_img = PhotoImage(file='icones_player/repeat.png')
         # shuffle_img = PhotoImage(file='icones_player/shuffle.png')
 
-        self.botaoPlay = Button(self.window, image=imgPlay,bd=0, command=self.samplePlayer.playSample)#,command=self.tocarMusica)
+        self.botaoPlay = Button(self.window, image=imgPlay,bd=0, command=self.playTrack)#,command=self.tocarMusica)
         self.botaoPlay.place(x=10 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
 
         prev_button = Button(self.window, image=prev_img,bd=0, command=self.prevTrack)#,command=lambda:self.voltarFaixa(1))
         prev_button.place(x=50 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
 
-        stop_button = Button(self.window, image=stop_img, command=self.samplePlayer.stopSample)
+        stop_button = Button(self.window, image=stop_img, command=self.stopTrack)
         stop_button.place(x=85 + indexs.xPlayerGrid,y=438 + indexs.yPlayerGrid)
 
         next_button = Button(self.window, image=next_img,bd=0, command=self.nextTrack)#,command=lambda:self.voltarFaixa(2))
@@ -415,10 +455,10 @@ class samplePage:
 
 
         ## Time Durations
-        tempoComeco = Label(self.window, text='--:--',font=('Calibri',10,'bold'))
-        tempoComeco.place(x=5 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
-        tempoFinal = Label(self.window, text='--:--',font=('Calibri',10,'bold'))
-        tempoFinal.place(x=300 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+        self.tempoComeco = Label(self.window, text='--:--',font=('Calibri',10,'bold'))
+        self.tempoComeco.place(x=5 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+        self.tempoFinal = Label(self.window, text='--:--',font=('Calibri',10,'bold'))
+        self.tempoFinal.place(x=300 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
 
         ## Progress Bar - The progress bar which indicates the running music
         tempoBarra = ttk.Progressbar(self.window, orient='horizontal',length=200)
@@ -426,7 +466,25 @@ class samplePage:
 
 
 
+    def audioMetaData(self):
+        audio = audio_metadata.load(self.treeRowValue[indexs.selectedTreePath] + '/' + self.treeRowValue[indexs.selectedTreeSample])
+        print('----', audio.streaminfo.duration)
+        self.timeSample = audio.streaminfo.duration
+        self.tempoFinal['text'] = self.timeSample
+        self.tempoComeco['text'] = '0'
 
+
+    def playTrack(self):
+        if self.treeRowValue != []:
+            self.samplePlayer.playSample()
+            self.reset()
+            self.start()
+
+    def stopTrack(self):
+        if self.treeRowValue != []:
+            self.samplePlayer.stopSample()
+            self.stop()
+            self.reset()
 
     def nextTrack(self):
         if self.treeRowValue != []:
@@ -441,6 +499,54 @@ class samplePage:
             self.samplePlayer.pauseSample()
             self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
             self.samplePlayer.playSample()
+
+    def reset(self):
+        global count
+        count = 1
+        self.t.set('00:00')
+
+    def start(self):
+        global count
+        count = 0
+        self.start_timer()
+
+    def start_timer(self):
+        global count
+        self.timer()
+
+    def stop(self):
+        global count
+        count = 1
+
+    def timer(self):
+        global count
+        if (count == 0):
+            self.d = str(self.t.get())
+            m, s = map(int, self.d.split(":"))
+
+            m = int(m)
+            s = int(s)
+            if (s < 59):
+                s += 1
+            elif (s == 59):
+                s = 0
+                if (m < 59):
+                    m += 1
+            if (m < 10):
+                m = str(0) + str(m)
+            else:
+                m = str(m)
+            if (s < 10):
+                s = str(0) + str(s)
+            else:
+                s = str(s)
+            self.d = m + ":" + s
+            print(self.d)
+
+            self.t.set(self.d)
+            self.tempoComeco['text'] = self.d
+            if (count == 0):
+                self.window.after(930, self.start_timer)
 
 
     def autoTag(self):
@@ -472,19 +578,6 @@ class samplePage:
         fato_db.addTag(syncRowFact[1], syncRowTag[0])
         self.refresh()
 
-    def showTags(self):
-        if tagSearchType.get() == 0:
-            #self.modeTagQuery['text'] = "View Most Used"
-            self.tagQuery = tag_db.viewMostUsed()
-            self.tagListbox.delete(0, END)
-            for row in self.tagQuery:
-                self.tagListbox.insert(END, row[1])
-        else:
-            #self.modeTagQuery['text'] = "View Last Used"
-            self.tagQuery = tag_db.viewLastUsed()
-            self.tagListbox.delete(0, END)
-            for row in self.tagQuery:
-                self.tagListbox.insert(END, row[1])
 
     def searchTag(self):
         print(tagSearchStr.get())

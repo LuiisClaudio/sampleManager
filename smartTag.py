@@ -64,7 +64,7 @@ def autoTag():
 def fillKey():
     lst =  ['C','D','E','F','G','A','B','C#','D#','F#','G#','A#','Cmin','Dmin','Emin','Fmin','Gmin','Amin','Bmin','C#min','D#min','F#min','G#min','A#min']
     for i in lst:
-        tag_db.addIfNotExist(i, date.today().strftime("%d/%m/%Y"))
+        tag_db.addIfNotExist(i)
 
 def getListOfFiles(dirName):
     # create a list of file and sub directories
@@ -152,21 +152,21 @@ def fillSampleTagBasic(lst):
     for tag_lst in lst:
         for tag_name in tag_lst:
             #print(tag_name.replace(" ", ""), date.today().strftime("%d/%m/%Y"))
-            tag_db.addIfNotExist(tag_name.replace(" ", ""), date.today().strftime("%d/%m/%Y"))
+            tag_db.addIfNotExist(tag_name.replace(" ", ""))
 
 def fillSampleTag(lst):
     for tag_lst in lst:
         #print(tag_lst[0].replace(" ", ""), date.today().strftime("%d/%m/%Y"))
-        tag_db.addIfNotExist(tag_lst[0].replace(" ", ""), date.today().strftime("%d/%m/%Y"))
+        tag_db.addIfNotExist(tag_lst[0].replace(" ", ""))
     for tag_lst in lst:
         for tag_name in tag_lst[1]:
-            tag_db.addIfNotExist((tag_name).replace(" ", ""), date.today().strftime("%d/%m/%Y"))
+            tag_db.addIfNotExist((tag_name).replace(" ", ""))
             #print((tag_lst[0] + '->' + tag_name).replace(" ", ""), date.today().strftime("%d/%m/%Y"))
             #tag_db.addIfNotExist((tag_lst[0] + '_' + tag_name).replace(" ", ""), date.today().strftime("%d/%m/%Y"))
             if tag_lst[0] != '':
-                tag_db.addIfNotExist((tag_lst[0] + '->' + tag_name).replace(" ", ""), date.today().strftime("%d/%m/%Y"))
+                tag_db.addIfNotExist((tag_lst[0] + '->' + tag_name).replace(" ", ""))
             else:
-                tag_db.addIfNotExist((tag_name).replace(" ", ""), date.today().strftime("%d/%m/%Y"))
+                tag_db.addIfNotExist((tag_name).replace(" ", ""))
 
 def runCode(dirName):
     minhaLista = scanTags(dirName)
@@ -176,5 +176,5 @@ def runCode(dirName):
 
 def searchTag():
     return
-runCode(indexs.tagSamplesDescDir)
+#runCode(indexs.tagSamplesDescDir)
 #autoTag()
