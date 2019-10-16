@@ -17,7 +17,7 @@ def viewall():
 def add(name,path,extension,disk,date):
     con = sqlite3.connect("sample_db.db", timeout=10)
     cur = con.cursor()
-    cur.execute("INSERT INTO sample VALUES(NULL,?,?,?,?,?)",(name,path,extension,disk,date))
+    cur.execute("INSERT INTO sample VALUES(NULL,?,?,?,?,?, NULL, NULL, NULL)",(name,path,extension,disk,date))
     con.commit()
     con.close()
 

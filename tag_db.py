@@ -53,6 +53,7 @@ def add(name, date):
     con.close()
 
 def addIfNotExist(name):
+    #print('Add if not', name)
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
     cur.execute("insert into tag (name, date) Select ?, ? Where not exists(select * from tag where name=?)",(name,date.today().strftime("%d/%m/%Y"),name))
@@ -81,9 +82,9 @@ def search(name, orderByType):
     if orderByType == 'Name':
         query = "SELECT * FROM tag WHERE name LIKE ? " + 'Order by name ASC'
     elif orderByType == 'Last':
-        query = "SELECT * FROM tag WHERE name LIKE ? " + 'Order by date ASC'
+        query = "Select DISTINCT t.id_tag, t.name, t.date from tag as t inner join fato as f on t.id_tag = f.id_tag where t.name LIKE ? Order by f.date ASC, t.name ASC"
     elif orderByType == 'Most':
-        query = "Select * from tag as t inner join fato as f on t.id_tag = f.id_tag where name LIKE ? group by t.id_tag ORDER BY count(*) ASC"
+        query = "Select * from tag as t inner join fato as f on t.id_tag = f.id_tag where t.name LIKE ? group by t.id_tag ORDER BY count(*) ASC"
     print(name)
     cur.execute(query,('%'+name+'%',))
     rows = cur.fetchall()
@@ -95,7 +96,7 @@ def findTagId(name):
     cur = con.cursor()
     cur.execute("SELECT id_tag FROM tag WHERE name=?", (name,))
     rows = cur.fetchall()
-    #print(rows[0][0])
+    print('row', rows[0][0])
     con.close()
     return rows[0][0]
 #Create a DB

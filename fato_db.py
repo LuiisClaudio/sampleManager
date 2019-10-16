@@ -14,7 +14,7 @@ def inicializaFato():
 def selectAll():
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag, s.bpm, s.key, s.genre, f.love \
+    cur.execute("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, '-') as tag, s.bpm, s.key, s.genre, f.love \
     FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag \
     Order By s.name ASC -- , t.name ASC")
     rows = cur.fetchall()
@@ -89,8 +89,8 @@ def selectFilter(name="",path="",extension="",disk="", tag="", bpm="", key="", g
     
     con = sqlite3.connect("sample_db.db")
 
-    #print("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag" + where)
-    selectFrom = "SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, 'NoTag') as tag, s.bpm, s.key, s.genre, f.love FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag "
+    #print("SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, '-') as tag FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag" + where)
+    selectFrom = "SELECT f.id_fato, s.id_sample, s.name, s.path, s.extension, s.disk, t.id_tag, ifnull(t.name, '-') as tag, s.bpm, s.key, s.genre, f.love FROM fato as f INNER JOIN sample as s on f.id_sample = s.id_sample LEFT JOIN tag as t on f.id_tag = t.id_tag "
     cur = con.cursor()
     if len(lstParam) == 0:
         cur.execute(selectFrom + where)
@@ -141,6 +141,13 @@ def addIfNotExist(id_sample,id_tag):
     con.commit()
     con.close()
 
+def addSampleIfNotExist(id_sample):
+    con = sqlite3.connect("sample_db.db", timeout=10)
+    cur = con.cursor()
+    cur.execute("insert into fato (id_sample, date) Select ?, ? Where not exists(select * from fato where id_sample=?)",(id_sample, date.today().strftime("%d/%m/%Y"),id_sample))
+    con.commit()
+    con.close()
+
 def addTag(id_sample, id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
@@ -171,17 +178,17 @@ def update(id_fato, id_sample, id_tag):
     con.close()
 
 
-def updateSample(id,id_sample, id_tag):
+def updateSample(id,id_sample):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("UPDATE fato SET id_sample=? WHERE id_fato=?",(id_sample, id_tag, id))
+    cur.execute("UPDATE fato SET id_sample=? WHERE id_fato=?",(id_sample, id))
     con.commit()
     con.close()
 
 def updateTag(id, id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("UPDATE fato SET id_tag=? WHERE id_fato=?",(id_tag, id))
+    cur.execute("UPDATE fato SET id_tag=?, date=? WHERE id_fato=?",(id_tag, date.today().strftime("%d/%m/%Y"),id))
     con.commit()
     con.close()
 
@@ -190,6 +197,13 @@ def updateByInterface(id_fato, id_sample, love, id_tag):
     cur = con.cursor()
     cur.execute("UPDATE fato SET love=?, date=? WHERE id_sample=?",(love, date.today().strftime("%d/%m/%Y"), id_sample) )
     cur.execute("UPDATE fato SET id_tag=? WHERE id_fato=?", (id_tag, id_sample))
+    con.commit()
+    con.close()
+
+def removeTagFato(id_tag):
+    con = sqlite3.connect("sample_db.db")
+    cur = con.cursor()
+    cur.execute("UPDATE fato SET id_tag=NULL WHERE id_tag=?", (id_tag,))
     con.commit()
     con.close()
 

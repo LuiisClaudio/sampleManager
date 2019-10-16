@@ -1,5 +1,6 @@
 import os
 import sample_db
+import fato_db
 from datetime import date
 
 '''
@@ -24,6 +25,9 @@ def getListOfFiles(dirName):
 
     return allFiles
 
+def findDisk(dirPath):
+    return 'MAC'
+
 
 
 
@@ -46,8 +50,8 @@ def read_sample(dirName):
         listOfFiles += [os.path.join(dirpath, file) for file in filenames]
         # files += [dirpath,[os.path.join('', file) for file in filenames]]
         for i in filenames:
-            if i[-3:] == 'wav':
-                files.append([i, dirpath, i[-3:], 'mac', date.today().strftime("%d/%m/%Y") ])
+            if i[-3:] in ['wav', 'mp3', 'aif']:
+                files.append([i, dirpath, i[-3:], findDisk(dirpath), date.today().strftime("%d/%m/%Y") ])
 
     # Print the files
     # for elem in listOfFiles:
@@ -59,7 +63,12 @@ def read_sample(dirName):
 
 def add_command(lstSamples):
     for i in lstSamples[1:]:
-        sample_db.add(i[0],i[1],i[2],i[3],i[4])
+        sample_db.add(i[0],i[1],i[2],i[3],i[4],)
+    syncOnFato()
+
+def syncOnFato():
+    for row in sample_db.viewall():
+        fato_db.addSampleIfNotExist(row[0])
 
 def runCode(dirName):
     minhaLista = read_sample(dirName)

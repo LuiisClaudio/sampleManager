@@ -25,25 +25,62 @@ class Teste:
         #print(self.soundFile.get_title())
         #self.soundFile.audio_set_volume(20)
 
+    def setPosition(self, pos):
+        return self.soundFile.set_position(pos)
+
+    def getPosition(self):
+        return self.soundFile.get_position()
+
+    def getLength(self):
+        return self.soundFile.get_length()
+
+    def getTime(self):
+        return self.soundFile.get_time()
+
     def sampleRate(self, rate):
         self.soundFile.set_rate(rate)
 
-    def volumeSample(self, db):
+    def setVolume(self, db):
         self.soundFile.audio_set_volume(db)
 
     def changeSample(self, name, path, extension):
-        #print(path + '/' + name + '.' + extension)
         self.soundFile.pause()
         self.soundFile = vlc.MediaPlayer(path + '/' + name)
 
+    def isPlaying(self):
+        return self.soundFile.is_playing()
+
     def playSample(self):
+        print(self.soundFile.is_playing())
         if self.soundFile.is_playing():
             self.soundFile.pause()
             self.is_paused = True
+            print('PAUSE get pos', self.soundFile.get_position())
+            print('PAUSE get lenght', self.soundFile.get_length())
+            print('PAUSE get time', self.soundFile.get_time())
+            print('Pause')
+        #elif self.soundFile.MediaPlayerEndReached():
+        #    print('Acabou')
         else:
-            if self.soundFile.play() == -1:
-                return
+            print('Play get position play', self.soundFile.get_position())
+            print('Play get lenght', self.soundFile.get_length())
+            self.is_paused = False
+            if self.soundFile.get_position() > 0.8 and self.soundFile.get_length() < 4000:
+                self.soundFile.stop()
+            elif self.soundFile.get_position() > 0.85 and self.soundFile.get_length() < 5000:
+                self.soundFile.stop()
+            elif self.soundFile.get_position() > 0.90 and self.soundFile.get_length() < 6000:
+                self.soundFile.stop()
+            elif self.soundFile.get_position() > 0.92 and self.soundFile.get_length() < 7000:
+                self.soundFile.stop()
+            elif self.soundFile.get_position() > 0.95 and self.soundFile.get_length() < 8000:
+                self.soundFile.stop()
+            elif self.soundFile.get_position() > 0.97 and self.soundFile.get_length() < 9000:
+                self.soundFile.stop()
+            self.soundFile.play()
+            print('Play Get time ', self.soundFile.get_time())
 
+        return self.is_paused
         #self.soundFile.stop()
         #self.soundFile.play()
 

@@ -11,22 +11,12 @@ from datetime import date
 import indexs
 import MusicPlayer
 import audio_metadata
+import time
 
-global count
 
 class samplePage:
 
     def __init__(self):
-
-        # global self.window
-        global nameLabel, pathLabel, extensionLabel, diskLabel
-        global lb, sb
-        global tagSearchEntry, tagSearchType, sbTagListBox, tagSearchStr
-        global e1, e2, e3, e4
-        global b1, b2, b3, b4, b5, b6
-        global name, pathEntry, extensionEntry, extensionEntry, diskEntry, cdate, directory
-        global nameAndOr, pathAndOr, extensionAndOr, diskAndOr, lstAndOr
-
         self.window = Tk()
         self.window.title("Manage Sample")
         self.window.geometry("1000x1000")
@@ -44,7 +34,11 @@ class samplePage:
         self.tagQuery = []
 
         self.t = StringVar()
-        self.t.set("00:00:00")
+        self.t.set("00:00")
+
+        self.label = tk.Label(text="")
+        self.label.place(x=300 + indexs.xPlayerGrid,y=300 + indexs.yPlayerGrid)
+        #self.update_clock()
 
         nameLabel = Label(self.window, text="Name")
 
@@ -76,25 +70,10 @@ class samplePage:
 
         AutoTagButton = Button(self.window, text='Autotag', bd=2, font=('arialblack', 13), width=10, command=self.autoTag)
 
-        SearchTagButton = Button(self.window, text='Search Tag', bd=2, font=('arialblack', 13), width=10, command=self.searchTag)
-
-        lb = Listbox(self.window, height=5, width=94)
-
-        sb = Scrollbar(self.window)
-
-        lb.configure(yscrollcommand=sb.set)
-        sb.configure(command=lb.yview)
-
-        lb.bind('<<ListboxSelect>>', self.getSelectedRow)
-
-        tagSearchStr = StringVar()
-        tagSearchEntry = Entry(self.window, textvariable=tagSearchStr, width=15)#.grid(row=2, column=6)
-
-        tagSearchType = IntVar()
-        Checkbutton(self.window, text="Last or Recent", width=12, variable=tagSearchType, command=self.showTags)#.grid(row=3, column=6)
 
 
 
+        self._buildMenuBar()
 
         self._buildSampleSpace()
 
@@ -102,13 +81,18 @@ class samplePage:
 
         self._buildPlayerSpace()
 
-        self.showTags()
-
         self.window.mainloop()
 
     def new_window(self):
         self.newWindow = tk.Toplevel(self.window)
         self.app = TagPage(self.newWindow)
+
+    def _buildMenuBar(self):
+        menubar = Menu(self.window)
+        filemenu = Menu(menubar, tearoff=0)
+        filemenu.add_command(label="Open", command=self.abreFaixasDir)
+        menubar.add_cascade(label="File", menu=filemenu)
+        self.window.config(menu=menubar)
 
     def _buildSampleSpace(self):
 
@@ -161,14 +145,18 @@ class samplePage:
         Label(self.window, text="Love").place(x=10, y=800)
 
 
-        self.editSampleName =  Label(self.window, text="Name")
+        self.editSampleName =  Label(self.window, text="-")
         self.editSampleName.place(x=100, y=550)
 
         self.tagListComboBox = []
-        for i in tag_db.viewallNames():
-            self.tagListComboBox.append(i[0])
-        self.editSampleTag = ttk.Combobox(self.window, values=self.tagListComboBox)
-        self.editSampleTag.place(x=100, y=600)#.place(x=100, y=750)
+        #for i in tag_db.viewallNames():
+        #    self.tagListComboBox.append(i[0])
+        #self.editSampleTag = ttk.Combobox(self.window, values=self.tagListComboBox)
+        #self.editSampleTag.place(x=100, y=600)#.place(x=100, y=750)
+        self.editTagNameVar = StringVar()
+        self.editTagName = Label(self.window, text="-", textvariable=self.editTagNameVar)
+        self.editTagName.place(x=100, y=600)
+
 
         self.editSampleBpm = ttk.Spinbox(self.window, values=indexs.lstBpm, width=3)
         self.editSampleBpm.place(x=100, y=650)#.place(x=100, y=600)
@@ -211,10 +199,10 @@ class samplePage:
         self.factQuery = fato_db.selectAll()
         cont = 1
         for item in self.factQuery:
-            self.tree.insert('', 'end', values=[cont, item[2], item[7], item[3], item[4], item[5], item[8], item[9], item[10], item[11]])
-            cont  = cont + 1
-        #for i in self.dataCols:
-        #    self.tree.column(i, width=75, minwidth=100)
+            self.insertTreeData(cont, [item[2], item[7], item[3], item[4], item[5], item[8], item[9], item[10], item[11]])
+            cont = cont + 1
+
+
         self.tree.column('Index', width=35, minwidth=35)
         self.tree.column('Sample', width=100, minwidth=150)
         self.tree.column('Tag', width=100, minwidth=100)
@@ -226,8 +214,48 @@ class samplePage:
         self.tree.column('Genre', width=100, minwidth=100)
         self.tree.column('Love', width=35, minwidth=35)
 
-        #tree.insert('', 'end', text = 'your text', tags = ('oddrow',))
-        #tree.tag_configure('oddrow', background='orange')
+        self.tree.tag_configure('zero', background='orange', foreground="black")
+        self.tree.tag_configure('vinte', background='dark orange', foreground="black")
+        self.tree.tag_configure('quarenta', background='coral', foreground="black")
+        self.tree.tag_configure('sessenta', background='tomato', foreground="black")
+        self.tree.tag_configure('oitenta', background='red', foreground="black")
+        self.tree.tag_configure('cem', background='green2', foreground="black")
+        self.tree.tag_configure('unview', background='white', foreground="black")
+        ttk.Style().configure("Treeview", background="#383838",
+                              foreground="IndianRed", fieldbackground="white")
+
+    def insertTreeData(self, cont, item):
+        #for i in range(len(item)):
+        #    if item[i] == None:
+        #        item[i] = '-'
+        loveValue = item[8]
+        if loveValue != 'None' and loveValue != '':
+            if loveValue != None:
+                if int(item[8]) < 20:
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]], tags = ('zero',))
+                elif int(item[8]) < 40:
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]], tags=('vinte',))
+                elif int(item[8]) < 60:
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]], tags=('quarenta',))
+                elif int(item[8]) < 80:
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]], tags=('sessenta',))
+                elif int(item[8]) < 100:
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]], tags=('oitenta',))
+                elif int(item[8]) == 100:
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]], tags=('cem',))
+            else:
+                if item[1] == '-':
+                    self.tree.insert('', 'end',
+                                     values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6],
+                                             item[7], item[8]], tags=('unview',))
+                else:
+                    self.tree.insert('', 'end', values=[cont, item[0], item[1], item[2], item[3], item[4], item[5], item[6], item[7], item[8]])
 
     def selectTreeValues(self, event):
         curItem = self.tree.focus()
@@ -287,16 +315,41 @@ class samplePage:
             if not found:
                 return 0
 
-        self.editSampleName['text'] = self.treeRowValue[indexs.selectedTreeSample]
+        if self.treeRowValue[indexs.selectedTreeSample] != None and self.treeRowValue[indexs.selectedTreeSample] != 'None' and self.treeRowValue[indexs.selectedTreeSample] != '':
+            self.editSampleName['text'] = self.treeRowValue[indexs.selectedTreeSample]
+        else:
+            self.editSampleName['text'] = '-'
+
+        if self.treeRowValue[indexs.selectedTreeTag] != None and self.treeRowValue[indexs.selectedTreeTag] != 'None' and self.treeRowValue[indexs.selectedTreeTag] != '-':
+            self.editTagNameVar.set(self.treeRowValue[indexs.selectedTreeTag])
+        else:
+            self.editTagNameVar.set('-')
 
         #self.editSampleKey.current(indexs.lstKey.index(self.treeRowValue[indexs.selectedTreeKey]))
 
-        self.editSampleTag.current(searchIndexTag(self.treeRowValue[indexs.selectedTreeTag]))
-        self.editSampleBpm.set(self.treeRowValue[indexs.selectedTreeBpm])
-        self.editSampleKey.current(indexs.lstKey.index(self.treeRowValue[indexs.selectedTreeKey]))
-        self.editSampleGenre.current(indexs.lstGenre.index(self.treeRowValue[indexs.selectedTreeGenre]))
+        #if self.treeRowValue[indexs.selectedTreeTag] != None and self.treeRowValue[indexs.selectedTreeTag] != 'None':
+        #    self.editSampleTag.current(searchIndexTag(self.treeRowValue[indexs.selectedTreeTag]))
 
-        self.editSampleLove.set(self.treeRowValue[indexs.selectedTreeLove])
+        if self.treeRowValue[indexs.selectedTreeBpm] != None and self.treeRowValue[indexs.selectedTreeBpm] != 'None' and self.treeRowValue[indexs.selectedTreeBpm] != '':
+            self.editSampleBpm.set(self.treeRowValue[indexs.selectedTreeBpm])
+        else:
+            self.editSampleBpm.set('')
+
+        if self.treeRowValue[indexs.selectedTreeKey] != None and self.treeRowValue[indexs.selectedTreeKey] != 'None' and self.treeRowValue[indexs.selectedTreeKey] != '':
+            print(self.treeRowValue[indexs.selectedTreeKey])
+            self.editSampleKey.current(indexs.lstKey.index(self.treeRowValue[indexs.selectedTreeKey]))
+        else:
+            self.editSampleKey.set('')
+
+        if self.treeRowValue[indexs.selectedTreeGenre] != None and self.treeRowValue[indexs.selectedTreeGenre] != 'None' and self.treeRowValue[indexs.selectedTreeGenre] != '':
+            self.editSampleGenre.current(indexs.lstGenre.index(self.treeRowValue[indexs.selectedTreeGenre]))
+        else:
+            self.editSampleGenre.set('')
+
+        if self.treeRowValue[indexs.selectedTreeLove] != None and self.treeRowValue[indexs.selectedTreeLove] != 'None' and self.treeRowValue[indexs.selectedTreeLove] != '':
+            self.editSampleLove.set(self.treeRowValue[indexs.selectedTreeLove])
+        else:
+            self.editSampleLove.set('')
 
     def editSampleInfo(self):
         def searchIdTag(name):
@@ -305,7 +358,7 @@ class samplePage:
         print(self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1])
         id_fato = self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1][indexs.fatoQueryIdFato]
         love = self.editSampleLove.get()
-        id_tag = searchIdTag(self.editSampleTag.get())
+        id_tag = searchIdTag(self.editTagNameVar.get())
         id_sample = self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1][indexs.fatoQueryIdSample]
         print(id_fato, love, id_tag)
         fato_db.updateByInterface(id_fato, id_sample, love, id_tag)
@@ -386,21 +439,17 @@ class samplePage:
             self.tagListbox.insert(END, row[1])
         return
 
-    def showTags(self):
-        if tagSearchType.get() == 0:
-            # self.modeTagQuery['text'] = "View Most Used"
-            self.tagQuery = tag_db.viewMostUsed()
-            self.tagListbox.delete(0, END)
-            for row in self.tagQuery:
-                self.tagListbox.insert(END, row[1])
+
 
     def addTag(self):
-        tag_db.addIfNotExist(self.tagSearchNameEntry.get())
-        self.refresh()
+        tag_db.addIfNotExist(self.tagNameEdit.get())
+        self.searchTagByName()
 
     def removeTag(self):
-        tag_db.delete(tag_db.findTagId(self.tagSearchNameEntry.get()))
-        self.refresh()
+        fato_db.removeTagFato(tag_db.findTagId(self.tagNameEdit.get()))
+        tag_db.delete(tag_db.findTagId(self.tagNameEdit.get()))
+        self.search_command()
+        self.searchTagByName()
 
     def _buildPlayerSpace(self):
 
@@ -449,9 +498,10 @@ class samplePage:
 
 
         ## Volume Scale - adjust volume
-        scale = ttk.Scale(self.window, from_=0, to=100, orient=HORIZONTAL)#,command=self.set_vol)
-        scale.set(70)  # implement the default value of scale when music MusicPlayer.py starts
-        scale.place(x=100 + indexs.xPlayerGrid,y=500 + indexs.yPlayerGrid)
+        self.scaleVolume = ttk.Scale(self.window, from_=0, to=100, orient=HORIZONTAL)#,command=self.set_vol)
+        self.scaleVolume.set(100)  # implement the default value of scale when music MusicPlayer.py starts
+        self.scaleVolume.place(x=100 + indexs.xPlayerGrid,y=500 + indexs.yPlayerGrid)
+        self.scaleVolume.bind('<ButtonRelease-1>', self._adjustVolume)
 
 
         ## Time Durations
@@ -461,29 +511,45 @@ class samplePage:
         self.tempoFinal.place(x=300 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
 
         ## Progress Bar - The progress bar which indicates the running music
-        tempoBarra = ttk.Progressbar(self.window, orient='horizontal',length=200)
-        tempoBarra.place(x=42 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+        self.tempoBarra = ttk.Progressbar(self.window, orient='horizontal',length=250)
+        self.tempoBarra['value'] = 0
+        self.tempoBarra.place(x=42 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+        self.scaleTime = ttk.Scale(self.window, from_=0, to=100, length=250, orient=HORIZONTAL)
+        self.scaleTime.place(x=42 + indexs.xPlayerGrid, y=400 + indexs.yPlayerGrid)
+        self.scaleTime.bind('<ButtonRelease-1>', self._adjustPosSample)
 
+    def _adjustPosSample(self, event):
+        self.samplePlayer.setPosition(self.scaleTime.get()/100)
+
+    def _adjustVolume(self, event):
+        self.samplePlayer.setVolume(int(self.scaleVolume.get()))
 
 
     def audioMetaData(self):
         audio = audio_metadata.load(self.treeRowValue[indexs.selectedTreePath] + '/' + self.treeRowValue[indexs.selectedTreeSample])
-        print('----', audio.streaminfo.duration)
-        self.timeSample = audio.streaminfo.duration
-        self.tempoFinal['text'] = self.timeSample
-        self.tempoComeco['text'] = '0'
+        self.timeSample = int(audio.streaminfo.duration + 0.5)
+        self.tempoBarra["value"] = 0
+        self.tempoBarra["maximum"] = 100
+        self.fillTimeInfo()
+
+    def fillTimeInfo(self):
+        self.tempoFinal['text'] = self.convert(self.timeSample)
+        self.tempoComeco['text'] = '00:00'
 
 
     def playTrack(self):
         if self.treeRowValue != []:
-            self.samplePlayer.playSample()
-            self.reset()
-            self.start()
+            self.isPausedStatus = self.samplePlayer.playSample()
+            if self.isPausedStatus == False:
+                self.reset()
+                self.start()
+            else:
+                self.start()
+
 
     def stopTrack(self):
         if self.treeRowValue != []:
             self.samplePlayer.stopSample()
-            self.stop()
             self.reset()
 
     def nextTrack(self):
@@ -500,54 +566,47 @@ class samplePage:
             self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
             self.samplePlayer.playSample()
 
+
+    def loopTrack(self):
+        if self.samplePlayer.getPosition() > 0.75:
+            print('Entrei')
+            self.samplePlayer.stopSample()
+            self.samplePlayer.playSample()
+
+    def update_clock(self):
+        now = time.strftime("%H:%M:%S")
+        self.label.configure(text=now)
+        #self.window.after(10, self.update_clock)
+        #print(self.samplePlayer.isPlaying())
+        #if self.samplePlayer.isPlaying() == 0:
+        #    self.stop()
+
     def reset(self):
-        global count
-        count = 1
-        self.t.set('00:00')
+        self.countTime = 1
+        self.totalTime = 0
 
     def start(self):
-        global count
-        count = 0
-        self.start_timer()
-
-    def start_timer(self):
-        global count
+        self.countTime = 0
         self.timer()
 
     def stop(self):
-        global count
-        count = 1
+        self.countTime = 1
+
 
     def timer(self):
-        global count
-        if (count == 0):
-            self.d = str(self.t.get())
-            m, s = map(int, self.d.split(":"))
+        if (self.countTime == 0):
+            #print(self.totalTime)
+            self.tempoBarra["value"] = int(self.samplePlayer.getPosition()*100)
+            self.scaleTime.set(int(self.samplePlayer.getPosition() * 100))
+            if (self.countTime == 0):
+                self.window.after(1000, self.timer)
+                self.totalTime = self.totalTime + 1
+                self.tempoComeco['text'] = self.convert(int(self.samplePlayer.getTime()/1000))
 
-            m = int(m)
-            s = int(s)
-            if (s < 59):
-                s += 1
-            elif (s == 59):
-                s = 0
-                if (m < 59):
-                    m += 1
-            if (m < 10):
-                m = str(0) + str(m)
-            else:
-                m = str(m)
-            if (s < 10):
-                s = str(0) + str(s)
-            else:
-                s = str(s)
-            self.d = m + ":" + s
-            print(self.d)
-
-            self.t.set(self.d)
-            self.tempoComeco['text'] = self.d
-            if (count == 0):
-                self.window.after(930, self.start_timer)
-
+    def convert(self, seconds):
+        min, sec = divmod(seconds, 60)
+        hour, min = divmod(min, 60)
+        return "%d:%02d:%02d" % (hour, min, sec) if hour != 0 else "%02d:%02d" % (min, sec)
 
     def autoTag(self):
         lstAutoTag = smartTag.autoTag()
@@ -559,7 +618,7 @@ class samplePage:
         for row in self.tree.get_children():
             self.tree.delete(row)
         self._load_data()
-        self.showTags()
+
 
     def syncTag(self):
         syncRowFact = self.factQuery[self.indexSample]
@@ -570,21 +629,8 @@ class samplePage:
         print(syncRowFact[1])
         print(syncRowTag[0])
         fato_db.updateTag(syncRowFact[0], syncRowTag[0])
-        self.refresh()
-
-    def syncNewTag(self):
-        syncRowFact = self.factQuery[self.indexSample]
-        syncRowTag = self.tagQuery[self.indexTag]
-        fato_db.addTag(syncRowFact[1], syncRowTag[0])
-        self.refresh()
-
-
-    def searchTag(self):
-        print(tagSearchStr.get())
-        self.tagQuery = tag_db.search(tagSearchStr.get())
-        self.tagListbox.delete(0, END)
-        for row in self.tagQuery:
-            self.tagListbox.insert(END, row[1])
+        #self.refresh()
+        self.search_command()
 
     def view_command(self):
         #self.modeTagQuery['text'] = 'View All'
@@ -596,11 +642,10 @@ class samplePage:
             self.tagListbox.insert(END, row[1])
 
     def search_command(self):
-        lb.delete(0, END)
         for row in self.tree.get_children():
             self.tree.delete(row)
-        query = fato_db.selectFilter(name=self.sampleSearch.get(), path=pathEntry.get(), extension=extensionEntry.get(),
-                                     disk=diskEntry.get(), tag = self.tagSearch.get(), bpm = self.bpmSearch.get(), key = self.keySearch.get(), genre = self.genreSearch.get(), loveLow=self.loveLowSearch.get(), loveUpper=self.loveUpperSearch.get())
+        query = fato_db.selectFilter(name=self.sampleSearch.get(), path=self.pathSearch.get(), extension=self.extensionSearch.get(),
+                                     disk=self.diskSearch.get(), tag = self.tagSearch.get(), bpm = self.bpmSearch.get(), key = self.keySearch.get(), genre = self.genreSearch.get(), loveLow=self.loveLowSearch.get(), loveUpper=self.loveUpperSearch.get())
         self.new_data(query)
 
     def new_data(self, query):
@@ -608,49 +653,22 @@ class samplePage:
         self.factQuery = query
         cont = 1
         for item in self.factQuery:
-            self.tree.insert('', 'end', values=[cont, item[2], item[7], item[3], item[4], item[5], item[8], item[9], item[10], item[11]])
+            self.insertTreeData(cont, [item[2], item[7], item[3], item[4], item[5], item[8], item[9], item[10], item[11]])
             cont  = cont + 1
 
         #tree.insert('', 'end', text = 'your text', tags = ('oddrow',))
         #tree.tag_configure('oddrow', background='orange')
 
-    def add_command(self):
-        tag_db.add(name.get(), cdate.get())
-        sample_db.add(name.get(), pathEntry.get(), extensionEntry.get(), diskEntry.get(), cdate.get())
-        lb.delete(0, END)
-        lb.insert(END, name.get(), cdate.get())
-
-    def update_command(self):
-        sample_db.update(self.treeRowValue[1], name=name.get(), path=pathEntry.get(), extension=extensionEntry.get(),
-                         disk=diskEntry.get(), date=cdate)
-        self.view_command()
-        self.refresh()
 
     def delete_command(self):
         fato_db.delete(self.treeRowValue[0])
         # sample_db.delete(self.treeRowValue[1])
         self.view_command()
 
-    def clear_command(self):
-        lb.delete(0, END)
-        e1.delete(0, END)
-        e2.delete(0, END)
-        e3.delete(0, END)
-        e4.delete(0, END)
-
     ## Add musicas to the playlist.
     def abreFaixasDir(self):
-        music_ex = ['mp3', 'ogg']
         dir_ = filedialog.askdirectory(initialdir='D:\\', title='Select Directory')
-        directory = dir_
         listDir.runCode(dir_)
-        # os.chdir(dir_)
-        # dir_files = os.listdir(dir_)
-        # for file in dir_files:
-        #     exten = file.split('.')[-1]
-        #     for ex in music_ex:
-        #         if exten == ex:
-        #             print(file)
 
     def abrirMusica(self):
         dir_ = filedialog.askopenfilename(initialdir='D:/', title='Select File')
@@ -661,7 +679,7 @@ class samplePage:
         # os.chdir(cng_dir)
         # filename = os.path.basename(dir_)
         print(dir_, cng_dir, '----', filename, filename[-3:])
-        sample_db.add(filename, cng_dir, filename[-3:], 'mac', cdate)
+        #sample_db.add(filename, cng_dir, filename[-3:], 'mac', cdate)
 
 
 class TagPage:
@@ -669,55 +687,6 @@ class TagPage:
     def __init__(self, master):
         self.master = master
         self.frame = tk.Frame(self.master)
-        # self.quitButton = tk.Button(self.frame, text = 'Quit', width = 25, command = self.close_windows)
-        # self.quitButton.pack()
-
-        # top = Toplevel()
-        # top.title("Anexo")
-        # Label(top, text="Name").grid(row=0, column=0, columnspan=2)
-
-        global lbTag, nameTagEntry, nameTag, cdate
-
-        cdate = date.today().strftime("%d/%m/%Y")
-
-        nameLabel = Label(self.frame, text="Name")
-        nameLabel.grid(row=0, column=0, columnspan=2)
-
-        lbTag = Listbox(self.frame, height=20, width=94)
-        lbTag.grid(row=6, column=0, columnspan=6)
-
-        sbTag = Scrollbar(self.frame)
-        sbTag.grid(row=6, column=6, rowspan=6)
-
-        lbTag.configure(yscrollcommand=sbTag.set)
-        sbTag.configure(command=lbTag.yview)
-
-        lbTag.bind('<<ListboxSelect>>', self.getSelectedRowTag)
-
-        nameTag = StringVar()
-        nameTagEntry = Entry(self.frame, textvariable=nameTag, width=50).grid(row=0, column=0, columnspan=10)
-
-        bTag1 = Button(self.frame, text="Add", width=12, command=self.add_commandTag)
-        bTag1.grid(row=5, column=0)
-
-        bTag2 = Button(self.frame, text="Update", width=12, command=self.update_commandTag)
-        bTag2.grid(row=5, column=1)
-
-        bTag3 = Button(self.frame, text="Search", width=12, command='')
-        bTag3.grid(row=5, column=2)
-
-        bTag4 = Button(self.frame, text="View All", width=12, command=self.view_commandTag)
-        bTag4.grid(row=5, column=3)
-
-        bTag5 = Button(self.frame, text="Delete", width=12, command=self.delete_commandTag)
-        bTag5.grid(row=5, column=4)
-
-        bTag6 = Button(self.frame, text="Cancel", width=12, command=self.frame.destroy)
-        bTag6.grid(row=5, column=5)
-
-        bTag7 = Button(self.frame, text="Clear All", width=12, command=self.clear_commandTag)
-        bTag7.grid(row=0, column=5)
-
         self.frame.pack()
         Pack()
 
@@ -725,48 +694,13 @@ class TagPage:
         self.newWindow = tk.Toplevel(self.window)
         self.app = TagPage(self.newWindow)
 
-    def getSelectedRowTag(self, event):
-        try:
-            global selectedTupleTag
-            index = lbTag.curselection()[0]
-            selectedTupleTag = lbTag.get(index)
-            # nameTagEntry.delete(0,END)
-            nameTagEntry.insert(END, selectedTupleTag[1])
-        except IndexError:
-            pass
-
-    def view_commandTag(self):
-        lbTag.delete(0, END)
-        for row in tag_db.viewall():
-            lbTag.insert(END, row)
-
-
-    def add_commandTag(self):
-        tag_db.add(nameTag.get(), cdate)
-        lbTag.delete(0, END)
-        lbTag.insert(END, nameTag.get(), cdate)
-
-    def update_commandTag(self):
-        tag_db.update(selectedTupleTag[0], nameTag.get(), cdate)
-        self.view_command()
-
-    def delete_commandTag(self):
-        tag_db.delete(selectedTupleTag[0])
-        self.view_command()
-
-    def clear_commandTag(self):
-        lbTag.delete(0, END)
-        nameTagEntry.delete(0, END)
 
     def close_windows(self):
         self.master.destroy()
 
-
 def main():
     samplePage()
-
 
 if __name__ == '__main__':
     main()
 
-# interface = samplePage()
