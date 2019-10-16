@@ -29,3 +29,5 @@ lstGenre = sorted(['-','Rock', 'Blues', 'Eletronic', 'Experimental', 'Orchestral
 lstBpm = list(range(40, 250))
 
 lstLove = list(range(101))
+
+lstRateMode = [0.5, 0.75, 1, 1.5, 1.75, 2, 2.25, 2.50, 2.75, 3]

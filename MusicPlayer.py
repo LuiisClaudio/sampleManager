@@ -37,20 +37,21 @@ class Teste:
     def getTime(self):
         return self.soundFile.get_time()
 
-    def sampleRate(self, rate):
+    def setRate(self, rate):
+        print(rate)
         self.soundFile.set_rate(rate)
 
     def setVolume(self, db):
         self.soundFile.audio_set_volume(db)
 
-    def changeSample(self, name, path, extension):
-        self.soundFile.pause()
-        self.soundFile = vlc.MediaPlayer(path + '/' + name)
+    def changeSample(self, name):
+        self.soundFile.stop()
+        self.soundFile = vlc.MediaPlayer(name)
 
     def isPlaying(self):
         return self.soundFile.is_playing()
 
-    def playSample(self):
+    def playSampleOld(self):
         print(self.soundFile.is_playing())
         if self.soundFile.is_playing():
             self.soundFile.pause()
@@ -83,6 +84,10 @@ class Teste:
         return self.is_paused
         #self.soundFile.stop()
         #self.soundFile.play()
+
+    def playSample(self):
+        self.soundFile.stop()
+        self.soundFile.play()
 
     def pauseSample(self):
         self.soundFile.pause()

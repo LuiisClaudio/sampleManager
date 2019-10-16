@@ -12,6 +12,7 @@ import indexs
 import MusicPlayer
 import audio_metadata
 import time
+import moreInfoSamplePage
 
 
 class samplePage:
@@ -25,8 +26,10 @@ class samplePage:
         self.samplePlayer = MusicPlayer.Teste()
 
         self.treeRowValue = []
+        self.selectedSample = None
 
-        ManagaeTagButton = Button(self.window, text='Manage tag.', bd=2, font=('arialblack', 13), width=10, command=self.new_window)#.grid(row=7, column=2, columnspan=4)
+        self.loopMode = False
+        self.isPausedStatus = False
 
         directory = 'D:\\'
 
@@ -38,7 +41,7 @@ class samplePage:
 
         self.label = tk.Label(text="")
         self.label.place(x=300 + indexs.xPlayerGrid,y=300 + indexs.yPlayerGrid)
-        #self.update_clock()
+        self.update_clock()
 
         nameLabel = Label(self.window, text="Name")
 
@@ -83,15 +86,15 @@ class samplePage:
 
         self.window.mainloop()
 
-    def new_window(self):
+    def viewInfoSample(self):
         self.newWindow = tk.Toplevel(self.window)
-        self.app = TagPage(self.newWindow)
+        self.app = moreInfoSamplePage.SampleInfo(self.newWindow)
 
     def _buildMenuBar(self):
         menubar = Menu(self.window)
         filemenu = Menu(menubar, tearoff=0)
         filemenu.add_command(label="Open", command=self.abreFaixasDir)
-        menubar.add_cascade(label="File", menu=filemenu)
+        menubar.add_cascade(label="Folder", menu=filemenu)
         self.window.config(menu=menubar)
 
     def _buildSampleSpace(self):
@@ -101,39 +104,52 @@ class samplePage:
         self._create_treeview()
 
         Button(self.window, text='Search', bd=2, font=('arialblack', 13), width=5, command=self.search_command).place(x = 10, y = 10)
+        Button(self.window, text='Clear All', bd=2, font=('arialblack', 13), width=5, command=self.clearAllSearch).place(x=10, y=40)
         Button(self.window, text='Save', bd=2, font=('arialblack', 13), width=5, command=self.editSampleInfo).place(x = 400, y = 550)
+        Button(self.window, text='Details', bd=2, font=('arialblack', 13), width=5, command=self.viewInfoSample).place(x=450, y=550)
+        Button(self.window, text='Delete', bd=2, font=('arialblack', 13), width=5, command=self.deleteSample).place(
+            x=400, y=600)
 
+        Label(self.window, text="Sample").place(x=10, y=70)
         self.sampleSearch = StringVar()
         #self.sampleSearch.set("Name")
-        Entry(self.window, textvariable=self.sampleSearch, width=10).place(x = 10, y = 40)
+        Entry(self.window, textvariable=self.sampleSearch, width=10).place(x=80, y=70)
 
+        Label(self.window, text="Path").place(x=350, y=70)
         self.pathSearch = StringVar()
         #self.pathSearch.set("Name")
-        Entry(self.window, textvariable=self.pathSearch, width=10).place(x=10, y=70)
+        Entry(self.window, textvariable=self.pathSearch, width=10).place(x=400, y=70)
 
+        Label(self.window, text="Extension").place(x=10, y=100)
         self.extensionSearch = StringVar()
         #self.extensionSearch.set("Name")
-        Entry(self.window, textvariable=self.extensionSearch, width=10).place(x=10, y=100)
+        Entry(self.window, textvariable=self.extensionSearch, width=10).place(x=80, y=100)
 
+        Label(self.window, text="Disk").place(x=350, y=100)
         self.diskSearch = StringVar()
         #self.diskSearch.set("Name")
-        Entry(self.window, textvariable=self.diskSearch, width=10).place(x=10, y=130)
+        Entry(self.window, textvariable=self.diskSearch, width=10).place(x=400, y=100)
 
+        Label(self.window, text="BPM").place(x = 120, y = 10)
         self.bpmSearch = ttk.Spinbox(self.window, values=indexs.lstBpm, width=3)
         self.bpmSearch.place(x = 120, y = 40)
 
+        Label(self.window, text="Key").place(x=180, y=10)
         self.keySearch = ttk.Combobox(self.window, values=indexs.lstKey, width=5)
         self.keySearch.place(x = 180, y = 40)
 
+        Label(self.window, text="Genre").place(x=260, y=10)
         self.genreSearch = ttk.Combobox(self.window, values=indexs.lstGenre, width=10)
         self.genreSearch.place(x = 260, y = 40)
 
+        Label(self.window, text="Tag").place(x=380, y=10)
         self.tagSearch = StringVar()
-        #tagSearch.set("Tag")
         Entry(self.window, textvariable=self.tagSearch, width=10).place(x = 380, y = 40)
 
+        Label(self.window, text="LoveLow").place(x=490, y=10)
         self.loveLowSearch = ttk.Spinbox(self.window, values=indexs.lstLove, width=3)
         self.loveLowSearch.place(x=490, y=40)
+        Label(self.window, text="Love Upper").place(x=550, y=10)
         self.loveUpperSearch =ttk.Spinbox(self.window, values=indexs.lstLove, width=3)
         self.loveUpperSearch.place(x=550, y=40)
 
@@ -229,7 +245,7 @@ class samplePage:
         #    if item[i] == None:
         #        item[i] = '-'
         loveValue = item[8]
-        if loveValue != 'None' and loveValue != '':
+        if loveValue != 'None' and loveValue != '' and loveValue != 'NULL':
             if loveValue != None:
                 if int(item[8]) < 20:
                     self.tree.insert('', 'end',
@@ -263,7 +279,7 @@ class samplePage:
         self.treeRowValue = treeValue['values']
         print('-->',self.treeRowValue)
         self.indexSample = self.treeRowValue[0] - 1
-        self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+        self.changeSelectedSample()
         self.fillSampleInfo()
         self.audioMetaData()
 
@@ -302,9 +318,14 @@ class samplePage:
         self.treeRowValue = treeValue['values']
         print('-->',self.treeRowValue)
         self.indexSample = self.treeRowValue[0] - 1
-        self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+        self.changeSelectedSample()
         self.fillSampleInfo()
         self.audioMetaData()
+
+    def changeSelectedSample(self):
+        if self.treeRowValue != []:
+            self.selectedSample = self.treeRowValue[3] + '/' + self.treeRowValue[1]
+            self.samplePlayer.changeSample(self.selectedSample)
 
     def fillSampleInfo(self):
         def searchIndexTag(name):
@@ -353,7 +374,11 @@ class samplePage:
 
     def editSampleInfo(self):
         def searchIdTag(name):
-            return tag_db.findTagId(name)
+            print(name)
+            if name != None and name != '' and name != '-':
+                return tag_db.findTagId(name)
+            else:
+                return None
 
         print(self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1])
         id_fato = self.factQuery[self.treeRowValue[indexs.selectedTreeCount] - 1][indexs.fatoQueryIdFato]
@@ -371,6 +396,27 @@ class samplePage:
         sample_db.updateByInterface(id_sample, bpm, key, genre)
 
         self.refresh()
+
+    def deleteSample(self):
+        deleteRowFact = self.factQuery[self.indexSample]
+        fato_db.delete(deleteRowFact[indexs.fatoQueryIdFato])
+        sample_db.delete(deleteRowFact[indexs.fatoQueryIdSample])
+
+        self.refresh()
+
+    def clearAllSearch(self):
+        self.sampleSearch.set('')
+        self.pathSearch.set('')
+        self.extensionSearch.set('')
+        self.diskSearch.set('')
+        self.bpmSearch.set('')
+        self.keySearch.set('')
+        self.genreSearch.set('')
+        self.tagSearch.set('')
+
+        self.loveLowSearch.set('')
+        self.loveUpperSearch.set('')
+
 
     def _buildTagSpace(self):
         value = StringVar()
@@ -393,6 +439,7 @@ class samplePage:
         Entry(self.window, textvariable=self.tagSearchNameEntry, width=10).place(x=indexs.xTagGrid + 50, y=100)
 
         Button(self.window, text="Sync Tag", width=12, command=self.syncTag).place(x=indexs.xTagGrid  - 130, y=200)
+        Button(self.window, text="Untag", width=12, command=self.untag).place(x=indexs.xTagGrid - 130, y=240)
 
     def _createListTag(self):
         self.tagListbox = Listbox(self.window, height=15, width=20)
@@ -472,20 +519,24 @@ class samplePage:
         prev_button = Button(self.window, image=prev_img,bd=0, command=self.prevTrack)#,command=lambda:self.voltarFaixa(1))
         prev_button.place(x=50 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
 
-        stop_button = Button(self.window, image=stop_img, command=self.stopTrack)
-        stop_button.place(x=85 + indexs.xPlayerGrid,y=438 + indexs.yPlayerGrid)
+        pause_button = Button(self.window, image=imgPause, command=self.pauseTrack)
+        pause_button.place(x=90 + indexs.xPlayerGrid, y=438 + indexs.yPlayerGrid)
 
         next_button = Button(self.window, image=next_img,bd=0, command=self.nextTrack)#,command=lambda:self.voltarFaixa(2))
         next_button.place(x=113 + indexs.xPlayerGrid,y=433 + indexs.yPlayerGrid)
 
-        speaker = Button(self.window,image=imgSpeaker,bd=0)#,command=self.speaker_func)
+        stop_button = Button(self.window, image=stop_img, command=self.stopTrack)
+        stop_button.place(x=160 + indexs.xPlayerGrid, y=433 + indexs.yPlayerGrid)
+
+        speaker = Button(self.window,image=imgSpeaker,bd=0,command=self.muteTrack)
         speaker.place(x=50 + indexs.xPlayerGrid,y=500 + indexs.yPlayerGrid)
 
-        #shuffle_button = Button(self.window, image=shuffle_img,bd=0)#,command=lambda:self.modoRepeticao(1))
-        #shuffle_button.place(x=170 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
-
-        repeat_button = Button(self.window, image=repeat_img,bd=0)#,command=lambda:self.modoRepeticao(2))
+        repeat_button = Button(self.window, image=repeat_img,bd=0, command=self.loopTrack)
         repeat_button.place(x=200 + indexs.xPlayerGrid,y=440 + indexs.yPlayerGrid)
+
+        self.rateMode = ttk.Spinbox(self.window, values=indexs.lstRateMode, width=4, command=self.rateTrack)
+        self.rateMode.place(x=250 + indexs.xPlayerGrid, y=440 + indexs.yPlayerGrid)
+        self.rateMode.set(1)
 
 
         play_des = Label(self.window, text='Play/Pause',relief='groove')
@@ -513,7 +564,7 @@ class samplePage:
         ## Progress Bar - The progress bar which indicates the running music
         self.tempoBarra = ttk.Progressbar(self.window, orient='horizontal',length=250)
         self.tempoBarra['value'] = 0
-        self.tempoBarra.place(x=42 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
+        #self.tempoBarra.place(x=42 + indexs.xPlayerGrid,y=400 + indexs.yPlayerGrid)
         self.scaleTime = ttk.Scale(self.window, from_=0, to=100, length=250, orient=HORIZONTAL)
         self.scaleTime.place(x=42 + indexs.xPlayerGrid, y=400 + indexs.yPlayerGrid)
         self.scaleTime.bind('<ButtonRelease-1>', self._adjustPosSample)
@@ -538,58 +589,77 @@ class samplePage:
 
 
     def playTrack(self):
+        self.samplePlayer.playSample()
+        self.isPausedStatus = False
+        self.resetTime()
+        self.startTime()
+
+    def pauseTrack(self):
         if self.treeRowValue != []:
-            self.isPausedStatus = self.samplePlayer.playSample()
-            if self.isPausedStatus == False:
-                self.reset()
-                self.start()
-            else:
-                self.start()
+            self.samplePlayer.pauseSample()
+            self.isPausedStatus = not self.isPausedStatus
 
 
     def stopTrack(self):
         if self.treeRowValue != []:
             self.samplePlayer.stopSample()
-            self.reset()
+            self.resetTime()
+            self.loopMode = False
+            self.isPausedStatus = False
+            self.scaleTime.set(0)
+            self.tempoComeco['text'] = '00:00'
 
     def nextTrack(self):
         if self.treeRowValue != []:
             self.tree.event_generate('<Down>')
             self.samplePlayer.pauseSample()
-            self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+            self.changeSelectedSample()
             self.samplePlayer.playSample()
 
     def prevTrack(self):
         if self.treeRowValue != []:
             self.tree.event_generate('<Up>')
             self.samplePlayer.pauseSample()
-            self.samplePlayer.changeSample(self.treeRowValue[1], self.treeRowValue[3], self.treeRowValue[4])
+            self.changeSelectedSample()
             self.samplePlayer.playSample()
 
+    def muteTrack(self):
+        if self.scaleVolume.get() > 5:
+            self.scaleVolume.set(0)
+            self.samplePlayer.setVolume(0)
+        else:
+            self.scaleVolume.set(70)
+            self.samplePlayer.setVolume(70)
 
     def loopTrack(self):
-        if self.samplePlayer.getPosition() > 0.75:
-            print('Entrei')
-            self.samplePlayer.stopSample()
-            self.samplePlayer.playSample()
+        self.loopMode = not self.loopMode
+
+    def rateTrack(self):
+        if self.treeRowValue != []:
+            print(self.rateMode.get())
+            self.samplePlayer.setRate(float(self.rateMode.get()))
+            #self.samplePlayer.setRate(1.5)
 
     def update_clock(self):
+
         now = time.strftime("%H:%M:%S")
         self.label.configure(text=now)
-        #self.window.after(10, self.update_clock)
+        self.window.after(1000, self.update_clock)
         #print(self.samplePlayer.isPlaying())
-        #if self.samplePlayer.isPlaying() == 0:
-        #    self.stop()
+        if self.selectedSample != None:
+            if self.samplePlayer.isPlaying() == 0 and self.isPausedStatus == False and self.loopMode == True:
+                print('Deveria tocar')
+                self.playTrack()
 
-    def reset(self):
+    def resetTime(self):
         self.countTime = 1
         self.totalTime = 0
 
-    def start(self):
+    def startTime(self):
         self.countTime = 0
         self.timer()
 
-    def stop(self):
+    def stopTime(self):
         self.countTime = 1
 
 
@@ -617,7 +687,7 @@ class samplePage:
     def refresh(self):
         for row in self.tree.get_children():
             self.tree.delete(row)
-        self._load_data()
+        self.search_command()
 
 
     def syncTag(self):
@@ -629,6 +699,18 @@ class samplePage:
         print(syncRowFact[1])
         print(syncRowTag[0])
         fato_db.updateTag(syncRowFact[0], syncRowTag[0])
+        #self.refresh()
+        self.search_command()
+
+    def untag(self):
+        syncRowFact = self.factQuery[self.indexSample]
+        syncRowTag = self.tagQuery[self.indexTag]
+
+        print(syncRowFact)
+        print(syncRowTag)
+        print(syncRowFact[1])
+        print(syncRowTag[0])
+        fato_db.removeTagFatoRow(syncRowFact[indexs.fatoQueryIdFato], syncRowFact[indexs.fatoQueryIdTag])
         #self.refresh()
         self.search_command()
 
@@ -682,7 +764,7 @@ class samplePage:
         #sample_db.add(filename, cng_dir, filename[-3:], 'mac', cdate)
 
 
-class TagPage:
+class SampleInfo2:
 
     def __init__(self, master):
         self.master = master
@@ -692,7 +774,7 @@ class TagPage:
 
     def new_window(self):
         self.newWindow = tk.Toplevel(self.window)
-        self.app = TagPage(self.newWindow)
+        self.app = SampleInfo2(self.newWindow)
 
 
     def close_windows(self):

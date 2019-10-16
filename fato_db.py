@@ -181,22 +181,26 @@ def update(id_fato, id_sample, id_tag):
 def updateSample(id,id_sample):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("UPDATE fato SET id_sample=? WHERE id_fato=?",(id_sample, id))
+    cur.execute("UPDATE fato SET id_sample=? and data_sample_mod=? WHERE id_fato=?",(id_sample, date.today().strftime("%d/%m/%Y"), id))
     con.commit()
     con.close()
 
 def updateTag(id, id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("UPDATE fato SET id_tag=?, date=? WHERE id_fato=?",(id_tag, date.today().strftime("%d/%m/%Y"),id))
+    cur.execute("UPDATE fato SET id_tag=?, date_tag_md=? WHERE id_fato=?",(id_tag, date.today().strftime("%d/%m/%Y"),id))
     con.commit()
     con.close()
 
 def updateByInterface(id_fato, id_sample, love, id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("UPDATE fato SET love=?, date=? WHERE id_sample=?",(love, date.today().strftime("%d/%m/%Y"), id_sample) )
-    cur.execute("UPDATE fato SET id_tag=? WHERE id_fato=?", (id_tag, id_sample))
+    if love != '':
+        cur.execute("UPDATE fato SET love=?, date_sample_mod=? WHERE id_sample=?",(love, date.today().strftime("%d/%m/%Y"), id_sample) )
+    else:
+        cur.execute("UPDATE fato SET love=NULL, date_sample_mod=? WHERE id_sample=?", (date.today().strftime("%d/%m/%Y"), id_sample))
+    if id_tag != None:
+        cur.execute("UPDATE fato SET id_tag=? WHERE id_fato=?", (id_tag, id_sample))
     con.commit()
     con.close()
 
@@ -204,6 +208,13 @@ def removeTagFato(id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
     cur.execute("UPDATE fato SET id_tag=NULL WHERE id_tag=?", (id_tag,))
+    con.commit()
+    con.close()
+
+def removeTagFatoRow(id_fato, id_tag):
+    con = sqlite3.connect("sample_db.db")
+    cur = con.cursor()
+    cur.execute("UPDATE fato SET id_tag=NULL and date_tag_mod=? WHERE id_fato=? and id_tag=?", (date.today().strftime("%d/%m/%Y"), id_fato, id_tag))
     con.commit()
     con.close()
 

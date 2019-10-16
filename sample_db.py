@@ -52,6 +52,12 @@ def update(id,name,path,extension,disk,date):
     con.close()
 
 def updateByInterface(id_sample, bpm, key, genre):
+    if bpm == '':
+        bpm = None
+    if key == '':
+        key = None
+    if genre == '':
+        genre = None
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
     cur.execute("UPDATE sample SET bpm=?, key=?, genre=? WHERE id_sample=?",(bpm, key, genre, id_sample) )
