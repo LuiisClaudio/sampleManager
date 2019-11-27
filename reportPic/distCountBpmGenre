@@ -1,0 +1,1135 @@
+genre,bpm,count_genre_bpm
+,,0
+40.0,Tech House,5
+40.0,Electro House,4
+40.0,Blues,3
+40.0,Rock,3
+40.0,Country,1
+40.0,Dubstep,1
+41.0,Future Bass,7
+41.0,Chinese Traditional,5
+41.0,Bass House,4
+41.0,Tech House,4
+41.0,Pop,3
+41.0,R&B,3
+42.0,World,6
+42.0,Country,5
+42.0,Tech House,3
+42.0,Urban,3
+42.0,Jazz,1
+43.0,Tech House,4
+43.0,Experimental,1
+44.0,Jazz,9
+44.0,Other Genre,2
+45.0,Experimental,6
+45.0,Blues,4
+45.0,Chinese Traditional,4
+45.0,Cinematic,3
+45.0,Eletronic,3
+45.0,House,3
+45.0,Other Genre,1
+46.0,Cinematic,9
+46.0,R&B,5
+46.0,Experimental,4
+47.0,Electro House,6
+47.0,Blues,4
+47.0,Cinematic,4
+47.0,Experimental,4
+47.0,House,3
+47.0,Indie,3
+47.0,Reggaeton Pop,3
+48.0,Hip Hop,5
+48.0,Electro House,4
+48.0,Eletronic,4
+48.0,Pop,4
+48.0,Country,3
+48.0,R&B,3
+49.0,Cinematic,6
+49.0,Future Bass,6
+49.0,Eletronic,5
+49.0,Orchestral,5
+49.0,Tech House,5
+49.0,Vintage Breaks,4
+49.0,Funk,3
+50.0,Indie,4
+50.0,Urban,4
+50.0,World,3
+51.0,R&B,7
+51.0,World,5
+51.0,Orchestral,3
+52.0,House,6
+52.0,Deep House,4
+52.0,Electro House,4
+52.0,Indie,3
+53.0,Indie,7
+53.0,Jazz,5
+53.0,Cinematic,4
+53.0,Country,4
+53.0,Future Bass,4
+53.0,House,4
+53.0,Blues,2
+53.0,Modern R&B,2
+54.0,Chillwave,4
+54.0,Future Bass,3
+54.0,Urban,2
+55.0,World,9
+55.0,Chillwave,8
+55.0,Cinematic,5
+55.0,Country,5
+55.0,Experimental,5
+55.0,R&B,5
+55.0,Chinese Traditional,4
+55.0,House,3
+56.0,Cinematic,16
+56.0,World,7
+56.0,Experimental,6
+56.0,Other Genre,5
+56.0,Tech House,5
+56.0,Deep House,3
+56.0,Reggaeton Pop,3
+56.0,Vintage Breaks,3
+57.0,R&B,4
+57.0,Rock,4
+58.0,Experimental,5
+58.0,Future Bass,5
+58.0,Modern R&B,4
+58.0,Pop,4
+59.0,Tech House,6
+59.0,Chinese Traditional,5
+59.0,Other Genre,4
+59.0,Modern R&B,3
+59.0,R&B,3
+59.0,Rock,2
+59.0,Orchestral,1
+60.0,Eletronic,8
+60.0,Chillwave,5
+60.0,Indie,5
+61.0,Eletronic,8
+61.0,Electro House,5
+61.0,Urban,5
+61.0,Modern R&B,4
+61.0,Tech House,2
+62.0,Funk,8
+62.0,R&B,6
+62.0,Modern R&B,5
+62.0,Blues,4
+62.0,Cinematic,4
+62.0,Rock,4
+63.0,Electro House,10
+63.0,Orchestral,6
+63.0,Deep House,5
+63.0,Future Bass,5
+63.0,Chillwave,4
+63.0,Chinese Traditional,3
+63.0,Other Genre,3
+64.0,Cinematic,6
+64.0,Chillwave,5
+64.0,Funk,4
+64.0,Orchestral,4
+65.0,Orchestral,6
+65.0,Cinematic,5
+65.0,Deep House,3
+65.0,Modern R&B,3
+66.0,Indie,7
+66.0,Orchestral,7
+66.0,Chillwave,4
+67.0,Chinese Traditional,5
+67.0,Rock,5
+67.0,Electro House,4
+68.0,Deep House,5
+68.0,Cinematic,4
+68.0,Experimental,4
+68.0,Other Genre,4
+68.0,Pop,4
+68.0,Jazz,3
+68.0,Reggaeton Pop,3
+69.0,Modern R&B,9
+69.0,Cinematic,7
+69.0,Hip Hop,4
+69.0,World,4
+69.0,Urban,3
+70.0,Modern R&B,6
+70.0,Blues,3
+70.0,R&B,3
+70.0,Bass House,2
+71.0,Cinematic,5
+71.0,Chillwave,4
+71.0,Indie,4
+71.0,Hip Hop,3
+71.0,Reggaeton Pop,3
+71.0,Tech House,3
+71.0,Vintage Breaks,3
+71.0,Experimental,2
+71.0,Future Bass,2
+72.0,Blues,9
+72.0,Modern R&B,7
+72.0,Electro House,4
+72.0,Future Bass,4
+72.0,R&B,4
+72.0,Chillwave,3
+73.0,Country,5
+73.0,Experimental,5
+73.0,Modern R&B,4
+73.0,Orchestral,4
+74.0,Future Bass,4
+74.0,World,4
+74.0,Bass House,3
+74.0,Reggaeton Pop,3
+74.0,Rock,3
+74.0,Tech House,3
+74.0,,0
+75.0,Experimental,8
+75.0,Chinese Traditional,6
+75.0,Hip Hop,5
+75.0,Orchestral,5
+75.0,Country,4
+75.0,Electro House,4
+75.0,Cinematic,3
+75.0,Eletronic,3
+76.0,Experimental,11
+76.0,R&B,9
+76.0,House,7
+76.0,Electro House,6
+76.0,Tech House,6
+76.0,Urban,6
+76.0,Modern R&B,5
+76.0,Pop,4
+76.0,Country,3
+76.0,Eletronic,3
+76.0,Jazz,3
+77.0,Electro House,9
+77.0,World,8
+77.0,House,6
+77.0,Chillwave,5
+77.0,Eletronic,4
+77.0,Rock,4
+78.0,Bass House,10
+78.0,Cinematic,3
+78.0,Other Genre,3
+79.0,Cinematic,4
+79.0,Dubstep,4
+79.0,Other Genre,4
+79.0,Eletronic,3
+79.0,Funk,3
+79.0,Modern R&B,3
+80.0,Chinese Traditional,4
+80.0,House,4
+80.0,Bass House,3
+80.0,Blues,2
+80.0,Experimental,1
+81.0,Modern R&B,9
+81.0,Hip Hop,7
+81.0,Bass House,6
+81.0,R&B,6
+81.0,Vintage Breaks,6
+81.0,Cinematic,5
+81.0,Pop,5
+81.0,World,4
+82.0,Chillwave,6
+82.0,Urban,5
+82.0,Electro House,4
+82.0,R&B,4
+82.0,Funk,3
+82.0,Pop,2
+83.0,World,5
+83.0,Future Bass,4
+83.0,Jazz,4
+83.0,Orchestral,4
+83.0,R&B,4
+83.0,Indie,3
+84.0,Experimental,5
+84.0,Electro House,4
+84.0,Rock,4
+84.0,Blues,3
+84.0,Jazz,3
+84.0,R&B,3
+85.0,Blues,4
+85.0,Hip Hop,4
+85.0,Bass House,3
+85.0,Modern R&B,3
+85.0,Rock,3
+85.0,World,3
+85.0,Country,2
+86.0,Jazz,9
+86.0,Urban,7
+86.0,Electro House,5
+87.0,Chillwave,6
+87.0,Hip Hop,5
+87.0,Reggaeton Pop,4
+87.0,Deep House,3
+87.0,Funk,3
+88.0,Eletronic,7
+88.0,Urban,5
+88.0,Deep House,3
+89.0,Bass House,4
+89.0,Indie,3
+89.0,Rock,3
+90.0,Eletronic,7
+90.0,Country,5
+90.0,Funk,5
+90.0,Chinese Traditional,4
+90.0,Modern R&B,3
+90.0,Orchestral,3
+90.0,Urban,3
+91.0,Chinese Traditional,7
+91.0,Blues,5
+91.0,Future Bass,3
+92.0,Cinematic,5
+92.0,Jazz,4
+93.0,Blues,8
+93.0,Tech House,7
+93.0,Deep House,6
+93.0,Reggaeton Pop,6
+93.0,Hip Hop,5
+93.0,House,5
+93.0,Jazz,3
+94.0,Reggaeton Pop,5
+94.0,Tech House,5
+94.0,Urban,5
+94.0,Orchestral,4
+94.0,Hip Hop,3
+95.0,Funk,7
+95.0,Jazz,7
+95.0,Chinese Traditional,5
+95.0,Blues,3
+95.0,Reggaeton Pop,2
+96.0,Blues,10
+96.0,Eletronic,5
+96.0,Cinematic,4
+96.0,Dubstep,3
+96.0,Future Bass,3
+96.0,Hip Hop,3
+96.0,Indie,3
+96.0,Orchestral,3
+97.0,Deep House,7
+97.0,Future Bass,6
+97.0,Pop,5
+97.0,R&B,4
+97.0,Chinese Traditional,3
+97.0,Funk,3
+98.0,Hip Hop,5
+98.0,World,4
+98.0,Orchestral,3
+99.0,Deep House,10
+99.0,Orchestral,5
+99.0,Tech House,5
+99.0,Country,4
+99.0,Electro House,4
+99.0,Experimental,4
+99.0,Funk,4
+99.0,Modern R&B,4
+99.0,World,4
+100.0,Urban,12
+100.0,Funk,5
+100.0,Future Bass,5
+100.0,Jazz,5
+100.0,Reggaeton Pop,5
+100.0,Tech House,5
+100.0,Chillwave,4
+100.0,Rock,3
+101.0,Cinematic,4
+101.0,House,4
+101.0,Bass House,3
+101.0,Deep House,3
+102.0,House,5
+102.0,Tech House,5
+102.0,Chinese Traditional,4
+102.0,Funk,4
+102.0,World,4
+102.0,Cinematic,3
+102.0,Indie,3
+102.0,Vintage Breaks,3
+102.0,Pop,2
+103.0,Vintage Breaks,8
+103.0,Urban,6
+103.0,Future Bass,5
+103.0,Other Genre,4
+103.0,Tech House,4
+103.0,Country,3
+104.0,Country,5
+104.0,Experimental,3
+105.0,House,11
+105.0,Vintage Breaks,5
+105.0,Dubstep,3
+105.0,Hip Hop,3
+106.0,Indie,8
+106.0,R&B,7
+106.0,Chillwave,5
+106.0,Experimental,5
+106.0,Vintage Breaks,4
+106.0,Cinematic,3
+107.0,Bass House,6
+107.0,Chillwave,4
+107.0,Other Genre,4
+107.0,Rock,4
+107.0,Vintage Breaks,4
+107.0,Country,3
+108.0,Eletronic,9
+108.0,Experimental,5
+108.0,Funk,5
+108.0,Modern R&B,5
+108.0,Bass House,4
+108.0,Tech House,4
+108.0,Cinematic,3
+108.0,Other Genre,3
+108.0,Pop,3
+108.0,Blues,1
+109.0,Bass House,6
+109.0,Dubstep,5
+109.0,Experimental,5
+109.0,Deep House,3
+109.0,Future Bass,3
+109.0,Indie,2
+110.0,Deep House,6
+110.0,Funk,6
+110.0,Modern R&B,5
+110.0,Dubstep,4
+111.0,Other Genre,6
+111.0,Tech House,5
+111.0,Chinese Traditional,4
+111.0,Cinematic,4
+111.0,Deep House,4
+112.0,Deep House,8
+112.0,House,3
+112.0,Pop,3
+113.0,Electro House,8
+113.0,Other Genre,3
+113.0,Pop,3
+114.0,Country,10
+114.0,Rock,5
+114.0,Modern R&B,4
+115.0,Tech House,5
+115.0,Pop,3
+115.0,Rock,3
+116.0,Indie,8
+116.0,Tech House,6
+116.0,Reggaeton Pop,5
+117.0,Electro House,8
+117.0,Chinese Traditional,6
+117.0,Blues,5
+117.0,Chillwave,4
+117.0,Urban,4
+118.0,Deep House,7
+118.0,Electro House,6
+118.0,Bass House,3
+118.0,Blues,3
+118.0,House,3
+118.0,Indie,1
+119.0,Rock,12
+119.0,Funk,8
+119.0,Orchestral,5
+119.0,Bass House,3
+119.0,Deep House,3
+119.0,Other Genre,3
+120.0,Funk,7
+120.0,Jazz,7
+120.0,Other Genre,5
+120.0,Blues,4
+120.0,Chillwave,4
+120.0,Deep House,4
+120.0,Future Bass,3
+120.0,R&B,3
+121.0,Pop,5
+121.0,R&B,4
+121.0,Vintage Breaks,4
+121.0,Dubstep,3
+121.0,Urban,2
+122.0,Cinematic,5
+122.0,World,2
+123.0,R&B,10
+123.0,Experimental,4
+123.0,Pop,4
+123.0,Cinematic,3
+123.0,Dubstep,3
+124.0,R&B,10
+124.0,Pop,8
+124.0,Blues,5
+124.0,Bass House,4
+124.0,Deep House,4
+124.0,Funk,4
+124.0,Hip Hop,3
+124.0,Jazz,3
+125.0,Eletronic,8
+125.0,Funk,4
+125.0,Jazz,4
+125.0,Modern R&B,4
+125.0,Electro House,3
+126.0,Cinematic,5
+126.0,Indie,4
+126.0,Jazz,4
+126.0,Urban,4
+127.0,Deep House,8
+127.0,Urban,6
+127.0,Eletronic,4
+127.0,Experimental,4
+127.0,Pop,4
+127.0,Chillwave,3
+128.0,Chillwave,7
+128.0,Eletronic,5
+128.0,Future Bass,5
+128.0,Indie,4
+128.0,Jazz,3
+128.0,Funk,2
+129.0,Deep House,8
+129.0,Pop,7
+129.0,Chinese Traditional,6
+129.0,Future Bass,6
+129.0,Electro House,4
+129.0,Eletronic,4
+129.0,Jazz,4
+129.0,Urban,1
+130.0,Funk,6
+130.0,Vintage Breaks,3
+130.0,Modern R&B,2
+131.0,R&B,5
+131.0,Rock,4
+131.0,Blues,3
+131.0,Urban,2
+132.0,Cinematic,5
+132.0,Pop,5
+132.0,Other Genre,4
+132.0,Bass House,3
+132.0,Chillwave,3
+133.0,Chillwave,7
+133.0,Experimental,6
+133.0,Dubstep,5
+133.0,Jazz,5
+133.0,Reggaeton Pop,4
+133.0,R&B,3
+134.0,Chillwave,7
+134.0,Experimental,7
+134.0,Reggaeton Pop,5
+134.0,Indie,4
+134.0,Urban,4
+134.0,Jazz,3
+135.0,Indie,8
+135.0,Experimental,6
+135.0,Chillwave,4
+135.0,Orchestral,3
+135.0,Vintage Breaks,3
+136.0,Urban,5
+136.0,Cinematic,3
+136.0,Country,3
+136.0,Pop,3
+136.0,Rock,3
+137.0,Dubstep,9
+137.0,Pop,7
+137.0,Tech House,6
+137.0,Indie,5
+137.0,Other Genre,5
+137.0,Jazz,4
+137.0,Experimental,3
+137.0,Future Bass,3
+138.0,Electro House,8
+138.0,Experimental,5
+138.0,Modern R&B,5
+138.0,Other Genre,5
+138.0,Future Bass,4
+138.0,Indie,4
+138.0,Chillwave,3
+139.0,Reggaeton Pop,9
+139.0,Hip Hop,7
+139.0,Urban,7
+139.0,Chinese Traditional,4
+140.0,Country,6
+140.0,Indie,4
+140.0,Eletronic,3
+140.0,Experimental,3
+140.0,Pop,3
+141.0,World,14
+141.0,R&B,5
+141.0,Reggaeton Pop,5
+141.0,Vintage Breaks,5
+141.0,Electro House,4
+141.0,House,4
+141.0,Modern R&B,4
+141.0,Future Bass,3
+142.0,Modern R&B,7
+142.0,Bass House,6
+142.0,Country,4
+142.0,R&B,3
+143.0,Blues,6
+143.0,Chinese Traditional,5
+143.0,Funk,4
+143.0,Pop,3
+143.0,World,3
+144.0,Bass House,6
+144.0,Pop,5
+144.0,Country,4
+144.0,Deep House,4
+144.0,Future Bass,4
+144.0,Other Genre,4
+144.0,House,3
+144.0,Orchestral,3
+144.0,World,3
+145.0,Rock,8
+145.0,Eletronic,4
+145.0,Orchestral,4
+145.0,World,4
+145.0,Chinese Traditional,3
+145.0,Deep House,3
+145.0,Urban,3
+145.0,Other Genre,2
+146.0,Country,5
+146.0,Pop,5
+146.0,Rock,4
+146.0,Chillwave,3
+146.0,Reggaeton Pop,3
+147.0,Electro House,6
+147.0,Hip Hop,6
+147.0,Funk,5
+147.0,Indie,4
+147.0,Reggaeton Pop,4
+147.0,World,2
+148.0,Blues,8
+148.0,Reggaeton Pop,6
+148.0,House,5
+148.0,Electro House,4
+148.0,Bass House,3
+148.0,Cinematic,3
+149.0,Electro House,6
+149.0,Hip Hop,5
+149.0,Country,4
+149.0,World,4
+149.0,Eletronic,3
+149.0,Deep House,2
+149.0,Pop,2
+150.0,Funk,4
+150.0,Modern R&B,4
+150.0,R&B,4
+150.0,Chillwave,3
+151.0,Chinese Traditional,6
+151.0,Modern R&B,6
+151.0,Electro House,4
+151.0,Deep House,3
+151.0,Future Bass,3
+151.0,Pop,3
+151.0,Rock,3
+152.0,Blues,6
+152.0,Chillwave,3
+152.0,Future Bass,1
+153.0,Chinese Traditional,5
+153.0,Eletronic,5
+153.0,Vintage Breaks,5
+153.0,Modern R&B,4
+153.0,Tech House,4
+153.0,Orchestral,3
+153.0,Pop,3
+154.0,Bass House,5
+154.0,Dubstep,5
+154.0,Reggaeton Pop,4
+154.0,Hip Hop,3
+154.0,House,3
+154.0,Eletronic,2
+155.0,Experimental,8
+155.0,Funk,6
+155.0,Jazz,5
+155.0,Modern R&B,3
+156.0,Cinematic,10
+156.0,Vintage Breaks,9
+156.0,Electro House,6
+156.0,Experimental,2
+157.0,Chinese Traditional,6
+157.0,Modern R&B,5
+157.0,Cinematic,4
+157.0,Country,4
+157.0,Experimental,4
+157.0,Hip Hop,4
+157.0,Tech House,4
+158.0,Bass House,6
+158.0,Blues,6
+158.0,Experimental,4
+158.0,Hip Hop,3
+159.0,Modern R&B,7
+159.0,Tech House,7
+159.0,Electro House,5
+159.0,Funk,4
+159.0,Bass House,3
+159.0,Deep House,3
+160.0,Hip Hop,8
+160.0,Urban,5
+160.0,Deep House,4
+160.0,Funk,4
+160.0,Pop,3
+160.0,Rock,3
+160.0,World,3
+160.0,Bass House,2
+161.0,Electro House,5
+161.0,Bass House,4
+161.0,Eletronic,3
+161.0,Reggaeton Pop,3
+161.0,Vintage Breaks,3
+161.0,Rock,2
+162.0,Bass House,5
+162.0,Rock,5
+162.0,World,3
+162.0,Chillwave,2
+162.0,Country,2
+162.0,Pop,2
+163.0,World,8
+163.0,Rock,6
+163.0,Vintage Breaks,6
+163.0,Reggaeton Pop,5
+163.0,Eletronic,4
+163.0,Jazz,4
+163.0,Other Genre,4
+164.0,Country,6
+164.0,Chillwave,5
+164.0,World,5
+164.0,Deep House,4
+164.0,R&B,4
+164.0,Rock,4
+164.0,Indie,3
+164.0,Urban,3
+164.0,Eletronic,2
+164.0,Jazz,2
+165.0,Indie,8
+165.0,Chillwave,4
+165.0,Eletronic,4
+165.0,Funk,4
+165.0,Future Bass,2
+166.0,Electro House,9
+166.0,Chinese Traditional,4
+167.0,Cinematic,8
+167.0,Dubstep,6
+168.0,House,6
+168.0,Bass House,5
+168.0,Blues,5
+168.0,Dubstep,4
+168.0,Rock,4
+169.0,Modern R&B,6
+169.0,Rock,6
+169.0,Chillwave,4
+169.0,Experimental,3
+170.0,Dubstep,7
+170.0,Funk,6
+171.0,Tech House,7
+171.0,Country,6
+171.0,Funk,5
+171.0,Rock,4
+172.0,Urban,12
+172.0,Tech House,10
+172.0,Dubstep,4
+172.0,Experimental,4
+172.0,Electro House,3
+172.0,House,2
+173.0,Reggaeton Pop,8
+173.0,Tech House,5
+173.0,Blues,3
+174.0,Modern R&B,4
+174.0,Rock,4
+175.0,Electro House,9
+175.0,R&B,7
+175.0,World,6
+175.0,Bass House,4
+175.0,Pop,4
+175.0,Country,3
+176.0,R&B,8
+176.0,Indie,6
+176.0,Future Bass,5
+176.0,Modern R&B,4
+176.0,Vintage Breaks,4
+176.0,Chinese Traditional,3
+176.0,Experimental,3
+176.0,Funk,3
+176.0,Electro House,2
+177.0,Country,6
+177.0,Bass House,5
+177.0,Eletronic,5
+177.0,Orchestral,5
+177.0,Experimental,4
+177.0,Other Genre,4
+177.0,Chillwave,3
+177.0,Tech House,3
+178.0,Deep House,8
+178.0,R&B,8
+178.0,Bass House,4
+178.0,Country,3
+179.0,Blues,9
+179.0,Chinese Traditional,6
+179.0,Urban,5
+179.0,Dubstep,4
+179.0,Pop,4
+179.0,Modern R&B,3
+179.0,R&B,3
+179.0,World,3
+179.0,Chillwave,2
+180.0,R&B,7
+180.0,Electro House,4
+180.0,Pop,4
+180.0,Rock,4
+180.0,World,3
+181.0,Dubstep,14
+181.0,Future Bass,7
+181.0,Deep House,4
+181.0,Pop,4
+181.0,World,4
+181.0,Cinematic,3
+181.0,Orchestral,3
+181.0,Rock,3
+181.0,Vintage Breaks,3
+182.0,Blues,4
+182.0,Rock,4
+182.0,Chillwave,3
+183.0,Bass House,6
+183.0,Eletronic,5
+183.0,Experimental,5
+183.0,Blues,4
+183.0,Electro House,4
+183.0,Other Genre,4
+183.0,Deep House,3
+183.0,Funk,3
+183.0,Indie,3
+184.0,Experimental,6
+184.0,Reggaeton Pop,6
+184.0,Cinematic,5
+184.0,Other Genre,5
+184.0,Urban,5
+184.0,Chinese Traditional,4
+184.0,Country,4
+184.0,Eletronic,4
+184.0,Modern R&B,3
+184.0,Electro House,1
+185.0,Indie,7
+185.0,Bass House,5
+185.0,Tech House,4
+185.0,Vintage Breaks,4
+185.0,Electro House,3
+185.0,R&B,3
+186.0,Pop,7
+186.0,Blues,5
+186.0,Jazz,5
+186.0,Cinematic,3
+187.0,Deep House,9
+187.0,House,7
+187.0,Dubstep,5
+187.0,Eletronic,4
+187.0,Experimental,4
+188.0,Pop,8
+188.0,Rock,8
+188.0,Hip Hop,6
+188.0,Blues,4
+188.0,World,4
+188.0,Modern R&B,2
+189.0,Modern R&B,8
+189.0,Experimental,4
+189.0,World,4
+190.0,Blues,8
+190.0,R&B,7
+190.0,Chinese Traditional,4
+190.0,Cinematic,4
+190.0,Reggaeton Pop,4
+190.0,World,2
+191.0,House,8
+191.0,Urban,7
+191.0,Other Genre,6
+191.0,Chinese Traditional,4
+191.0,Indie,4
+191.0,Experimental,3
+191.0,World,2
+192.0,Electro House,8
+192.0,Deep House,6
+192.0,Rock,3
+192.0,Tech House,3
+192.0,World,3
+192.0,Other Genre,2
+193.0,Reggaeton Pop,6
+193.0,Cinematic,5
+193.0,Other Genre,5
+193.0,R&B,4
+193.0,House,3
+194.0,Modern R&B,11
+194.0,Eletronic,6
+194.0,Bass House,4
+194.0,Dubstep,2
+195.0,Indie,6
+195.0,Chillwave,5
+195.0,Future Bass,5
+195.0,Eletronic,4
+195.0,Hip Hop,4
+195.0,Rock,4
+195.0,Orchestral,3
+195.0,R&B,3
+196.0,House,7
+196.0,Pop,5
+196.0,Chinese Traditional,4
+197.0,Eletronic,6
+197.0,Vintage Breaks,6
+197.0,Deep House,5
+197.0,Jazz,5
+197.0,Urban,5
+197.0,Chinese Traditional,4
+197.0,Electro House,4
+197.0,Modern R&B,4
+198.0,Tech House,9
+198.0,Hip Hop,7
+198.0,Deep House,4
+198.0,Other Genre,4
+198.0,R&B,3
+198.0,Future Bass,2
+199.0,Deep House,4
+199.0,Urban,4
+199.0,Eletronic,3
+199.0,Modern R&B,3
+200.0,Chinese Traditional,6
+200.0,Electro House,6
+200.0,Bass House,5
+200.0,Modern R&B,5
+200.0,Funk,4
+200.0,Rock,3
+200.0,Tech House,3
+201.0,Cinematic,5
+201.0,Bass House,3
+202.0,Dubstep,10
+202.0,Vintage Breaks,9
+202.0,Electro House,7
+202.0,Urban,6
+202.0,Pop,4
+203.0,Chillwave,6
+203.0,Future Bass,5
+203.0,Tech House,5
+203.0,Electro House,3
+203.0,Urban,3
+204.0,R&B,9
+204.0,Tech House,6
+204.0,Bass House,5
+204.0,Electro House,4
+204.0,Rock,4
+204.0,Chillwave,3
+204.0,Future Bass,3
+204.0,Other Genre,3
+205.0,Vintage Breaks,7
+205.0,Orchestral,6
+205.0,Other Genre,4
+205.0,Rock,1
+206.0,Vintage Breaks,8
+206.0,Modern R&B,6
+206.0,Bass House,5
+206.0,Chillwave,5
+206.0,Jazz,5
+206.0,R&B,5
+206.0,Rock,3
+206.0,Tech House,2
+207.0,World,4
+207.0,Country,3
+207.0,Deep House,3
+207.0,Electro House,1
+208.0,Experimental,8
+208.0,Reggaeton Pop,7
+208.0,Chinese Traditional,5
+208.0,Chillwave,4
+208.0,Vintage Breaks,3
+209.0,Rock,6
+209.0,Chillwave,4
+209.0,Hip Hop,4
+209.0,Blues,3
+209.0,Funk,3
+209.0,Future Bass,3
+210.0,Indie,13
+210.0,Orchestral,5
+210.0,R&B,5
+210.0,Chinese Traditional,4
+210.0,World,4
+210.0,Future Bass,3
+211.0,Blues,8
+211.0,Urban,7
+211.0,Reggaeton Pop,6
+211.0,Future Bass,3
+212.0,Bass House,9
+212.0,Chillwave,4
+212.0,Indie,4
+212.0,Future Bass,3
+212.0,Country,2
+213.0,Electro House,4
+213.0,Other Genre,4
+213.0,R&B,4
+213.0,Vintage Breaks,4
+213.0,Modern R&B,2
+214.0,Modern R&B,7
+214.0,Urban,5
+214.0,Pop,3
+214.0,Tech House,3
+214.0,Vintage Breaks,2
+215.0,R&B,4
+215.0,World,4
+215.0,Future Bass,3
+215.0,Dubstep,2
+216.0,House,3
+216.0,Indie,3
+216.0,Rock,2
+217.0,Indie,10
+217.0,Electro House,7
+217.0,Tech House,4
+217.0,Urban,4
+217.0,World,4
+217.0,Eletronic,3
+217.0,House,3
+218.0,Country,6
+218.0,Eletronic,4
+218.0,Tech House,3
+218.0,Urban,3
+219.0,Hip Hop,5
+219.0,Cinematic,4
+219.0,Indie,4
+219.0,Chinese Traditional,3
+219.0,Orchestral,3
+219.0,Tech House,3
+220.0,Bass House,7
+220.0,Other Genre,6
+220.0,Indie,5
+220.0,Tech House,5
+220.0,Dubstep,4
+220.0,Eletronic,2
+221.0,Country,11
+221.0,Indie,7
+221.0,Blues,5
+221.0,Hip Hop,5
+221.0,Eletronic,4
+221.0,Jazz,4
+221.0,Future Bass,2
+222.0,Other Genre,7
+222.0,Dubstep,4
+222.0,Electro House,4
+222.0,Orchestral,4
+222.0,Urban,4
+223.0,Other Genre,6
+223.0,R&B,5
+223.0,Bass House,4
+223.0,Experimental,3
+224.0,Country,6
+224.0,Bass House,3
+224.0,Electro House,3
+225.0,Future Bass,7
+225.0,Chillwave,5
+225.0,Hip Hop,5
+225.0,World,5
+225.0,Deep House,4
+225.0,Orchestral,3
+225.0,Urban,2
+226.0,Blues,14
+226.0,Chillwave,12
+226.0,Jazz,9
+226.0,Hip Hop,5
+226.0,Reggaeton Pop,4
+226.0,Vintage Breaks,4
+226.0,Indie,3
+226.0,Modern R&B,3
+226.0,Eletronic,2
+227.0,Cinematic,6
+227.0,Future Bass,5
+227.0,Pop,5
+227.0,Funk,4
+227.0,Reggaeton Pop,4
+227.0,Indie,2
+228.0,Eletronic,6
+228.0,Dubstep,4
+228.0,Hip Hop,4
+228.0,House,4
+228.0,Blues,3
+228.0,Chillwave,3
+228.0,Orchestral,3
+228.0,Tech House,1
+229.0,Funk,5
+229.0,Country,3
+230.0,Rock,6
+230.0,Jazz,4
+231.0,Eletronic,9
+231.0,Rock,8
+231.0,Cinematic,5
+231.0,Modern R&B,4
+231.0,Tech House,4
+231.0,Chinese Traditional,3
+232.0,Bass House,8
+232.0,House,5
+232.0,Chillwave,4
+232.0,Hip Hop,4
+232.0,Reggaeton Pop,4
+233.0,Pop,11
+233.0,Hip Hop,4
+233.0,Other Genre,4
+233.0,Reggaeton Pop,3
+234.0,World,8
+234.0,Hip Hop,6
+234.0,Tech House,6
+234.0,Dubstep,5
+234.0,Indie,4
+234.0,Reggaeton Pop,3
+235.0,Other Genre,3
+235.0,Rock,2
+235.0,Vintage Breaks,2
+236.0,Indie,6
+236.0,Chinese Traditional,4
+236.0,Bass House,3
+237.0,Funk,5
+237.0,Urban,5
+238.0,R&B,10
+238.0,Reggaeton Pop,5
+238.0,Blues,4
+238.0,Cinematic,4
+239.0,Experimental,6
+239.0,Eletronic,5
+239.0,Vintage Breaks,5
+239.0,Bass House,3
+239.0,Modern R&B,3
+240.0,Other Genre,8
+240.0,Urban,8
+240.0,Indie,6
+240.0,Pop,5
+240.0,Chillwave,4
+240.0,House,4
+241.0,Future Bass,6
+241.0,Other Genre,5
+241.0,Reggaeton Pop,5
+241.0,Rock,4
+241.0,Urban,4
+241.0,Hip Hop,3
+241.0,Indie,3
+241.0,Pop,3
+242.0,Cinematic,11
+242.0,Jazz,5
+242.0,Hip Hop,3
+242.0,House,3
+242.0,World,3
+242.0,Rock,2
+243.0,Blues,6
+243.0,Reggaeton Pop,6
+243.0,Urban,5
+243.0,House,4
+243.0,Indie,4
+244.0,Cinematic,12
+244.0,Jazz,6
+244.0,Hip Hop,5
+244.0,Tech House,5
+244.0,Other Genre,3
+245.0,Chillwave,10
+245.0,Vintage Breaks,7
+245.0,Bass House,5
+245.0,R&B,5
+245.0,Blues,4
+245.0,Deep House,4
+245.0,Jazz,4
+245.0,Cinematic,3
+246.0,Other Genre,10
+246.0,Chinese Traditional,8
+246.0,Dubstep,8
+246.0,Hip Hop,5
+246.0,Cinematic,4
+246.0,Country,3
+247.0,Hip Hop,5
+247.0,Cinematic,3
+247.0,Pop,3
+248.0,Cinematic,3
+248.0,Indie,3
+248.0,Orchestral,3
+248.0,Rock,3
+249.0,Chinese Traditional,4
+249.0,Orchestral,4
+249.0,Urban,4
+249.0,Vintage Breaks,4
+249.0,World,4
+249.0,Dubstep,3
+249.0,Experimental,3
+249.0,Funk,3
+249.0,Indie,3
+249.0,Pop,3
+249.0,Hip Hop,2

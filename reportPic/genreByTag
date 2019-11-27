@@ -1,0 +1,1878 @@
+genre,tag_name,total
+,Bass,1
+,Ambience,1
+,Acoustic,1
+,Arp,1
+,Brass->Stabs,1
+,String->Ensemble,1
+Bass House,Electric,33
+Bass House,Guitar,18
+Bass House,Bass,15
+Bass House,Drums,12
+Bass House,String->Staccato,3
+Bass House,Brass->Stabs,2
+Bass House,Percussion->Grooves,2
+Bass House,Synth->Fills,2
+Bass House,Synth->Chords,2
+Bass House,String->Melody,2
+Bass House,Brass&Woodwinds,1
+Bass House,Noise,1
+Bass House,SpokenWord,1
+Bass House,VoxCuts,1
+Bass House,Household,1
+Bass House,Human,1
+Bass House,ScienceFiction,1
+Bass House,Pulse,1
+Bass House,Grooves,1
+Bass House,Organ,1
+Bass House,Rhodes,1
+Bass House,Saxophone,1
+Bass House,Drums_Snaps,1
+Bass House,Vocals_Oohs&Aahs,1
+Bass House,CinematicFX_ScienceFiction,1
+Bass House,Guitar_Riffs,1
+Bass House,Bass_Sub,1
+Bass House,Percussion_Bells&Chimes,1
+Bass House,Percussion_Shakers,1
+Bass House,Keys_Synth,1
+Bass House,Brass&Woodwinds_Trumpet,1
+Bass House,A#,1
+Bass House,Dmin,1
+Bass House,Fmin,1
+Bass House,Amin,1
+Bass House,Key_Melody,1
+Bass House,String_Cello,1
+Bass House,String_Violin,1
+Bass House,FX->Impacts,1
+Bass House,Drums->Cymbals,1
+Bass House,Drums->DrumFills,1
+Bass House,Vocals->Acappellas,1
+Bass House,Vocals->Recorded,1
+Bass House,Vocals->Words&Phrases,1
+Bass House,Woodwind->Flute,1
+Bass House,CinematicFX->Warfare,1
+Bass House,CinematicFX->Human,1
+Bass House,CinematicFX->ScienceFiction,1
+Bass House,Human->Fight,1
+Bass House,Human->Gore,1
+Bass House,Guitar->Acoustic,1
+Bass House,Guitar->Leads,1
+Bass House,Guitar->Distorted,1
+Bass House,Guitar->Melody,1
+Bass House,Key->Wurlitzer,1
+Bass House,Key->Rhodes,1
+Bass House,Key->Stabs,1
+Bass House,Bass->Pulse,1
+Bass House,Bass->Synth,1
+Bass House,Synth->Pads,1
+Bass House,Synth->Atmospheres,1
+Bass House,Synth->Stabs,1
+Bass House,Synth->Plucks,1
+Bass House,Synth->Arp,1
+Bass House,String->Cello,1
+Bass House,String->Violin,1
+Bass House,String->Orchestral,1
+Bass House,String->Bass,1
+Bass House,String->Synth,1
+Bass House,t,1
+Bass House,h,1
+Blues,Electric,24
+Blues,Drums,19
+Blues,Guitar,13
+Blues,Bass,11
+Blues,Drums->Toms,3
+Blues,Synth->Stabs,3
+Blues,Rhythm,2
+Blues,Strings_Bass,2
+Blues,Vocals_Oohs&Aahs,2
+Blues,Percussion_Tambourines,2
+Blues,CinematicFX->Warfare,2
+Blues,CinematicFX->5.1Surround,2
+Blues,Key->Synth,2
+Blues,Brass->Ensemble,2
+Blues,Bass->Saw,2
+Blues,FX,1
+Blues,CinematicFX,1
+Blues,Melody,1
+Blues,Shouts,1
+Blues,Harmonies,1
+Blues,Human,1
+Blues,ScienceFiction,1
+Blues,BodySounds,1
+Blues,Chords,1
+Blues,Grooves,1
+Blues,PercussionLoops,1
+Blues,Plucks,1
+Blues,Strings_Ensemble,1
+Blues,Vocals_Vocoder,1
+Blues,Guitar_Clean,1
+Blues,Bass_Saw,1
+Blues,Bass_Acoustic,1
+Blues,Bass_Synth,1
+Blues,Percussion_PercussionLoops,1
+Blues,Synth_Fills,1
+Blues,Keys_Rhodes,1
+Blues,Brass&Woodwinds_Ensemble,1
+Blues,Dmin,1
+Blues,A#min,1
+Blues,Key_Rhodes,1
+Blues,Drums->Cymbals,1
+Blues,Drums->Snaps,1
+Blues,Drums->TonalOneShots,1
+Blues,Drums->Snares,1
+Blues,Vocals->Sampled,1
+Blues,Vocals->Recorded,1
+Blues,Vocals->Vocoder,1
+Blues,Vocals->Loops,1
+Blues,Vocals->VoxCuts,1
+Blues,Vocals->Whispers,1
+Blues,Vocals->Words&Phrases,1
+Blues,Woodwind->Harmonica,1
+Blues,Woodwind->Riffs,1
+Blues,Woodwind->Flute,1
+Blues,CinematicFX->Household,1
+Blues,CinematicFX->Human,1
+Blues,CinematicFX->ScienceFiction,1
+Blues,Human->Crowd,1
+Blues,Human->Movement,1
+Blues,Human->BodySounds,1
+Blues,Guitar->Acoustic,1
+Blues,Key->Piano,1
+Blues,Key->Organ,1
+Blues,Key->Rhodes,1
+Blues,Brass->Trumpet,1
+Blues,Brass->Riffs,1
+Blues,Bass->SampledBassSounds,1
+Blues,Bass->Pulse,1
+Blues,Bass->Sub,1
+Blues,Bass->Wobble,1
+Blues,Percussion->HandDrums,1
+Blues,Percussion->Grooves,1
+Blues,Percussion->Tambourines,1
+Blues,Percussion->Cowbells,1
+Blues,Synth->LeadLoops,1
+Blues,Synth->Pads,1
+Blues,Synth->Plucks,1
+Blues,String->Ensemble,1
+Blues,String->Cello,1
+Chillwave,Electric,32
+Chillwave,Bass,17
+Chillwave,Guitar,16
+Chillwave,Drums,10
+Chillwave,Guitar->Leads,3
+Chillwave,Woodwind->Harmonica,2
+Chillwave,CinematicFX->Household,2
+Chillwave,Key->Piano,2
+Chillwave,Key->Stabs,2
+Chillwave,Synth->Stabs,2
+Chillwave,Strings,1
+Chillwave,Staccato,1
+Chillwave,Loops,1
+Chillwave,Whispers,1
+Chillwave,Fight,1
+Chillwave,Distorted,1
+Chillwave,Clean,1
+Chillwave,Analog,1
+Chillwave,HandDrums,1
+Chillwave,Piano,1
+Chillwave,Strings_Synth,1
+Chillwave,FX_Noise,1
+Chillwave,Drums_Claps,1
+Chillwave,CinematicFX_Ambience,1
+Chillwave,Guitar_Acoustic,1
+Chillwave,Bass_Distorted,1
+Chillwave,Bass_Acid,1
+Chillwave,Bass_Pulse,1
+Chillwave,Bass_Wobble,1
+Chillwave,Synth_Chords,1
+Chillwave,Keys_Stabs,1
+Chillwave,Brass&Woodwinds_Trumpet,1
+Chillwave,C,1
+Chillwave,G,1
+Chillwave,Gmin,1
+Chillwave,Amin,1
+Chillwave,D#min,1
+Chillwave,Key_Piano,1
+Chillwave,String_Violin,1
+Chillwave,FX->Transition,1
+Chillwave,Drums->Cymbals,1
+Chillwave,Drums->DrumFills,1
+Chillwave,Drums->Claps,1
+Chillwave,Drums->Loops,1
+Chillwave,Drums->Kicks,1
+Chillwave,Vocals->Sampled,1
+Chillwave,Vocals->Acappellas,1
+Chillwave,Vocals->Dialogue,1
+Chillwave,Vocals->Oohs&Aahs,1
+Chillwave,Vocals->Vocoder,1
+Chillwave,Vocals->Loops,1
+Chillwave,Vocals->VoxCuts,1
+Chillwave,Vocals->Shouts,1
+Chillwave,Woodwind->Riffs,1
+Chillwave,CinematicFX->Transportation,1
+Chillwave,CinematicFX->Machines&Devices,1
+Chillwave,Human->Fight,1
+Chillwave,Human->Crowd,1
+Chillwave,Human->Footsteps,1
+Chillwave,Human->BodySounds,1
+Chillwave,Guitar->Clean,1
+Chillwave,Guitar->Rhythm,1
+Chillwave,Key->Clavinet,1
+Chillwave,Key->Wurlitzer,1
+Chillwave,Key->Synth,1
+Chillwave,Key->Chords,1
+Chillwave,Brass->Ensemble,1
+Chillwave,Brass->Trombone,1
+Chillwave,Brass->Stabs,1
+Chillwave,Brass->Riffs,1
+Chillwave,Bass->Sub,1
+Chillwave,Bass->Wobble,1
+Chillwave,Bass->Synth,1
+Chillwave,Percussion->Grooves,1
+Chillwave,Synth->LeadLoops,1
+Chillwave,Synth->MelodyLoops,1
+Chillwave,Synth->Arp,1
+Chillwave,Synth->Chords,1
+Chillwave,String->Ensemble,1
+Chillwave,String->Bass,1
+Chillwave,String->Staccato,1
+Chillwave,String->Synth,1
+Chillwave,String->Viola,1
+Chinese Traditional,Electric,28
+Chinese Traditional,Bass,19
+Chinese Traditional,Drums,13
+Chinese Traditional,Guitar,8
+Chinese Traditional,Drums->Loops,2
+Chinese Traditional,Vocals->Words&Phrases,2
+Chinese Traditional,Human->Fight,2
+Chinese Traditional,Key->Clavinet,2
+Chinese Traditional,Key->Synth,2
+Chinese Traditional,Key->Stabs,2
+Chinese Traditional,Bass->Wobble,2
+Chinese Traditional,Synth->FX,2
+Chinese Traditional,Percussion,1
+Chinese Traditional,Melody,1
+Chinese Traditional,Textures,1
+Chinese Traditional,Claps,1
+Chinese Traditional,Transportation,1
+Chinese Traditional,5.1Surround,1
+Chinese Traditional,Rhythm,1
+Chinese Traditional,Saw,1
+Chinese Traditional,Grooves,1
+Chinese Traditional,Clavinet,1
+Chinese Traditional,Flute,1
+Chinese Traditional,Drums_Snaps,1
+Chinese Traditional,CinematicFX_5.1Surround,1
+Chinese Traditional,Guitar_Acoustic,1
+Chinese Traditional,Guitar_Distorted,1
+Chinese Traditional,Guitar_Riffs,1
+Chinese Traditional,Percussion_Grooves,1
+Chinese Traditional,Keys_Rhodes,1
+Chinese Traditional,F,1
+Chinese Traditional,Cmin,1
+Chinese Traditional,Key_Melody,1
+Chinese Traditional,FX->Noise,1
+Chinese Traditional,Drums->DrumFills,1
+Chinese Traditional,Drums->Snares,1
+Chinese Traditional,Vocals->Sampled,1
+Chinese Traditional,Vocals->Dialogue,1
+Chinese Traditional,Vocals->SpokenWord,1
+Chinese Traditional,Vocals->Vocoder,1
+Chinese Traditional,Vocals->Loops,1
+Chinese Traditional,CinematicFX->5.1Surround,1
+Chinese Traditional,CinematicFX->Household,1
+Chinese Traditional,Human->BodySounds,1
+Chinese Traditional,Guitar->Synth,1
+Chinese Traditional,Guitar->Riffs,1
+Chinese Traditional,Brass->Ensemble,1
+Chinese Traditional,Brass->Stabs,1
+Chinese Traditional,Bass->SampledBassSounds,1
+Chinese Traditional,Bass->Acid,1
+Chinese Traditional,Bass->Sub,1
+Chinese Traditional,Percussion->HandDrums,1
+Chinese Traditional,Percussion->Cowbells,1
+Chinese Traditional,Synth->Textures,1
+Chinese Traditional,Synth->Plucks,1
+Chinese Traditional,String->Staccato,1
+Chinese Traditional,String->Synth,1
+Chinese Traditional,String->Viola,1
+Chinese Traditional,S,1
+Cinematic,Electric,35
+Cinematic,Drums,22
+Cinematic,Bass,19
+Cinematic,Guitar,16
+Cinematic,CinematicFX->Animals,3
+Cinematic,Fills,2
+Cinematic,Human->Gore,2
+Cinematic,Key->Wurlitzer,2
+Cinematic,Brass->Trombone,2
+Cinematic,Bass->Analog,2
+Cinematic,Bass->Acid,2
+Cinematic,Synth->MelodyLoops,2
+Cinematic,Synth->Pads,2
+Cinematic,r,2
+Cinematic,FX,1
+Cinematic,Cello,1
+Cinematic,Violin,1
+Cinematic,Impacts,1
+Cinematic,Sampled,1
+Cinematic,Words&Phrases,1
+Cinematic,Fight,1
+Cinematic,Analog,1
+Cinematic,MelodyLoops,1
+Cinematic,Atmospheres,1
+Cinematic,Organ,1
+Cinematic,Strings_Melody,1
+Cinematic,Drums_Loops,1
+Cinematic,Drums_Kicks,1
+Cinematic,Vocals_VoxCuts,1
+Cinematic,Vocals_Words&Phrases,1
+Cinematic,Guitar_Chords,1
+Cinematic,Bass_Distorted,1
+Cinematic,Bass_Pulse,1
+Cinematic,Percussion_HandDrums,1
+Cinematic,Percussion_Tambourines,1
+Cinematic,Percussion_Bells&Chimes,1
+Cinematic,Synth_LeadLoops,1
+Cinematic,Synth_Stabs,1
+Cinematic,C,1
+Cinematic,F#,1
+Cinematic,Key_Melody,1
+Cinematic,Key_Synth,1
+Cinematic,FX->Noise,1
+Cinematic,Drums->DrumFills,1
+Cinematic,Drums->Loops,1
+Cinematic,Drums->Snares,1
+Cinematic,Vocals->Sampled,1
+Cinematic,Vocals->Acappellas,1
+Cinematic,Vocals->Dialogue,1
+Cinematic,Vocals->SpokenWord,1
+Cinematic,Vocals->VoxCuts,1
+Cinematic,Woodwind->Harmonica,1
+Cinematic,Woodwind->Stabs,1
+Cinematic,Woodwind->Riffs,1
+Cinematic,Woodwind->Flute,1
+Cinematic,CinematicFX->Household,1
+Cinematic,CinematicFX->Foley,1
+Cinematic,Human->Crowd,1
+Cinematic,Human->Footsteps,1
+Cinematic,Human->BodySounds,1
+Cinematic,Guitar->Acoustic,1
+Cinematic,Guitar->Riffs,1
+Cinematic,Key->Clavinet,1
+Cinematic,Key->Piano,1
+Cinematic,Key->Stabs,1
+Cinematic,Brass->Ensemble,1
+Cinematic,Brass->Trumpet,1
+Cinematic,Brass->Saxophone,1
+Cinematic,Brass->Stabs,1
+Cinematic,Brass->Riffs,1
+Cinematic,Bass->Saw,1
+Cinematic,Bass->Pulse,1
+Cinematic,Bass->Wobble,1
+Cinematic,Bass->Electric,1
+Cinematic,Percussion->HandDrums,1
+Cinematic,Percussion->Grooves,1
+Cinematic,Percussion->Woodblock,1
+Cinematic,Percussion->Shakers,1
+Cinematic,Synth->FX,1
+Cinematic,Synth->Atmospheres,1
+Cinematic,Synth->Stabs,1
+Cinematic,Synth->Arp,1
+Cinematic,Synth->Chords,1
+Cinematic,String->Violin,1
+Cinematic,String->Melody,1
+Cinematic,String->Synth,1
+Cinematic,V,1
+Cinematic,c,1
+Cinematic,t,1
+Cinematic,h,1
+Country,Electric,21
+Country,Drums,13
+Country,Guitar,10
+Country,Bass,10
+Country,Bass->Sub,3
+Country,Vocals->SpokenWord,2
+Country,CinematicFX->Transportation,2
+Country,Guitar->Rhythm,2
+Country,String->Ensemble,2
+Country,Strings,1
+Country,Cymbals,1
+Country,Snares,1
+Country,Acappellas,1
+Country,Analog,1
+Country,Saw,1
+Country,Pulse,1
+Country,Wobble,1
+Country,Harmonica,1
+Country,Strings_Ensemble,1
+Country,Strings_Orchestral,1
+Country,Drums_Loops,1
+Country,Vocals_Dialogue,1
+Country,Vocals_VoxCuts,1
+Country,CinematicFX_Transportation,1
+Country,Guitar_Melody,1
+Country,Synth_Arp,1
+Country,Synth_Chords,1
+Country,Keys_Stabs,1
+Country,Brass&Woodwinds_Harmonica,1
+Country,Brass&Woodwinds_Riffs,1
+Country,Cmin,1
+Country,Key_Organ,1
+Country,Key_Stabs,1
+Country,String_Ensemble,1
+Country,String_Orchestral,1
+Country,FX->Noise,1
+Country,Drums->Snaps,1
+Country,Drums->Kicks,1
+Country,Vocals->Acappellas,1
+Country,Vocals->Harmonies,1
+Country,Woodwind->Flute,1
+Country,CinematicFX->Animals,1
+Country,CinematicFX->Ambience,1
+Country,CinematicFX->ScienceFiction,1
+Country,Human->Footsteps,1
+Country,Guitar->Acoustic,1
+Country,Guitar->Leads,1
+Country,Key->Melody,1
+Country,Key->Rhodes,1
+Country,Brass->Saxophone,1
+Country,Brass->Stabs,1
+Country,Bass->Analog,1
+Country,Bass->Acoustic,1
+Country,Bass->SampledBassSounds,1
+Country,Bass->Distorted,1
+Country,Bass->Synth,1
+Country,Percussion->Grooves,1
+Country,Percussion->Woodblock,1
+Country,Synth->Textures,1
+Country,Synth->MelodyLoops,1
+Country,String->Violin,1
+Deep House,Electric,30
+Deep House,Bass,19
+Deep House,Drums,13
+Deep House,Guitar,11
+Deep House,CinematicFX->Animals,3
+Deep House,Vocals->VoxCuts,2
+Deep House,CinematicFX->ScienceFiction,2
+Deep House,Key->Rhodes,2
+Deep House,FX,1
+Deep House,Viola,1
+Deep House,Textures,1
+Deep House,Cymbals,1
+Deep House,Sampled,1
+Deep House,Shouts,1
+Deep House,Transportation,1
+Deep House,ScienceFiction,1
+Deep House,Fight,1
+Deep House,Acoustic,1
+Deep House,Cowbells,1
+Deep House,LeadLoops,1
+Deep House,Organ,1
+Deep House,FX_Transition,1
+Deep House,FX_Impacts,1
+Deep House,Guitar_Clean,1
+Deep House,Bass_SampledBassSounds,1
+Deep House,Bass_Wobble,1
+Deep House,Bass_Electric,1
+Deep House,Synth_Textures,1
+Deep House,Synth_Chords,1
+Deep House,Keys_Wurlitzer,1
+Deep House,Keys_Chords,1
+Deep House,Amin,1
+Deep House,Key_Clavinet,1
+Deep House,FX->Textures,1
+Deep House,Drums->TonalOneShots,1
+Deep House,Drums->Toms,1
+Deep House,Drums->Kicks,1
+Deep House,Vocals->Acappellas,1
+Deep House,Vocals->Dialogue,1
+Deep House,Vocals->Oohs&Aahs,1
+Deep House,Vocals->Loops,1
+Deep House,Vocals->Words&Phrases,1
+Deep House,Woodwind->Ensemble,1
+Deep House,Woodwind->Stabs,1
+Deep House,CinematicFX->Warfare,1
+Deep House,CinematicFX->Foley,1
+Deep House,Human->Movement,1
+Deep House,Guitar->Distorted,1
+Deep House,Guitar->Synth,1
+Deep House,Guitar->Rhythm,1
+Deep House,Guitar->Chords,1
+Deep House,Key->Organ,1
+Deep House,Key->Melody,1
+Deep House,Key->Synth,1
+Deep House,Key->Stabs,1
+Deep House,Brass->Trumpet,1
+Deep House,Brass->Riffs,1
+Deep House,Bass->Acoustic,1
+Deep House,Bass->Synth,1
+Deep House,Percussion->Cowbells,1
+Deep House,Percussion->Shakers,1
+Deep House,Synth->Stabs,1
+Deep House,Synth->Arp,1
+Deep House,String->Synth,1
+Deep House,d,1
+Dubstep,Electric,16
+Dubstep,Drums,12
+Dubstep,Bass,10
+Dubstep,Guitar,6
+Dubstep,Bass->Distorted,4
+Dubstep,Woodwind->Riffs,2
+Dubstep,Guitar->Leads,2
+Dubstep,Percussion->Shakers,2
+Dubstep,Vocals,1
+Dubstep,Violin,1
+Dubstep,Textures,1
+Dubstep,Impacts,1
+Dubstep,Dialogue,1
+Dubstep,Footsteps,1
+Dubstep,Acoustic,1
+Dubstep,Pads,1
+Dubstep,Organ,1
+Dubstep,Flute,1
+Dubstep,Strings_Ensemble,1
+Dubstep,CinematicFX_Machines&Devices,1
+Dubstep,CinematicFX_Household,1
+Dubstep,Human_Fight,1
+Dubstep,Synth_LeadLoops,1
+Dubstep,Dmin,1
+Dubstep,Fmin,1
+Dubstep,FX->Textures,1
+Dubstep,Drums->DrumFills,1
+Dubstep,Vocals->Recorded,1
+Dubstep,Vocals->SpokenWord,1
+Dubstep,Vocals->Vocoder,1
+Dubstep,Vocals->Loops,1
+Dubstep,Vocals->VoxCuts,1
+Dubstep,Vocals->Shouts,1
+Dubstep,CinematicFX->Transportation,1
+Dubstep,CinematicFX->Machines&Devices,1
+Dubstep,Key->Piano,1
+Dubstep,Key->Wurlitzer,1
+Dubstep,Key->Synth,1
+Dubstep,Key->Stabs,1
+Dubstep,Brass->Saxophone,1
+Dubstep,Brass->Stabs,1
+Dubstep,Bass->Acid,1
+Dubstep,Bass->Pulse,1
+Dubstep,Bass->Wobble,1
+Dubstep,Bass->Synth,1
+Dubstep,Percussion->HandDrums,1
+Dubstep,Synth->FX,1
+Dubstep,Synth->Atmospheres,1
+Dubstep,Synth->Stabs,1
+Dubstep,Synth->Chords,1
+Dubstep,String->Melody,1
+Dubstep,String->Viola,1
+Dubstep,m,1
+Dubstep,V,1
+Dubstep,l,1
+Electro House,Electric,35
+Electro House,Bass,21
+Electro House,Guitar,15
+Electro House,Drums,14
+Electro House,Percussion->Cowbells,4
+Electro House,Drums->TonalOneShots,3
+Electro House,Vocals->Sampled,3
+Electro House,Brass->Trombone,3
+Electro House,Percussion->Woodblock,3
+Electro House,VoxCuts,2
+Electro House,Vocals->Dialogue,2
+Electro House,Vocals->VoxCuts,2
+Electro House,Vocals->Words&Phrases,2
+Electro House,Woodwind->Ensemble,2
+Electro House,Woodwind->Stabs,2
+Electro House,CinematicFX->Human,2
+Electro House,Key->Chords,2
+Electro House,Bass->Distorted,2
+Electro House,Bass->Wobble,2
+Electro House,Synth->Stabs,2
+Electro House,String->Ensemble,2
+Electro House,Vocals,1
+Electro House,Percussion,1
+Electro House,Ensemble,1
+Electro House,Impacts,1
+Electro House,TonalOneShots,1
+Electro House,Sampled,1
+Electro House,Animals,1
+Electro House,Gore,1
+Electro House,Footsteps,1
+Electro House,Leads,1
+Electro House,Chords,1
+Electro House,Tambourines,1
+Electro House,Arp,1
+Electro House,Drums_DrumFills,1
+Electro House,CinematicFX_Warfare,1
+Electro House,CinematicFX_Foley,1
+Electro House,Guitar_Acoustic,1
+Electro House,Percussion_PercussionLoops,1
+Electro House,Synth_Textures,1
+Electro House,D,1
+Electro House,B,1
+Electro House,Amin,1
+Electro House,A#min,1
+Electro House,String_Cello,1
+Electro House,FX->Noise,1
+Electro House,Drums->Snaps,1
+Electro House,Drums->Toms,1
+Electro House,Vocals->Loops,1
+Electro House,Vocals->Whispers,1
+Electro House,Vocals->Shouts,1
+Electro House,Vocals->Harmonies,1
+Electro House,Woodwind->Harmonica,1
+Electro House,CinematicFX->Transportation,1
+Electro House,CinematicFX->Machines&Devices,1
+Electro House,CinematicFX->Ambience,1
+Electro House,CinematicFX->ScienceFiction,1
+Electro House,Human->Gore,1
+Electro House,Human->Crowd,1
+Electro House,Guitar->Electric,1
+Electro House,Key->Clavinet,1
+Electro House,Key->Organ,1
+Electro House,Key->Rhodes,1
+Electro House,Brass->Ensemble,1
+Electro House,Brass->Saxophone,1
+Electro House,Brass->Stabs,1
+Electro House,Bass->Acoustic,1
+Electro House,Bass->Acid,1
+Electro House,Bass->Sub,1
+Electro House,Percussion->Tambourines,1
+Electro House,Synth->FX,1
+Electro House,Synth->Fills,1
+Electro House,Synth->Plucks,1
+Electro House,String->Melody,1
+Electro House,String->Orchestral,1
+Electro House,String->Viola,1
+Electro House,s,1
+Electro House,l,1
+Electro House,t,1
+Electro House,P,1
+Eletronic,Electric,29
+Eletronic,Guitar,15
+Eletronic,Bass,14
+Eletronic,Drums,12
+Eletronic,FX,2
+Eletronic,SampledBassSounds,2
+Eletronic,FX_Noise,2
+Eletronic,CinematicFX_Warfare,2
+Eletronic,FX->Textures,2
+Eletronic,Vocals->SpokenWord,2
+Eletronic,Guitar->Distorted,2
+Eletronic,Guitar->Melody,2
+Eletronic,Percussion,1
+Eletronic,Kicks,1
+Eletronic,VoxCuts,1
+Eletronic,Whispers,1
+Eletronic,Machines&Devices,1
+Eletronic,Human,1
+Eletronic,Gore,1
+Eletronic,Piano,1
+Eletronic,Strings_Orchestral,1
+Eletronic,Drums_TonalOneShots,1
+Eletronic,Drums_Loops,1
+Eletronic,Vocals_Harmonies,1
+Eletronic,Human_Fight,1
+Eletronic,Guitar_Clean,1
+Eletronic,Bass_Synth,1
+Eletronic,Synth_Analog,1
+Eletronic,Synth_MelodyLoops,1
+Eletronic,Synth_Stabs,1
+Eletronic,Keys_Rhodes,1
+Eletronic,Brass&Woodwinds_Saxophone,1
+Eletronic,Amin,1
+Eletronic,Key_Synth,1
+Eletronic,FX->Impacts,1
+Eletronic,FX->Noise,1
+Eletronic,Drums->Cymbals,1
+Eletronic,Drums->DrumFills,1
+Eletronic,Drums->Snaps,1
+Eletronic,Drums->Loops,1
+Eletronic,Drums->Kicks,1
+Eletronic,Vocals->Acappellas,1
+Eletronic,Vocals->Oohs&Aahs,1
+Eletronic,Vocals->Whispers,1
+Eletronic,Vocals->Words&Phrases,1
+Eletronic,Woodwind->Riffs,1
+Eletronic,CinematicFX->Human,1
+Eletronic,CinematicFX->ScienceFiction,1
+Eletronic,CinematicFX->Foley,1
+Eletronic,Human->Fight,1
+Eletronic,Human->Crowd,1
+Eletronic,Human->BodySounds,1
+Eletronic,Guitar->Acoustic,1
+Eletronic,Guitar->Rhythm,1
+Eletronic,Guitar->Electric,1
+Eletronic,Key->Clavinet,1
+Eletronic,Key->Wurlitzer,1
+Eletronic,Key->Rhodes,1
+Eletronic,Brass->Saxophone,1
+Eletronic,Brass->Stabs,1
+Eletronic,Brass->Riffs,1
+Eletronic,Bass->SampledBassSounds,1
+Eletronic,Bass->Distorted,1
+Eletronic,Bass->Sub,1
+Eletronic,Bass->Synth,1
+Eletronic,Percussion->Tambourines,1
+Eletronic,Percussion->Cowbells,1
+Eletronic,Synth->Chords,1
+Eletronic,String->Ensemble,1
+Eletronic,String->Melody,1
+Eletronic,String->Viola,1
+Eletronic,l,1
+Eletronic,W,1
+Eletronic,w,1
+Eletronic,h,1
+Experimental,Electric,35
+Experimental,Bass,19
+Experimental,Guitar,15
+Experimental,Drums,10
+Experimental,FX->Transition,2
+Experimental,Vocals->Acappellas,2
+Experimental,Vocals->Oohs&Aahs,2
+Experimental,Guitar->Acoustic,2
+Experimental,Brass->Saxophone,2
+Experimental,String->Bass,2
+Experimental,Synth,1
+Experimental,Ensemble,1
+Experimental,Orchestral,1
+Experimental,Staccato,1
+Experimental,Acappellas,1
+Experimental,5.1Surround,1
+Experimental,Distorted,1
+Experimental,Chords,1
+Experimental,Acid,1
+Experimental,Grooves,1
+Experimental,Piano,1
+Experimental,Harmonica,1
+Experimental,Strings_Bass,1
+Experimental,FX_Impacts,1
+Experimental,CinematicFX_5.1Surround,1
+Experimental,CinematicFX_Household,1
+Experimental,Human_BodySounds,1
+Experimental,Guitar_Melody,1
+Experimental,Guitar_Chords,1
+Experimental,Bass_Sub,1
+Experimental,Synth_Plucks,1
+Experimental,Synth_Chords,1
+Experimental,Keys_Organ,1
+Experimental,Keys_Chords,1
+Experimental,C,1
+Experimental,B,1
+Experimental,A#,1
+Experimental,String_Cello,1
+Experimental,Drums->Cymbals,1
+Experimental,Drums->DrumFills,1
+Experimental,Drums->Snaps,1
+Experimental,Drums->TonalOneShots,1
+Experimental,Vocals->Loops,1
+Experimental,Vocals->Whispers,1
+Experimental,Vocals->Words&Phrases,1
+Experimental,Woodwind->Stabs,1
+Experimental,CinematicFX->Transportation,1
+Experimental,CinematicFX->Warfare,1
+Experimental,CinematicFX->Machines&Devices,1
+Experimental,CinematicFX->Foley,1
+Experimental,Human->Gore,1
+Experimental,Guitar->Clean,1
+Experimental,Guitar->Synth,1
+Experimental,Key->Organ,1
+Experimental,Key->Stabs,1
+Experimental,Key->Chords,1
+Experimental,Bass->Analog,1
+Experimental,Bass->Distorted,1
+Experimental,Bass->Synth,1
+Experimental,Percussion->HandDrums,1
+Experimental,Percussion->Tambourines,1
+Experimental,Synth->Stabs,1
+Experimental,Synth->Plucks,1
+Experimental,Synth->Arp,1
+Experimental,Synth->Chords,1
+Experimental,String->Cello,1
+Experimental,String->Violin,1
+Experimental,String->Staccato,1
+Experimental,String->Viola,1
+Experimental,c,1
+Experimental,y,1
+Experimental,g,1
+Funk,Electric,22
+Funk,Drums,15
+Funk,Bass,13
+Funk,Guitar,9
+Funk,FX->Noise,2
+Funk,Drums->Claps,2
+Funk,Human->Gore,2
+Funk,Key->Clavinet,2
+Funk,Brass->Riffs,2
+Funk,Synth->LeadLoops,2
+Funk,String->Viola,2
+Funk,Percussion,1
+Funk,Synth,1
+Funk,Melody,1
+Funk,Textures,1
+Funk,Impacts,1
+Funk,Whispers,1
+Funk,Riffs,1
+Funk,Tambourines,1
+Funk,LeadLoops,1
+Funk,Strings_Synth,1
+Funk,Vocals_Acappellas,1
+Funk,Vocals_Oohs&Aahs,1
+Funk,CinematicFX_Animals,1
+Funk,CinematicFX_Ambience,1
+Funk,CinematicFX_Foley,1
+Funk,Guitar_Acoustic,1
+Funk,Guitar_Clean,1
+Funk,Bass_Sub,1
+Funk,Synth_Textures,1
+Funk,Synth_Arp,1
+Funk,Keys_Clavinet,1
+Funk,F#,1
+Funk,Bmin,1
+Funk,Key_Clavinet,1
+Funk,Key_Rhodes,1
+Funk,String_Cello,1
+Funk,String_Violin,1
+Funk,FX->Impacts,1
+Funk,Vocals->Loops,1
+Funk,Vocals->Whispers,1
+Funk,CinematicFX->Animals,1
+Funk,CinematicFX->Household,1
+Funk,Guitar->Rhythm,1
+Funk,Guitar->Riffs,1
+Funk,Guitar->Chords,1
+Funk,Key->Piano,1
+Funk,Brass->Saxophone,1
+Funk,Bass->SampledBassSounds,1
+Funk,Bass->Pulse,1
+Funk,Bass->Sub,1
+Funk,Bass->Synth,1
+Funk,Bass->Electric,1
+Funk,Percussion->Woodblock,1
+Funk,Percussion->Bells&Chimes,1
+Funk,Synth->Analog,1
+Funk,Synth->Textures,1
+Funk,Synth->FX,1
+Funk,Synth->Plucks,1
+Funk,String->Staccato,1
+Funk,c,1
+Funk,d,1
+Funk,y,1
+Future Bass,Electric,26
+Future Bass,Drums,15
+Future Bass,Guitar,15
+Future Bass,Bass,11
+Future Bass,FX->Textures,2
+Future Bass,Key->Synth,2
+Future Bass,Bass->Distorted,2
+Future Bass,Noise,1
+Future Bass,Chords,1
+Future Bass,Pads,1
+Future Bass,Organ,1
+Future Bass,Strings_Staccato,1
+Future Bass,FX_Impacts,1
+Future Bass,Drums_Snaps,1
+Future Bass,Drums_Toms,1
+Future Bass,Vocals_Words&Phrases,1
+Future Bass,CinematicFX_Human,1
+Future Bass,Guitar_Rhythm,1
+Future Bass,Guitar_Riffs,1
+Future Bass,Bass_SampledBassSounds,1
+Future Bass,Bass_Sub,1
+Future Bass,Synth_Textures,1
+Future Bass,Synth_MelodyLoops,1
+Future Bass,Synth_Stabs,1
+Future Bass,Synth_Arp,1
+Future Bass,Keys_Clavinet,1
+Future Bass,Brass&Woodwinds_Trumpet,1
+Future Bass,Bmin,1
+Future Bass,Key_Melody,1
+Future Bass,String_Orchestral,1
+Future Bass,FX->Impacts,1
+Future Bass,FX->Noise,1
+Future Bass,Drums->Snaps,1
+Future Bass,Vocals->Acappellas,1
+Future Bass,Vocals->SpokenWord,1
+Future Bass,Woodwind->Stabs,1
+Future Bass,Woodwind->Flute,1
+Future Bass,Human->Fight,1
+Future Bass,Human->Crowd,1
+Future Bass,Human->Footsteps,1
+Future Bass,Guitar->Melody,1
+Future Bass,Guitar->Clean,1
+Future Bass,Guitar->Synth,1
+Future Bass,Guitar->Rhythm,1
+Future Bass,Guitar->Riffs,1
+Future Bass,Key->Clavinet,1
+Future Bass,Key->Piano,1
+Future Bass,Key->Melody,1
+Future Bass,Bass->Saw,1
+Future Bass,Bass->Sub,1
+Future Bass,Bass->Wobble,1
+Future Bass,Percussion->HandDrums,1
+Future Bass,Percussion->Tambourines,1
+Future Bass,Synth->MelodyLoops,1
+Future Bass,W,1
+Hip Hop,Electric,20
+Hip Hop,Drums,18
+Hip Hop,Guitar,14
+Hip Hop,Bass,6
+Hip Hop,Organ,2
+Hip Hop,Drums->TonalOneShots,2
+Hip Hop,Vocals->SpokenWord,2
+Hip Hop,Woodwind->Ensemble,2
+Hip Hop,CinematicFX->Warfare,2
+Hip Hop,Human->Crowd,2
+Hip Hop,Brass->Ensemble,2
+Hip Hop,Brass->Trombone,2
+Hip Hop,Percussion->Woodblock,2
+Hip Hop,Synth->Pads,2
+Hip Hop,FX,1
+Hip Hop,Synth,1
+Hip Hop,Ensemble,1
+Hip Hop,Sampled,1
+Hip Hop,Oohs&Aahs,1
+Hip Hop,Harmonies,1
+Hip Hop,Crowd,1
+Hip Hop,Clean,1
+Hip Hop,Wobble,1
+Hip Hop,Shakers,1
+Hip Hop,Strings_Viola,1
+Hip Hop,Vocals_Shouts,1
+Hip Hop,CinematicFX_5.1Surround,1
+Hip Hop,CinematicFX_Machines&Devices,1
+Hip Hop,Bass_Pulse,1
+Hip Hop,Percussion_Bells&Chimes,1
+Hip Hop,Synth_Atmospheres,1
+Hip Hop,Keys_Rhodes,1
+Hip Hop,G,1
+Hip Hop,Emin,1
+Hip Hop,Gmin,1
+Hip Hop,A#min,1
+Hip Hop,Key_Rhodes,1
+Hip Hop,String_Cello,1
+Hip Hop,Drums->Claps,1
+Hip Hop,Drums->Snares,1
+Hip Hop,Vocals->Sampled,1
+Hip Hop,Vocals->Acappellas,1
+Hip Hop,Vocals->Oohs&Aahs,1
+Hip Hop,Vocals->Whispers,1
+Hip Hop,Vocals->Words&Phrases,1
+Hip Hop,Woodwind->Flute,1
+Hip Hop,CinematicFX->Animals,1
+Hip Hop,CinematicFX->Machines&Devices,1
+Hip Hop,CinematicFX->Ambience,1
+Hip Hop,CinematicFX->Household,1
+Hip Hop,CinematicFX->Human,1
+Hip Hop,CinematicFX->ScienceFiction,1
+Hip Hop,Human->Movement,1
+Hip Hop,Guitar->Synth,1
+Hip Hop,Guitar->Riffs,1
+Hip Hop,Key->Clavinet,1
+Hip Hop,Brass->Trumpet,1
+Hip Hop,Brass->Stabs,1
+Hip Hop,Brass->Riffs,1
+Hip Hop,Bass->Pulse,1
+Hip Hop,Bass->Electric,1
+Hip Hop,Percussion->PercussionLoops,1
+Hip Hop,Percussion->Bells&Chimes,1
+Hip Hop,Synth->Textures,1
+Hip Hop,Synth->Stabs,1
+Hip Hop,String->Bass,1
+Hip Hop,m,1
+Hip Hop,o,1
+Hip Hop,c,1
+Hip Hop,t,1
+House,Electric,19
+House,Drums,13
+House,Guitar,10
+House,Bass,9
+House,Guitar->Clean,3
+House,CinematicFX_Warfare,2
+House,Woodwind->Stabs,2
+House,Bass->Acoustic,2
+House,Synth->Textures,2
+House,String->Orchestral,2
+House,Synth,1
+House,Violin,1
+House,BodySounds,1
+House,Shakers,1
+House,Atmospheres,1
+House,Plucks,1
+House,Strings_Orchestral,1
+House,Drums_TonalOneShots,1
+House,Vocals_Oohs&Aahs,1
+House,Guitar_Synth,1
+House,Percussion_Tambourines,1
+House,Percussion_Shakers,1
+House,Synth_Pads,1
+House,G,1
+House,String_Ensemble,1
+House,String_Violin,1
+House,FX->Noise,1
+House,Drums->Claps,1
+House,Drums->Snares,1
+House,Vocals->Oohs&Aahs,1
+House,Vocals->Vocoder,1
+House,Vocals->VoxCuts,1
+House,Woodwind->Flute,1
+House,CinematicFX->Transportation,1
+House,CinematicFX->5.1Surround,1
+House,CinematicFX->ScienceFiction,1
+House,Human->Fight,1
+House,Human->Movement,1
+House,Guitar->Acoustic,1
+House,Guitar->Rhythm,1
+House,Key->Piano,1
+House,Key->Organ,1
+House,Brass->Stabs,1
+House,Brass->Riffs,1
+House,Bass->Saw,1
+House,Percussion->Grooves,1
+House,Percussion->Shakers,1
+House,Synth->LeadLoops,1
+House,Synth->MelodyLoops,1
+House,Synth->Atmospheres,1
+House,String->Cello,1
+House,String->Bass,1
+House,m,1
+House,P,1
+Indie,Electric,35
+Indie,Guitar,19
+Indie,Bass,16
+Indie,Drums,12
+Indie,Key->Rhodes,3
+Indie,Keys,2
+Indie,FX_Impacts,2
+Indie,Drums_Loops,2
+Indie,Keys_Clavinet,2
+Indie,E,2
+Indie,FX->Transition,2
+Indie,Key->Clavinet,2
+Indie,Bass->Analog,2
+Indie,Synth->Analog,2
+Indie,Synth->FX,2
+Indie,Vocals,1
+Indie,Viola,1
+Indie,TonalOneShots,1
+Indie,Whispers,1
+Indie,Transportation,1
+Indie,ScienceFiction,1
+Indie,Fight,1
+Indie,Stabs,1
+Indie,Trombone,1
+Indie,Strings_Cello,1
+Indie,Drums_Toms,1
+Indie,Vocals_Vocoder,1
+Indie,CinematicFX_5.1Surround,1
+Indie,CinematicFX_ScienceFiction,1
+Indie,Bass_Saw,1
+Indie,Bass_Acoustic,1
+Indie,Bass_SampledBassSounds,1
+Indie,Bass_Pulse,1
+Indie,Synth_Pads,1
+Indie,Brass&Woodwinds_Trumpet,1
+Indie,D,1
+Indie,F,1
+Indie,Cmin,1
+Indie,Dmin,1
+Indie,Key_Piano,1
+Indie,String_Ensemble,1
+Indie,FX->Textures,1
+Indie,Drums->Cymbals,1
+Indie,Drums->TonalOneShots,1
+Indie,Vocals->Dialogue,1
+Indie,Vocals->VoxCuts,1
+Indie,Vocals->Whispers,1
+Indie,Woodwind->Ensemble,1
+Indie,Woodwind->Harmonica,1
+Indie,Woodwind->Stabs,1
+Indie,CinematicFX->Animals,1
+Indie,CinematicFX->Ambience,1
+Indie,CinematicFX->Human,1
+Indie,Human->Fight,1
+Indie,Human->Crowd,1
+Indie,Human->Footsteps,1
+Indie,Guitar->Acoustic,1
+Indie,Guitar->Distorted,1
+Indie,Guitar->Clean,1
+Indie,Guitar->Synth,1
+Indie,Guitar->Electric,1
+Indie,Key->Piano,1
+Indie,Key->Chords,1
+Indie,Bass->SampledBassSounds,1
+Indie,Bass->Distorted,1
+Indie,Bass->Pulse,1
+Indie,Bass->Sub,1
+Indie,Percussion->HandDrums,1
+Indie,Percussion->Shakers,1
+Indie,Synth->Fills,1
+Indie,Synth->Stabs,1
+Indie,Synth->Plucks,1
+Indie,Synth->Chords,1
+Indie,String->Cello,1
+Indie,String->Orchestral,1
+Indie,String->Viola,1
+Indie,o,1
+Jazz,Electric,24
+Jazz,Guitar,14
+Jazz,Bass,10
+Jazz,Drums,8
+Jazz,CinematicFX_Machines&Devices,2
+Jazz,Vocals->Vocoder,2
+Jazz,CinematicFX->ScienceFiction,2
+Jazz,Key->Piano,2
+Jazz,Synth->Arp,2
+Jazz,Toms,1
+Jazz,Vocoder,1
+Jazz,Animals,1
+Jazz,Cowbells,1
+Jazz,Strings_Viola,1
+Jazz,CinematicFX_Transportation,1
+Jazz,CinematicFX_Ambience,1
+Jazz,Guitar_Distorted,1
+Jazz,Guitar_Clean,1
+Jazz,Guitar_Synth,1
+Jazz,Bass_Distorted,1
+Jazz,Bass_Pulse,1
+Jazz,Percussion_Shakers,1
+Jazz,Synth_Fills,1
+Jazz,Keys_Rhodes,1
+Jazz,Brass&Woodwinds_Riffs,1
+Jazz,D#,1
+Jazz,C#min,1
+Jazz,Key_Clavinet,1
+Jazz,Drums->DrumFills,1
+Jazz,Vocals->Recorded,1
+Jazz,Vocals->Dialogue,1
+Jazz,Vocals->Oohs&Aahs,1
+Jazz,Woodwind->Ensemble,1
+Jazz,Woodwind->Stabs,1
+Jazz,CinematicFX->Warfare,1
+Jazz,CinematicFX->Animals,1
+Jazz,CinematicFX->Household,1
+Jazz,Human->Fight,1
+Jazz,Human->Footsteps,1
+Jazz,Guitar->Acoustic,1
+Jazz,Guitar->Electric,1
+Jazz,Guitar->Chords,1
+Jazz,Key->Synth,1
+Jazz,Brass->Trumpet,1
+Jazz,Brass->Saxophone,1
+Jazz,Brass->Stabs,1
+Jazz,Bass->SampledBassSounds,1
+Jazz,Percussion->HandDrums,1
+Jazz,Percussion->Woodblock,1
+Jazz,Percussion->Bells&Chimes,1
+Jazz,Synth->Analog,1
+Jazz,Synth->MelodyLoops,1
+Jazz,Synth->Fills,1
+Jazz,String->Ensemble,1
+Jazz,String->Melody,1
+Jazz,String->Synth,1
+Jazz,i,1
+Jazz,t,1
+Modern R&B,Electric,30
+Modern R&B,Drums,18
+Modern R&B,Guitar,16
+Modern R&B,Bass,12
+Modern R&B,Percussion->Tambourines,3
+Modern R&B,Guitar_Distorted,2
+Modern R&B,Brass&Woodwinds_Trumpet,2
+Modern R&B,Drums->TonalOneShots,2
+Modern R&B,Vocals->Dialogue,2
+Modern R&B,Vocals->Harmonies,2
+Modern R&B,CinematicFX->Foley,2
+Modern R&B,Guitar->Clean,2
+Modern R&B,Key->Melody,2
+Modern R&B,Key->Stabs,2
+Modern R&B,Synth->Textures,2
+Modern R&B,Strings,1
+Modern R&B,Vocals,1
+Modern R&B,CinematicFX,1
+Modern R&B,Loops,1
+Modern R&B,Acappellas,1
+Modern R&B,Dialogue,1
+Modern R&B,Whispers,1
+Modern R&B,5.1Surround,1
+Modern R&B,Human,1
+Modern R&B,Fight,1
+Modern R&B,SampledBassSounds,1
+Modern R&B,Stabs,1
+Modern R&B,Strings_Bass,1
+Modern R&B,FX_Transition,1
+Modern R&B,Drums_Loops,1
+Modern R&B,Drums_Snares,1
+Modern R&B,Vocals_Loops,1
+Modern R&B,Vocals_VoxCuts,1
+Modern R&B,Bass_Acoustic,1
+Modern R&B,Percussion_Bells&Chimes,1
+Modern R&B,Synth_Atmospheres,1
+Modern R&B,Synth_Fills,1
+Modern R&B,Keys_Stabs,1
+Modern R&B,B,1
+Modern R&B,Cmin,1
+Modern R&B,String,1
+Modern R&B,String_Ensemble,1
+Modern R&B,String_Synth,1
+Modern R&B,FX->Impacts,1
+Modern R&B,Drums->Snaps,1
+Modern R&B,Drums->Claps,1
+Modern R&B,Drums->Loops,1
+Modern R&B,Drums->Snares,1
+Modern R&B,Vocals->Recorded,1
+Modern R&B,Vocals->Oohs&Aahs,1
+Modern R&B,Vocals->SpokenWord,1
+Modern R&B,Vocals->Loops,1
+Modern R&B,Vocals->Whispers,1
+Modern R&B,Woodwind->Ensemble,1
+Modern R&B,Woodwind->Harmonica,1
+Modern R&B,Woodwind->Riffs,1
+Modern R&B,Woodwind->Flute,1
+Modern R&B,CinematicFX->Machines&Devices,1
+Modern R&B,CinematicFX->Ambience,1
+Modern R&B,CinematicFX->ScienceFiction,1
+Modern R&B,Guitar->Leads,1
+Modern R&B,Guitar->Synth,1
+Modern R&B,Guitar->Chords,1
+Modern R&B,Key->Clavinet,1
+Modern R&B,Key->Organ,1
+Modern R&B,Key->Wurlitzer,1
+Modern R&B,Brass->Trombone,1
+Modern R&B,Brass->Trumpet,1
+Modern R&B,Brass->Stabs,1
+Modern R&B,Bass->Acoustic,1
+Modern R&B,Bass->Acid,1
+Modern R&B,Percussion->Cowbells,1
+Modern R&B,Percussion->Bells&Chimes,1
+Modern R&B,Percussion->Shakers,1
+Modern R&B,Synth->Analog,1
+Modern R&B,Synth->LeadLoops,1
+Modern R&B,Synth->Chords,1
+Modern R&B,String->Melody,1
+Modern R&B,String->Orchestral,1
+Modern R&B,String->Bass,1
+Modern R&B,String->Staccato,1
+Modern R&B,w,1
+Modern R&B,n,1
+Modern R&B,y,1
+Orchestral,Electric,19
+Orchestral,Drums,10
+Orchestral,Bass,10
+Orchestral,Guitar,9
+Orchestral,Keys,1
+Orchestral,Sampled,1
+Orchestral,Whispers,1
+Orchestral,Plucks,1
+Orchestral,Arp,1
+Orchestral,Vocals_Whispers,1
+Orchestral,CinematicFX_5.1Surround,1
+Orchestral,Guitar_Acoustic,1
+Orchestral,Guitar_Rhythm,1
+Orchestral,Synth_Textures,1
+Orchestral,Synth_Fills,1
+Orchestral,Synth_Arp,1
+Orchestral,Key_Organ,1
+Orchestral,Key_Wurlitzer,1
+Orchestral,FX->Textures,1
+Orchestral,FX->Noise,1
+Orchestral,Vocals->Recorded,1
+Orchestral,Vocals->Dialogue,1
+Orchestral,Vocals->SpokenWord,1
+Orchestral,Vocals->Shouts,1
+Orchestral,CinematicFX->5.1Surround,1
+Orchestral,CinematicFX->Foley,1
+Orchestral,Human->Gore,1
+Orchestral,Human->BodySounds,1
+Orchestral,Guitar->Synth,1
+Orchestral,Key->Clavinet,1
+Orchestral,Key->Organ,1
+Orchestral,Key->Synth,1
+Orchestral,Key->Stabs,1
+Orchestral,Brass->Trombone,1
+Orchestral,Brass->Trumpet,1
+Orchestral,Brass->Saxophone,1
+Orchestral,Brass->Stabs,1
+Orchestral,Bass->Acid,1
+Orchestral,Percussion->Grooves,1
+Orchestral,Synth->FX,1
+Orchestral,Synth->Arp,1
+Orchestral,String->Ensemble,1
+Orchestral,String->Violin,1
+Orchestral,String->Synth,1
+Orchestral,String->Viola,1
+Orchestral,c,1
+Orchestral,l,1
+Other Genre,Electric,28
+Other Genre,Guitar,14
+Other Genre,Bass,13
+Other Genre,Drums,12
+Other Genre,Vocals->Dialogue,3
+Other Genre,Keys_Rhodes,2
+Other Genre,Woodwind->Ensemble,2
+Other Genre,Woodwind->Stabs,2
+Other Genre,Key->Clavinet,2
+Other Genre,Bass->Sub,2
+Other Genre,Percussion->Bells&Chimes,2
+Other Genre,Synth->LeadLoops,2
+Other Genre,Transition,1
+Other Genre,Dialogue,1
+Other Genre,Warfare,1
+Other Genre,BodySounds,1
+Other Genre,Wobble,1
+Other Genre,Pads,1
+Other Genre,Harmonica,1
+Other Genre,FX_Textures,1
+Other Genre,CinematicFX_Transportation,1
+Other Genre,Guitar_Rhythm,1
+Other Genre,Synth_Fills,1
+Other Genre,FX->Transition,1
+Other Genre,FX->Textures,1
+Other Genre,Drums->DrumFills,1
+Other Genre,Drums->Kicks,1
+Other Genre,Vocals->Sampled,1
+Other Genre,Vocals->Acappellas,1
+Other Genre,Vocals->SpokenWord,1
+Other Genre,Vocals->Loops,1
+Other Genre,Woodwind->Harmonica,1
+Other Genre,Woodwind->Flute,1
+Other Genre,CinematicFX->Warfare,1
+Other Genre,CinematicFX->5.1Surround,1
+Other Genre,CinematicFX->Human,1
+Other Genre,Guitar->Distorted,1
+Other Genre,Guitar->Melody,1
+Other Genre,Key->Piano,1
+Other Genre,Key->Melody,1
+Other Genre,Key->Wurlitzer,1
+Other Genre,Brass->Stabs,1
+Other Genre,Bass->Analog,1
+Other Genre,Bass->Saw,1
+Other Genre,Bass->SampledBassSounds,1
+Other Genre,Bass->Distorted,1
+Other Genre,Bass->Synth,1
+Other Genre,Percussion->HandDrums,1
+Other Genre,Percussion->Woodblock,1
+Other Genre,Synth->MelodyLoops,1
+Other Genre,String->Melody,1
+Other Genre,String->Bass,1
+Other Genre,u,1
+Other Genre,K,1
+Pop,Electric,28
+Pop,Drums,16
+Pop,Guitar,14
+Pop,Bass,14
+Pop,Woodwind->Stabs,5
+Pop,Cymbals,2
+Pop,Drums->Loops,2
+Pop,Human->Movement,2
+Pop,Human->BodySounds,2
+Pop,Key->Piano,2
+Pop,Key->Organ,2
+Pop,String->Violin,2
+Pop,String->Synth,2
+Pop,DrumFills,1
+Pop,Dialogue,1
+Pop,Ambience,1
+Pop,ScienceFiction,1
+Pop,Analog,1
+Pop,Sub,1
+Pop,Piano,1
+Pop,Strings_Staccato,1
+Pop,FX_Impacts,1
+Pop,Drums_Snares,1
+Pop,Guitar_Distorted,1
+Pop,Percussion_Bells&Chimes,1
+Pop,Synth_Atmospheres,1
+Pop,Synth_Plucks,1
+Pop,Keys_Wurlitzer,1
+Pop,A,1
+Pop,A#min,1
+Pop,String_Orchestral,1
+Pop,FX->Transition,1
+Pop,FX->Impacts,1
+Pop,FX->Noise,1
+Pop,Drums->DrumFills,1
+Pop,Vocals->Sampled,1
+Pop,Vocals->Words&Phrases,1
+Pop,Vocals->Harmonies,1
+Pop,Woodwind->Ensemble,1
+Pop,CinematicFX->Animals,1
+Pop,CinematicFX->Machines&Devices,1
+Pop,CinematicFX->Human,1
+Pop,Human->Fight,1
+Pop,Guitar->Acoustic,1
+Pop,Guitar->Leads,1
+Pop,Guitar->Electric,1
+Pop,Key->Synth,1
+Pop,Brass->Trombone,1
+Pop,Brass->Riffs,1
+Pop,Bass->Acoustic,1
+Pop,Bass->Wobble,1
+Pop,Percussion->Grooves,1
+Pop,Percussion->Woodblock,1
+Pop,Percussion->Shakers,1
+Pop,Synth->Textures,1
+Pop,Synth->LeadLoops,1
+Pop,Synth->Pads,1
+Pop,Synth->Fills,1
+Pop,String->Viola,1
+Pop,r,1
+Pop,S,1
+Pop,g,1
+R&B,Electric,40
+R&B,Bass,23
+R&B,Guitar,17
+R&B,Drums,13
+R&B,Percussion->Grooves,4
+R&B,Key_Organ,2
+R&B,Drums->DrumFills,2
+R&B,Drums->Snaps,2
+R&B,Vocals->Shouts,2
+R&B,CinematicFX->Animals,2
+R&B,Human->Movement,2
+R&B,Guitar->Electric,2
+R&B,Key->Wurlitzer,2
+R&B,Brass->Trumpet,2
+R&B,Brass->Stabs,2
+R&B,Percussion->PercussionLoops,2
+R&B,Percussion->Cowbells,2
+R&B,Synth->FX,2
+R&B,String->Ensemble,2
+R&B,String->Viola,2
+R&B,Toms,1
+R&B,Transportation,1
+R&B,PercussionLoops,1
+R&B,Saxophone,1
+R&B,Strings_Cello,1
+R&B,Strings_Bass,1
+R&B,Vocals_Sampled,1
+R&B,Vocals_SpokenWord,1
+R&B,Guitar_Distorted,1
+R&B,Bass_Acoustic,1
+R&B,Bass_Wobble,1
+R&B,Bass_Synth,1
+R&B,Bass_Electric,1
+R&B,Percussion_Grooves,1
+R&B,Keys_Melody,1
+R&B,G,1
+R&B,String_Staccato,1
+R&B,Drums->Loops,1
+R&B,Vocals->Sampled,1
+R&B,Vocals->Recorded,1
+R&B,Vocals->SpokenWord,1
+R&B,Woodwind->Ensemble,1
+R&B,Woodwind->Harmonica,1
+R&B,CinematicFX->5.1Surround,1
+R&B,Human->Fight,1
+R&B,Human->Crowd,1
+R&B,Guitar->Clean,1
+R&B,Guitar->Synth,1
+R&B,Key->Organ,1
+R&B,Key->Melody,1
+R&B,Key->Synth,1
+R&B,Bass->Saw,1
+R&B,Bass->Distorted,1
+R&B,Bass->Sub,1
+R&B,Bass->Synth,1
+R&B,Percussion->HandDrums,1
+R&B,Percussion->Shakers,1
+R&B,Synth->LeadLoops,1
+R&B,Synth->MelodyLoops,1
+R&B,Synth->Pads,1
+R&B,Synth->Atmospheres,1
+R&B,Synth->Fills,1
+R&B,Synth->Stabs,1
+R&B,Synth->Plucks,1
+R&B,String->Staccato,1
+R&B,o,1
+R&B,a,1
+Reggaeton Pop,Electric,32
+Reggaeton Pop,Guitar,16
+Reggaeton Pop,Bass,16
+Reggaeton Pop,Drums,5
+Reggaeton Pop,Synth->Atmospheres,3
+Reggaeton Pop,Drums->TonalOneShots,2
+Reggaeton Pop,Drums->Snares,2
+Reggaeton Pop,Vocals->Vocoder,2
+Reggaeton Pop,Human->BodySounds,2
+Reggaeton Pop,String->Melody,2
+Reggaeton Pop,Impacts,1
+Reggaeton Pop,Snaps,1
+Reggaeton Pop,Kicks,1
+Reggaeton Pop,SpokenWord,1
+Reggaeton Pop,Harmonies,1
+Reggaeton Pop,Acid,1
+Reggaeton Pop,Atmospheres,1
+Reggaeton Pop,Harmonica,1
+Reggaeton Pop,Strings_Bass,1
+Reggaeton Pop,Vocals_Dialogue,1
+Reggaeton Pop,CinematicFX_Transportation,1
+Reggaeton Pop,Brass&Woodwinds_Ensemble,1
+Reggaeton Pop,Bmin,1
+Reggaeton Pop,Key_Piano,1
+Reggaeton Pop,FX->Textures,1
+Reggaeton Pop,Drums->Kicks,1
+Reggaeton Pop,Vocals->Sampled,1
+Reggaeton Pop,Vocals->Recorded,1
+Reggaeton Pop,Vocals->Whispers,1
+Reggaeton Pop,Vocals->Shouts,1
+Reggaeton Pop,CinematicFX->Warfare,1
+Reggaeton Pop,CinematicFX->Animals,1
+Reggaeton Pop,CinematicFX->Ambience,1
+Reggaeton Pop,CinematicFX->ScienceFiction,1
+Reggaeton Pop,Human->Crowd,1
+Reggaeton Pop,Guitar->Melody,1
+Reggaeton Pop,Key->Synth,1
+Reggaeton Pop,Brass->Trumpet,1
+Reggaeton Pop,Brass->Saxophone,1
+Reggaeton Pop,Bass->Analog,1
+Reggaeton Pop,Bass->Saw,1
+Reggaeton Pop,Bass->SampledBassSounds,1
+Reggaeton Pop,Bass->Pulse,1
+Reggaeton Pop,Percussion->Grooves,1
+Reggaeton Pop,Percussion->Woodblock,1
+Reggaeton Pop,Synth->Textures,1
+Reggaeton Pop,String->Staccato,1
+Reggaeton Pop,d,1
+Reggaeton Pop,n,1
+Reggaeton Pop,K,1
+Rock,Electric,26
+Rock,Drums,19
+Rock,Guitar,13
+Rock,Bass,13
+Rock,Percussion->HandDrums,3
+Rock,Percussion->Cowbells,3
+Rock,String->Orchestral,3
+Rock,Drums->Kicks,2
+Rock,Vocals->Sampled,2
+Rock,Guitar->Riffs,2
+Rock,Percussion->Bells&Chimes,2
+Rock,Synth->LeadLoops,2
+Rock,String->Bass,2
+Rock,l,2
+Rock,Orchestral,1
+Rock,Transition,1
+Rock,TonalOneShots,1
+Rock,Dialogue,1
+Rock,Footsteps,1
+Rock,Leads,1
+Rock,Wurlitzer,1
+Rock,Human_Gore,1
+Rock,Synth_Textures,1
+Rock,Synth_FX,1
+Rock,Synth_LeadLoops,1
+Rock,Keys_Stabs,1
+Rock,D#,1
+Rock,F#min,1
+Rock,FX->Transition,1
+Rock,Drums->Cymbals,1
+Rock,Drums->Snaps,1
+Rock,Vocals->Oohs&Aahs,1
+Rock,Vocals->SpokenWord,1
+Rock,Vocals->Loops,1
+Rock,Vocals->Shouts,1
+Rock,Vocals->Words&Phrases,1
+Rock,Woodwind->Riffs,1
+Rock,CinematicFX->Transportation,1
+Rock,CinematicFX->Warfare,1
+Rock,CinematicFX->5.1Surround,1
+Rock,CinematicFX->Animals,1
+Rock,CinematicFX->Machines&Devices,1
+Rock,CinematicFX->Ambience,1
+Rock,Human->Gore,1
+Rock,Human->Movement,1
+Rock,Guitar->Leads,1
+Rock,Key->Clavinet,1
+Rock,Key->Synth,1
+Rock,Key->Rhodes,1
+Rock,Bass->Saw,1
+Rock,Bass->Distorted,1
+Rock,Bass->Acid,1
+Rock,Bass->Synth,1
+Rock,Percussion->Shakers,1
+Rock,Synth->FX,1
+Rock,Synth->Atmospheres,1
+Rock,Synth->Plucks,1
+Rock,Synth->Arp,1
+Rock,Synth->Chords,1
+Rock,X,1
+Rock,K,1
+Rock,y,1
+Tech House,Electric,34
+Tech House,Bass,19
+Tech House,Guitar,16
+Tech House,Drums,11
+Tech House,DrumFills,2
+Tech House,Strings_Bass,2
+Tech House,FX->Transition,2
+Tech House,Drums->Cymbals,2
+Tech House,Woodwind->Harmonica,2
+Tech House,CinematicFX->ScienceFiction,2
+Tech House,Key->Rhodes,2
+Tech House,Brass->Saxophone,2
+Tech House,Bass->Saw,2
+Tech House,Strings,1
+Tech House,Synth,1
+Tech House,Noise,1
+Tech House,Snaps,1
+Tech House,Kicks,1
+Tech House,Acappellas,1
+Tech House,Footsteps,1
+Tech House,Acoustic,1
+Tech House,Chords,1
+Tech House,Plucks,1
+Tech House,Arp,1
+Tech House,Strings_Staccato,1
+Tech House,Strings_Viola,1
+Tech House,Drums_TonalOneShots,1
+Tech House,Drums_Snares,1
+Tech House,Vocals_Oohs&Aahs,1
+Tech House,Vocals_SpokenWord,1
+Tech House,CinematicFX_Machines&Devices,1
+Tech House,CinematicFX_ScienceFiction,1
+Tech House,Guitar_Riffs,1
+Tech House,Percussion_HandDrums,1
+Tech House,Percussion_Bells&Chimes,1
+Tech House,Keys_Clavinet,1
+Tech House,A#min,1
+Tech House,Key_Chords,1
+Tech House,FX->Impacts,1
+Tech House,FX->Noise,1
+Tech House,Vocals->Sampled,1
+Tech House,Vocals->Acappellas,1
+Tech House,Vocals->Dialogue,1
+Tech House,Vocals->Oohs&Aahs,1
+Tech House,Vocals->VoxCuts,1
+Tech House,Vocals->Whispers,1
+Tech House,Vocals->Shouts,1
+Tech House,CinematicFX->Warfare,1
+Tech House,CinematicFX->Machines&Devices,1
+Tech House,CinematicFX->Household,1
+Tech House,CinematicFX->Foley,1
+Tech House,Human->Gore,1
+Tech House,Human->Footsteps,1
+Tech House,Guitar->Clean,1
+Tech House,Guitar->Rhythm,1
+Tech House,Key->Clavinet,1
+Tech House,Key->Chords,1
+Tech House,Brass->Stabs,1
+Tech House,Bass->Acoustic,1
+Tech House,Bass->Pulse,1
+Tech House,Bass->Sub,1
+Tech House,Bass->Wobble,1
+Tech House,Percussion->PercussionLoops,1
+Tech House,Percussion->Woodblock,1
+Tech House,Percussion->Bells&Chimes,1
+Tech House,Synth->Analog,1
+Tech House,Synth->Textures,1
+Tech House,Synth->FX,1
+Tech House,Synth->LeadLoops,1
+Tech House,Synth->Stabs,1
+Tech House,Synth->Arp,1
+Tech House,Synth->Chords,1
+Tech House,String->Cello,1
+Tech House,String->Violin,1
+Tech House,String->Synth,1
+Tech House,a,1
+Tech House,H,1
+Tech House,y,1
+Urban,Electric,30
+Urban,Drums,16
+Urban,Bass,16
+Urban,Guitar,13
+Urban,Synth->Chords,5
+Urban,Percussion_Grooves,2
+Urban,Drums->Claps,2
+Urban,Woodwind->Harmonica,2
+Urban,CinematicFX->Foley,2
+Urban,Bass->Wobble,2
+Urban,Percussion->Shakers,2
+Urban,String->Ensemble,2
+Urban,String->Violin,2
+Urban,FX,1
+Urban,Synth,1
+Urban,Cello,1
+Urban,Staccato,1
+Urban,Animals,1
+Urban,Gore,1
+Urban,Distorted,1
+Urban,Rhythm,1
+Urban,MelodyLoops,1
+Urban,Organ,1
+Urban,Trumpet,1
+Urban,Strings_Violin,1
+Urban,Strings_Viola,1
+Urban,FX_Noise,1
+Urban,Vocals_Sampled,1
+Urban,Vocals_Vocoder,1
+Urban,Vocals_Whispers,1
+Urban,CinematicFX_Transportation,1
+Urban,CinematicFX_Animals,1
+Urban,Guitar_Synth,1
+Urban,Synth_Analog,1
+Urban,Keys_Piano,1
+Urban,Brass&Woodwinds_Trumpet,1
+Urban,Brass&Woodwinds_Stabs,1
+Urban,F#,1
+Urban,C#min,1
+Urban,G#min,1
+Urban,Key_Piano,1
+Urban,Key_Rhodes,1
+Urban,Key_Chords,1
+Urban,FX->Impacts,1
+Urban,FX->Noise,1
+Urban,Drums->Cymbals,1
+Urban,Drums->DrumFills,1
+Urban,Drums->Toms,1
+Urban,Drums->Loops,1
+Urban,Vocals->Sampled,1
+Urban,Vocals->Recorded,1
+Urban,Vocals->Oohs&Aahs,1
+Urban,Vocals->Vocoder,1
+Urban,Woodwind->Stabs,1
+Urban,Woodwind->Flute,1
+Urban,CinematicFX->5.1Surround,1
+Urban,CinematicFX->Animals,1
+Urban,CinematicFX->Household,1
+Urban,CinematicFX->Human,1
+Urban,Human->Footsteps,1
+Urban,Human->BodySounds,1
+Urban,Guitar->Clean,1
+Urban,Guitar->Riffs,1
+Urban,Key->Clavinet,1
+Urban,Key->Stabs,1
+Urban,Brass->Trombone,1
+Urban,Brass->Saxophone,1
+Urban,Brass->Stabs,1
+Urban,Brass->Riffs,1
+Urban,Bass->Distorted,1
+Urban,Bass->Pulse,1
+Urban,Bass->Sub,1
+Urban,Percussion->PercussionLoops,1
+Urban,Percussion->Cowbells,1
+Urban,Synth->Textures,1
+Urban,Synth->Arp,1
+Urban,String->Melody,1
+Urban,String->Bass,1
+Urban,String->Staccato,1
+Urban,m,1
+Urban,a,1
+Urban,y,1
+Urban,P,1
+Vintage Breaks,Electric,23
+Vintage Breaks,Drums,13
+Vintage Breaks,Bass,13
+Vintage Breaks,Guitar,11
+Vintage Breaks,Woodwind->Riffs,2
+Vintage Breaks,Key->Stabs,2
+Vintage Breaks,Bass->Synth,2
+Vintage Breaks,String->Cello,2
+Vintage Breaks,Strings,1
+Vintage Breaks,Claps,1
+Vintage Breaks,Acappellas,1
+Vintage Breaks,5.1Surround,1
+Vintage Breaks,Harmonica,1
+Vintage Breaks,Vocals_Recorded,1
+Vintage Breaks,CinematicFX_Ambience,1
+Vintage Breaks,CinematicFX_Foley,1
+Vintage Breaks,Guitar_Melody,1
+Vintage Breaks,Guitar_Synth,1
+Vintage Breaks,Guitar_Chords,1
+Vintage Breaks,Percussion_HandDrums,1
+Vintage Breaks,Percussion_Shakers,1
+Vintage Breaks,Synth_Atmospheres,1
+Vintage Breaks,B,1
+Vintage Breaks,Gmin,1
+Vintage Breaks,Key_Clavinet,1
+Vintage Breaks,FX->Textures,1
+Vintage Breaks,Drums->Cymbals,1
+Vintage Breaks,Drums->Kicks,1
+Vintage Breaks,Vocals->Recorded,1
+Vintage Breaks,Vocals->Loops,1
+Vintage Breaks,Vocals->Whispers,1
+Vintage Breaks,Woodwind->Harmonica,1
+Vintage Breaks,CinematicFX->5.1Surround,1
+Vintage Breaks,CinematicFX->Human,1
+Vintage Breaks,CinematicFX->Foley,1
+Vintage Breaks,Human->Fight,1
+Vintage Breaks,Human->Movement,1
+Vintage Breaks,Human->Footsteps,1
+Vintage Breaks,Guitar->Clean,1
+Vintage Breaks,Guitar->Synth,1
+Vintage Breaks,Guitar->Chords,1
+Vintage Breaks,Key->Clavinet,1
+Vintage Breaks,Bass->Sub,1
+Vintage Breaks,Percussion->PercussionLoops,1
+Vintage Breaks,Synth->Analog,1
+Vintage Breaks,Synth->Textures,1
+Vintage Breaks,Synth->FX,1
+Vintage Breaks,Synth->LeadLoops,1
+Vintage Breaks,Synth->MelodyLoops,1
+Vintage Breaks,Synth->Pads,1
+Vintage Breaks,String->Melody,1
+Vintage Breaks,String->Bass,1
+Vintage Breaks,String->Staccato,1
+World,Electric,32
+World,Guitar,17
+World,Bass,15
+World,Drums,12
+World,FX,2
+World,Drums->DrumFills,2
+World,Vocals->Vocoder,2
+World,CinematicFX->Household,2
+World,Bass->Distorted,2
+World,String->Staccato,2
+World,Violin,1
+World,Ambience,1
+World,Distorted,1
+World,Vocals_SpokenWord,1
+World,Vocals_Harmonies,1
+World,Guitar_Rhythm,1
+World,Bass_Analog,1
+World,Bass_Acid,1
+World,Bass_Sub,1
+World,Percussion_Bells&Chimes,1
+World,Synth_Arp,1
+World,B,1
+World,C#,1
+World,A#,1
+World,Brass,1
+World,FX->Impacts,1
+World,FX->Noise,1
+World,Drums->Toms,1
+World,Drums->Snares,1
+World,Vocals->Sampled,1
+World,Vocals->Acappellas,1
+World,Vocals->Oohs&Aahs,1
+World,Vocals->Whispers,1
+World,Woodwind->Flute,1
+World,CinematicFX->Transportation,1
+World,CinematicFX->5.1Surround,1
+World,CinematicFX->Animals,1
+World,CinematicFX->Ambience,1
+World,CinematicFX->Foley,1
+World,Human->Gore,1
+World,Human->BodySounds,1
+World,Guitar->Leads,1
+World,Guitar->Rhythm,1
+World,Guitar->Electric,1
+World,Key->Piano,1
+World,Key->Organ,1
+World,Key->Rhodes,1
+World,Brass->Saxophone,1
+World,Bass->Acoustic,1
+World,Bass->Acid,1
+World,Bass->Pulse,1
+World,Bass->Sub,1
+World,Bass->Synth,1
+World,Bass->Electric,1
+World,Percussion->HandDrums,1
+World,Synth->LeadLoops,1
+World,Synth->Pads,1
+World,Synth->Plucks,1
+World,String->Violin,1
+World,String->Viola,1
+World,m,1
+World,i,1
+World,n,1
+World,H,1

@@ -188,7 +188,7 @@ def updateSample(id,id_sample):
 def updateTag(id, id_tag):
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("UPDATE fato SET id_tag=?, date_tag_md=? WHERE id_fato=?",(id_tag, date.today().strftime("%d/%m/%Y"),id))
+    cur.execute("UPDATE fato SET id_tag=?, date_tag_mod=? WHERE id_fato=?",(id_tag, date.today().strftime("%d/%m/%Y"),id))
     con.commit()
     con.close()
 
