@@ -4,7 +4,7 @@ index_name_viewAll_tag = 1
 xSearchGrid = 10
 ySearchGrid = 10
 padSearchGrid = 30
-spaceSearchGrid = 100
+spaceSearchGrid = 90
 
 xTree = 400
 yTree = 10
@@ -14,8 +14,12 @@ xTagGrid = 400
 padTagGrig = 200
 
 yPlayerGrid = 515
-xPlayerGrid = 40
+xPlayerGrid = 60
 
+xEditSample = 10
+yEditSample = 500
+padEditSample = 50
+spaceEditSample = 90
 tagSamplesDescDir = '/Users/luisclaudio/Desktop/sampleDatabase/LevantamentoDeTagsPadrao/'
 
 fatoQueryIdFato = 0

@@ -115,7 +115,7 @@ def selectFilter(name="",path="",extension="",disk="", tag="", bpm="", key="", g
 def create():
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS fato(id_fato INTEGER PRIMARY KEY, id_sample INTEGER, id_tag INTEGER, bpm INTEGER, key TEXT, genre TEXT, date TEXT)")
+    cur.execute("CREATE TABLE IF NOT EXISTS fato(id_fato INTEGER PRIMARY KEY, id_sample INTEGER, id_tag INTEGER, love INTEGER, date TEXT, date_sample_mod TEXT, date_tag_mod TEXT)")
     con.commit()
     con.close()
 

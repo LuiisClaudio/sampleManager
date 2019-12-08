@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 import tkinter as tk
+import os
 import sample_db
 import tag_db
 import fato_db
@@ -19,7 +20,7 @@ class samplePage:
 
     def __init__(self):
         self.window = Tk()
-        self.window.title("Manage Sample")
+        self.window.title("Sample Manager")
         self.window.geometry("1920x1080")
         #self.window.resizable(0, 0)
 
@@ -40,7 +41,7 @@ class samplePage:
         self.t.set("00:00")
 
         self.label = tk.Label(text="")
-        self.label.place(x=300 + indexs.xPlayerGrid,y=300 + indexs.yPlayerGrid)
+        #self.label.place(x=300 + indexs.xPlayerGrid,y=300 + indexs.yPlayerGrid)
         self.update_clock()
 
 
@@ -61,9 +62,9 @@ class samplePage:
     def _buildMenuBar(self):
         menubar = Menu(self.window)
         filemenu = Menu(menubar, tearoff=0)
-        filemenu.add_command(label="Open", command=self.abreFaixasDir)
-        #filemenu.add_command(label="Open", command=self.abreFaixasDir)
-        menubar.add_cascade(label="Folder", menu=filemenu)
+        filemenu.add_command(label="By Folder", command=self.abreFaixasDir)
+        filemenu.add_command(label="By File", command=self.abrirMusica)
+        menubar.add_cascade(label="Add Sample", menu=filemenu)
         self.window.config(menu=menubar)
 
     def _buildSampleSpace(self):
@@ -85,23 +86,23 @@ class samplePage:
         Entry(self.window, textvariable=self.pathSearch, width=10).place(x=indexs.xSearchGrid + indexs.spaceSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 2))
 
         Label(self.window, text="BPM").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 3))
-        self.bpmSearch = ttk.Spinbox(self.window, values=indexs.lstBpm, width=3)
+        self.bpmSearch = ttk.Spinbox(self.window, values=indexs.lstBpm, width=9)
         self.bpmSearch.place(x=indexs.xSearchGrid + indexs.spaceSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 3))
 
         Label(self.window, text="Key").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 4))
-        self.keySearch = ttk.Combobox(self.window, values=indexs.lstKey, width=5)
+        self.keySearch = ttk.Combobox(self.window, values=indexs.lstKey, width=9)
         self.keySearch.place(x=indexs.xSearchGrid + indexs.spaceSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 4))
 
         Label(self.window, text="Genre").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 5))
-        self.genreSearch = ttk.Combobox(self.window, values=indexs.lstGenre, width=10)
+        self.genreSearch = ttk.Combobox(self.window, values=indexs.lstGenre, width=9)
         self.genreSearch.place(x=indexs.xSearchGrid + indexs.spaceSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 5))
 
-        Label(self.window, text="LoveLow").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 6))
-        self.loveLowSearch = ttk.Spinbox(self.window, values=indexs.lstLove, width=3)
+        Label(self.window, text="Love Low").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 6))
+        self.loveLowSearch = ttk.Spinbox(self.window, values=indexs.lstLove, width=9)
         self.loveLowSearch.place(x=indexs.xSearchGrid + indexs.spaceSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 6))
 
         Label(self.window, text="Love Upper").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 7))
-        self.loveUpperSearch = ttk.Spinbox(self.window, values=indexs.lstLove, width=3)
+        self.loveUpperSearch = ttk.Spinbox(self.window, values=indexs.lstLove, width=9)
         self.loveUpperSearch.place(x=indexs.xSearchGrid + indexs.spaceSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 7))
 
         Label(self.window, text="Extension").place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 8))
@@ -118,23 +119,21 @@ class samplePage:
         Button(self.window, text='Clear All', bd=2, font=('arialblack', 13), width=5, command=self.clearAllSearch).place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 11))
 
 
-        Button(self.window, text='Save', bd=2, font=('arialblack', 13), width=5, command=self.editSampleInfo).place(
-            x=indexs.xSearchGrid, y=550)
         # Button(self.window, text='Details', bd=2, font=('arialblack', 13), width=5, command=self.viewInfoSample).place(x=520, y=550)
         Button(self.window, text='Delete', bd=2, font=('arialblack', 13), width=5, command=self.deleteSample).place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 12))
         Button(self.window, text='Hard Delete', bd=2, font=('arialblack', 13), width=9,
                command=self.hardDeleteSample).place(x=indexs.xSearchGrid, y=indexs.ySearchGrid + (indexs.padSearchGrid * 13))
 
-        Label(self.window, text="Name").place(x=indexs.xSearchGrid, y=550)
-        Label(self.window, text="Tag").place(x=indexs.xSearchGrid, y=600)  # .place(x=10, y=750)
-        Label(self.window, text="BPM").place(x=indexs.xSearchGrid, y=650)#.place(x=10, y=600)
-        Label(self.window, text="Key").place(x=indexs.xSearchGrid, y=700)#.place(x=10, y=650)
-        Label(self.window, text="Genre").place(x=indexs.xSearchGrid, y=750)#.place(x=10, y=700)
-        Label(self.window, text="Love").place(x=indexs.xSearchGrid, y=800)
+        Label(self.window, text="Name").place(x=indexs.xEditSample, y=indexs.yEditSample)
+        Label(self.window, text="Tag").place(x=indexs.xEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 1)) )  # .place(x=10, y=750)
+        Label(self.window, text="BPM").place(x=indexs.xEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 2)) )#.place(x=10, y=600)
+        Label(self.window, text="Key").place(x=indexs.xEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 3)) )#.place(x=10, y=650)
+        Label(self.window, text="Genre").place(x=indexs.xEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 4)) )#.place(x=10, y=700)
+        Label(self.window, text="Love").place(x=indexs.xEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 5)) )
 
 
-        self.editSampleName =  Label(self.window, text="-")
-        self.editSampleName.place(x=100, y=550)
+        self.editSampleName =  Label(self.window, text="")
+        self.editSampleName.place(x=indexs.xEditSample + indexs.spaceEditSample, y=indexs.yEditSample)
 
         self.tagListComboBox = []
         #for i in tag_db.viewallNames():
@@ -142,23 +141,28 @@ class samplePage:
         #self.editSampleTag = ttk.Combobox(self.window, values=self.tagListComboBox)
         #self.editSampleTag.place(x=100, y=600)#.place(x=100, y=750)
         self.editTagNameVar = StringVar()
-        self.editTagName = Label(self.window, text="-", textvariable=self.editTagNameVar)
-        self.editTagName.place(x=100, y=600)
+        self.editTagName = Label(self.window, text="", textvariable=self.editTagNameVar)
+        self.editTagName.place(x=indexs.xEditSample + indexs.spaceEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 1)) )
 
 
-        self.editSampleBpm = ttk.Spinbox(self.window, values=indexs.lstBpm, width=3)
-        self.editSampleBpm.place(x=100, y=650)#.place(x=100, y=600)
+        self.editSampleBpm = ttk.Spinbox(self.window, values=indexs.lstBpm, width=9)
+        self.editSampleBpm.place(x=indexs.xEditSample + indexs.spaceEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 2)) )#.place(x=100, y=600)
 
         self.box_value = StringVar()
-        self.editSampleKey = ttk.Combobox(self.window, textvariable=self.box_value, values=indexs.lstKey, state='readonly', width=5)
-        self.editSampleKey.place(x=100, y=700)#.place(x=100, y=650)
+        self.editSampleKey = ttk.Combobox(self.window, textvariable=self.box_value, values=indexs.lstKey, state='readonly', width=9)
+        self.editSampleKey.place(x=indexs.xEditSample + indexs.spaceEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 3)) )#.place(x=100, y=650)
 
-        self.editSampleGenre = ttk.Combobox(self.window, values=indexs.lstGenre, width=10)
-        self.editSampleGenre.place(x=100, y=750)#.place(x=100, y=700)
+        self.editSampleGenre = ttk.Combobox(self.window, values=indexs.lstGenre, width=9)
+        self.editSampleGenre.place(x=indexs.xEditSample + indexs.spaceEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 4)) )#.place(x=100, y=700)
 
 
-        self.editSampleLove = ttk.Spinbox(self.window, values=indexs.lstLove, width=10)
-        self.editSampleLove.place(x=100, y=800)
+        self.editSampleLove = ttk.Spinbox(self.window, values=indexs.lstLove, width=9)
+        self.editSampleLove.place(x=indexs.xEditSample + indexs.spaceEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 5)) )
+
+        Button(self.window, text='Save', bd=2, font=('arialblack', 13), width=5, command=self.editSampleInfo).place(
+            x=indexs.xEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 6)) )
+        Button(self.window, text='Contain Folder', bd=2, font=('arialblack', 13), width=11, command=self.openCotainFolder).place(
+            x=indexs.xEditSample +  indexs.spaceEditSample, y=(indexs.yEditSample + (indexs.padEditSample * 6)))
 
 
     def _create_treeview(self):
@@ -313,12 +317,12 @@ class samplePage:
         if self.treeRowValue[indexs.selectedTreeSample] != None and self.treeRowValue[indexs.selectedTreeSample] != 'None' and self.treeRowValue[indexs.selectedTreeSample] != '':
             self.editSampleName['text'] = self.treeRowValue[indexs.selectedTreeSample]
         else:
-            self.editSampleName['text'] = '-'
+            self.editSampleName['text'] = ''
 
         if self.treeRowValue[indexs.selectedTreeTag] != None and self.treeRowValue[indexs.selectedTreeTag] != 'None' and self.treeRowValue[indexs.selectedTreeTag] != '-':
             self.editTagNameVar.set(self.treeRowValue[indexs.selectedTreeTag])
         else:
-            self.editTagNameVar.set('-')
+            self.editTagNameVar.set('')
 
         #self.editSampleKey.current(indexs.lstKey.index(self.treeRowValue[indexs.selectedTreeKey]))
 
@@ -345,6 +349,14 @@ class samplePage:
             self.editSampleLove.set(self.treeRowValue[indexs.selectedTreeLove])
         else:
             self.editSampleLove.set('')
+
+
+    def openCotainFolder(self):
+        print(self.treeRowValue[indexs.selectedTreePath])
+        dir_ = 'open ' + self.treeRowValue[indexs.selectedTreePath].replace(" ", '\ ')
+        #dir_ = filedialog.askdirectory(initialdir=self.treeRowValue[indexs.selectedTreePath], title='Select Directory')
+        os.system(''+dir_)
+        #os.system('open /Users/luisclaudio/Desktop')
 
     def editSampleInfo(self):
         def searchIdTag(name):
@@ -514,11 +526,11 @@ class samplePage:
         repeat_button.place(x=indexs.xTree + (indexs.xPlayerGrid * 5),y=indexs.yPlayerGrid)
 
         self.rateMode = ttk.Spinbox(self.window, values=indexs.lstRateMode, width=4, command=self.rateTrack)
-        self.rateMode.place(x=indexs.xTree + (indexs.xPlayerGrid * 6), y=indexs.yPlayerGrid)
+        self.rateMode.place(x=indexs.xTree + (indexs.xPlayerGrid * 6), y=indexs.yPlayerGrid + 12)
         self.rateMode.set(1)
 
         speaker = Button(self.window, image=imgSpeaker, bd=0, command=self.muteTrack)
-        speaker.place(x=indexs.xTree + (indexs.xPlayerGrid * 7), y=indexs.yPlayerGrid)
+        speaker.place(x=indexs.xTree + (indexs.xPlayerGrid * 7) + 50, y=indexs.yPlayerGrid)
 
         play_des = Label(self.window, text='Play/Pause',relief='groove')
         prev_des = Label(self.window, text='Previous Track',relief='groove')
@@ -532,7 +544,7 @@ class samplePage:
         ## Volume Scale - adjust volume
         self.scaleVolume = ttk.Scale(self.window, from_=0, to=100, orient=HORIZONTAL)#,command=self.set_vol)
         self.scaleVolume.set(100)  # implement the default value of scale when music MusicPlayer.py starts
-        self.scaleVolume.place(x=indexs.xTree + (indexs.xPlayerGrid * 8), y=indexs.yPlayerGrid)
+        self.scaleVolume.place(x=indexs.xTree + (indexs.xPlayerGrid * 8) + 50, y=indexs.yPlayerGrid + 12)
         self.scaleVolume.bind('<ButtonRelease-1>', self._adjustVolume)
 
 
@@ -738,10 +750,12 @@ class samplePage:
         filename = dir_.split('/')[-1]
         cng_dir = dir_.split('/')[0:-1]
         cng_dir = '/'.join(cng_dir)
-        cng_dir = cng_dir + '/'
+        cng_dir = cng_dir #+ '/'
         # os.chdir(cng_dir)
         # filename = os.path.basename(dir_)
-        print(dir_, cng_dir, '----', filename, filename[-3:])
+        #print(dir_, cng_dir, '----', filename, filename[-3:])
+        print([filename, cng_dir, filename[-3:], listDir.findDisk(dir_), date.today().strftime("%d/%m/%Y")])
+        listDir.add_sample([filename, cng_dir, filename[-3:], listDir.findDisk(dir_), date.today().strftime("%d/%m/%Y")])
         #sample_db.add(filename, cng_dir, filename[-3:], 'mac', cdate)
 
 

@@ -2,7 +2,7 @@ import sqlite3
 def create():
     con = sqlite3.connect("sample_db.db")
     cur = con.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS sample(id_sample INTEGER PRIMARY KEY,name TEXT,path TEXT, extension TEXT,disk TEXT, date TEXT)")
+    cur.execute("CREATE TABLE IF NOT EXISTS sample(id_sample INTEGER PRIMARY KEY,name TEXT,path TEXT, extension TEXT,disk TEXT, date TEXT, bpm INTEGER, key TEXT, genre TEXT)")
     con.commit()
     con.close()
 

@@ -170,11 +170,12 @@ def fillSampleTag(lst):
 
 def runCode(dirName):
     minhaLista = scanTags(dirName)
+    #print(minhaLista)
     fillSampleTag(minhaLista[1:])
-    fillKey()
+    #fillKey()
 
 
 def searchTag():
     return
-#runCode(indexs.tagSamplesDescDir)
+runCode(indexs.tagSamplesDescDir)
 #autoTag()

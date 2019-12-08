@@ -60,6 +60,9 @@ def read_sample(dirName):
         print(elem)
     return files
 
+def add_sample(fileSample):
+    sample_db.add(fileSample[0], fileSample[1], fileSample[2], fileSample[3], fileSample[4], )
+    syncOnFato()
 
 def add_command(lstSamples):
     for i in lstSamples[1:]:
