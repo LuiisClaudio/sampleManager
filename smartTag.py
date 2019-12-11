@@ -53,7 +53,7 @@ def autoTag():
     for i in fatoTable:
         for k in tagTable:
             if (i[2].find(k[1]) != -1 and k[1] != '') and (k[1] not in lstKey):
-                print(i[0], i[2], '-----------',k[0], k[1])
+                #print(i[0], i[2], '-----------',k[0], k[1])
                 lstAddTag.append([i[0],i[1],k[0]])
     #print(sample_row)
     #print(lstTag)

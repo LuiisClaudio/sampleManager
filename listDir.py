@@ -2,7 +2,7 @@ import os
 import sample_db
 import fato_db
 from datetime import date
-
+import smartTag
 '''
     For the given path, get the List of all files in the directory tree 
 '''
@@ -26,7 +26,7 @@ def getListOfFiles(dirName):
     return allFiles
 
 def findDisk(dirPath):
-    return 'MAC'
+    return dirPath.split('/')[2]
 
 
 
@@ -73,6 +73,13 @@ def syncOnFato():
     for row in sample_db.viewall():
         fato_db.addSampleIfNotExist(row[0])
 
+def autoTag():
+    lstAutoTag = smartTag.autoTag()
+    for i in lstAutoTag:
+        fato_db.addIfNotExist(i[1], i[2])
+
 def runCode(dirName):
     minhaLista = read_sample(dirName)
     add_command(minhaLista)
+    smartTag
+    #autoTag()

@@ -7,7 +7,7 @@ import sample_db
 import tag_db
 import fato_db
 import listDir
-import smartTag
+#import smartTag
 from datetime import date
 import indexs
 import MusicPlayer
@@ -216,7 +216,7 @@ class samplePage:
         self.tree.tag_configure('cem', background='green2', foreground="black")
         self.tree.tag_configure('unview', background='white', foreground="black")
         ttk.Style().configure("Treeview", background="#383838",
-                              foreground="IndianRed", fieldbackground="white")
+                              foreground="orange", fieldbackground="white")
 
     def insertTreeData(self, cont, item):
         #for i in range(len(item)):
@@ -396,6 +396,7 @@ class samplePage:
             print(deleteRow)
             fato_db.delete(deleteRow[indexs.fatoQueryIdFato])
             sample_db.delete(deleteRow[indexs.fatoQueryIdSample])
+        self.clearAllSearch()
         self.search_command()
 
     def clearAllSearch(self):
@@ -488,6 +489,7 @@ class samplePage:
     def removeTag(self):
         fato_db.removeTagFato(tag_db.findTagId(self.tagNameEdit.get()))
         tag_db.delete(tag_db.findTagId(self.tagNameEdit.get()))
+        self.clearAllSearch()
         self.search_command()
         self.searchTagByName()
 
@@ -671,11 +673,11 @@ class samplePage:
         hour, min = divmod(min, 60)
         return "%d:%02d:%02d" % (hour, min, sec) if hour != 0 else "%02d:%02d" % (min, sec)
 
-    def autoTag(self):
-        lstAutoTag = smartTag.autoTag()
-        for i in lstAutoTag:
-            fato_db.addIfNotExist(i[1], i[2])
-        self.refresh()
+    #def autoTag(self):
+    #    lstAutoTag = smartTag.autoTag()
+    #    for i in lstAutoTag:
+    #        fato_db.addIfNotExist(i[1], i[2])
+    #    self.refresh()
 
     def refresh(self):
         for row in self.tree.get_children():
@@ -693,6 +695,7 @@ class samplePage:
         print(syncRowTag[0])
         fato_db.updateTag(syncRowFact[0], syncRowTag[0])
         #self.refresh()
+        #self.clearAllSearch()
         self.search_command()
 
     def untag(self):
@@ -705,6 +708,7 @@ class samplePage:
         print(syncRowTag[0])
         fato_db.removeTagFatoRow(syncRowFact[indexs.fatoQueryIdFato], syncRowFact[indexs.fatoQueryIdTag])
         #self.refresh()
+        #self.clearAllSearch()
         self.search_command()
 
     def view_command(self):
@@ -744,6 +748,9 @@ class samplePage:
     def abreFaixasDir(self):
         dir_ = filedialog.askdirectory(initialdir='D:\\', title='Select Directory')
         listDir.runCode(dir_)
+        self.clearAllSearch()
+        self.search_command()
+
 
     def abrirMusica(self):
         dir_ = filedialog.askopenfilename(initialdir='D:/', title='Select File')
